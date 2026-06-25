@@ -1,0 +1,338 @@
+<script>location.replace('../../index.html#/patient/appointments/new');</script>
+<main class="layout__content">
+  <a href="appointments.html" class="btn btn--ghost appointment-new__back">
+    <svg class="icon" aria-hidden="true">
+      <use href="../../images/icons.svg#icon-arrow-back" />
+    </svg>
+    Назад к записям
+  </a>
+
+  <article class="card appointment-new-card">
+    <header class="card__header appointment-new-card__header">
+      <h1 class="title title--h1">Запись на приём</h1>
+    </header>
+
+    <div class="card__body appointment-new-card__body">
+      <div class="appointment-new__top">
+        <div class="appointment-new__map">
+          <span class="appointment-new__map-label">Карта:</span>
+          <div class="tabs tabs--family-cards" data-tabs="family-cards">
+            <button type="button" class="tab tab--active" data-tab="mine">
+              <span class="tab__label">Моя</span>
+            </button>
+            <button type="button" class="tab" data-tab="ivan">
+              <span class="tab__label">Иван <span class="tab__label-muted">(муж)</span></span>
+            </button>
+            <button type="button" class="tab" data-tab="sofia">
+              <span class="tab__label">София <span class="tab__label-muted">(дочь)</span></span>
+            </button>
+            <button type="button" class="tab" data-tab="misha">
+              <span class="tab__label">Миша <span class="tab__label-muted">(сын)</span></span>
+            </button>
+            <a href="family.html" class="tabs--family-cards__add">+ Добавить</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="appointment-wizard" data-appointment-wizard data-tab-root="appointment-wizard">
+        <div class="tabs tabs--appointment-wizard" data-tabs="appointment-wizard">
+          <button type="button" class="tab tab--active" data-tab="facility" data-tab-href="#/patient/appointments/new">
+            <span class="tab__label">1. Медучереждение</span>
+          </button>
+          <button type="button" class="tab" data-tab="specialty" data-tab-href="#/patient/appointments/new/specialty">
+            <span class="tab__label">2. Специализация</span>
+          </button>
+          <button type="button" class="tab" data-tab="doctor" data-tab-href="#/patient/appointments/new/doctor">
+            <span class="tab__label">3. Выбор врача</span>
+          </button>
+          <button type="button" class="tab" data-tab="datetime" data-tab-href="#/patient/appointments/new/datetime">
+            <span class="tab__label">4. Дата и время</span>
+          </button>
+          <button type="button" class="tab" data-tab="confirm" data-tab-href="#/patient/appointments/new/confirm">
+            <span class="tab__label">5. Подтверждение</span>
+          </button>
+        </div>
+
+        <div class="appointment-wizard__panels">
+          <div class="tab-panel tab-panel--active" data-tab-panel="appointment-wizard" data-panel="facility">
+            <section class="appointment-step appointment-step--facility">
+              <h3 class="title title--h3">Выберите медучереждение</h3>
+              <p class="text text--muted">Или введите название медцентра, поликлиники и т.д.</p>
+
+              <div class="appointment-step__search">
+                <div class="documents-search">
+                  <span class="documents-search__icon" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.875 11.875C9.63642 11.875 11.875 9.63642 11.875 6.875C11.875 4.11358 9.63642 1.875 6.875 1.875C4.11358 1.875 1.875 4.11358 1.875 6.875C1.875 9.63642 4.11358 11.875 6.875 11.875Z"
+                        stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M13.125 13.125L10.4375 10.4375" stroke="currentColor" stroke-width="1.25"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <input class="documents-search__input" type="search"
+                    placeholder="Клиника “Мерси”, 34-я поликлиника..." aria-label="Поиск медучреждений">
+                </div>
+              </div>
+
+              <div class="appointment-facility-grid" role="list">
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-clinic="Клиника “Мерси”">Клиника “Мерси”</button>
+                <button type="button" class="appointment-facility-chip" data-appointment-clinic="ЛОДЭ">ЛОДЭ</button>
+                <button type="button" class="appointment-facility-chip" data-appointment-clinic="34-я поликлиника">34-я
+                  поликлиника</button>
+                <button type="button" class="appointment-facility-chip" data-appointment-clinic="24-я поликлиника">24-я
+                  поликлиника</button>
+                <button type="button" class="appointment-facility-chip" data-appointment-clinic="Ева Клиник">Ева
+                  Клиник</button>
+                <button type="button" class="appointment-facility-chip" data-appointment-clinic="5-я поликлиника">5-я
+                  поликлиника</button>
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-clinic="Кравира">Кравира</button>
+              </div>
+            </section>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="appointment-wizard" data-panel="specialty" hidden>
+            <section class="appointment-step appointment-step--specialty">
+              <h3 class="title title--h3">Выберите специализацию</h3>
+              <p class="text text--muted">Подберите специалиста для вашего случая</p>
+
+              <div class="appointment-step__search">
+                <div class="documents-search">
+                  <span class="documents-search__icon" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.875 11.875C9.63642 11.875 11.875 9.63642 11.875 6.875C11.875 4.11358 9.63642 1.875 6.875 1.875C4.11358 1.875 1.875 4.11358 1.875 6.875C1.875 9.63642 4.11358 11.875 6.875 11.875Z"
+                        stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M13.125 13.125L10.4375 10.4375" stroke="currentColor" stroke-width="1.25"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <input class="documents-search__input" type="search" placeholder="Терапевт, кардиолог..."
+                    aria-label="Поиск специализации">
+                </div>
+              </div>
+
+              <div class="appointment-facility-grid" role="list">
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-specialty="Терапевт">Терапевт</button>
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-specialty="Кардиолог">Кардиолог</button>
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-specialty="Педиатр">Педиатр</button>
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-specialty="Невролог">Невролог</button>
+                <button type="button" class="appointment-facility-chip" data-appointment-specialty="ЛОР">ЛОР</button>
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-specialty="Офтальмолог">Офтальмолог</button>
+              </div>
+            </section>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="appointment-wizard" data-panel="doctor" hidden>
+            <section class="appointment-step appointment-step--doctor">
+              <h3 class="title title--h3">Выберите врача</h3>
+              <p class="text text--muted">Список доступных специалистов</p>
+
+              <div class="appointment-step__search">
+                <div class="documents-search">
+                  <span class="documents-search__icon" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.875 11.875C9.63642 11.875 11.875 9.63642 11.875 6.875C11.875 4.11358 9.63642 1.875 6.875 1.875C4.11358 1.875 1.875 4.11358 1.875 6.875C1.875 9.63642 4.11358 11.875 6.875 11.875Z"
+                        stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M13.125 13.125L10.4375 10.4375" stroke="currentColor" stroke-width="1.25"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <input class="documents-search__input" type="search" placeholder="Фамилия врача..."
+                    aria-label="Поиск врача">
+                </div>
+              </div>
+
+              <div class="appointment-facility-grid appointment-facility-grid--doctor" role="list">
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-doctor="Кардиолог Смирнова Н.В.">Кардиолог Смирнова Н.В.</button>
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-doctor="Педиатр Петров А.И.">Педиатр Петров А.И.</button>
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-doctor="Терапевт Иванов И.Н.">Терапевт Иванов И.Н.</button>
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-doctor="Невролог Козлова Е.А.">Невролог Козлова Е.А.</button>
+              </div>
+            </section>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="appointment-wizard" data-panel="datetime" hidden>
+            <section class="appointment-step appointment-step--datetime">
+              <h3 class="appointment-step__title">Выберите врача</h3>
+              <p class="appointment-step__hint">Или введите фамилию врача</p>
+
+              <input type="hidden" id="date-step" name="date-step" value="">
+              <input type="hidden" id="time-step" name="time-step" value="">
+
+              <div class="appointment-datetime">
+                <div class="appointment-calendar" data-appointment-calendar aria-label="Календарь">
+                  <div class="appointment-calendar__header">
+                    <button type="button" class="btn btn--ghost btn--icon appointment-calendar__nav"
+                      data-appointment-calendar-prev aria-label="Предыдущий месяц">
+                      <svg class="icon appointment-calendar__nav-icon appointment-calendar__nav-icon--prev"
+                        aria-hidden="true">
+                        <use href="../../images/icons.svg#icon-chevron-right" />
+                      </svg>
+                    </button>
+                    <p class="appointment-calendar__title" data-appointment-calendar-title>Июнь 2026</p>
+                    <button type="button" class="btn btn--ghost btn--icon appointment-calendar__nav"
+                      data-appointment-calendar-next aria-label="Следующий месяц">
+                      <svg class="icon" aria-hidden="true">
+                        <use href="../../images/icons.svg#icon-chevron-right" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="appointment-calendar__weekdays" aria-hidden="true">
+                    <span>ПН</span>
+                    <span>ВТ</span>
+                    <span>СР</span>
+                    <span>ЧТ</span>
+                    <span>ПТ</span>
+                    <span>СБ</span>
+                    <span>ВС</span>
+                  </div>
+
+                  <div class="appointment-calendar__grid" data-appointment-calendar-grid role="grid"></div>
+                </div>
+
+                <div class="appointment-datetime__booking">
+                  <div class="appointment-datetime__row">
+                    <span class="appointment-datetime__label">Дата приёма:</span>
+                    <input class="appointment-datetime__date" type="date" data-appointment-date-input
+                      id="appointment-date-input" aria-label="Дата приёма">
+                  </div>
+
+                  <div class="appointment-datetime__times">
+                    <span class="appointment-datetime__label">Время приёма:</span>
+                    <div class="appointment-time-grid" role="list">
+                      <button type="button" class="appointment-time-slot" data-appointment-time="12:00">12:00</button>
+                      <button type="button" class="appointment-time-slot" data-appointment-time="12:30">12:30</button>
+                      <button type="button" class="appointment-time-slot" data-appointment-time="13:30">13:30</button>
+                      <button type="button" class="appointment-time-slot" data-appointment-time="14:20">14:20</button>
+                      <button type="button" class="appointment-time-slot" data-appointment-time="16:00">16:00</button>
+                      <button type="button" class="appointment-time-slot" data-appointment-time="16:30">16:30</button>
+                      <button type="button" class="appointment-time-slot" data-appointment-time="18:10">18:10</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="appointment-wizard" data-panel="confirm" hidden>
+            <section class="appointment-step appointment-step--confirm">
+              <h3 class="appointment-step__title">Подтвердите выбранные данные</h3>
+
+              <div class="appointment-confirm-card" data-appointment-confirm-card>
+                <span class="appointment-confirm-card__doctor" data-confirm-doctor>—</span>
+                <div class="appointment-confirm-card__meta">
+                  <span class="appointment-confirm-card__clinic" data-confirm-clinic>—</span>
+                  <span class="appointment-confirm-card__datetime" data-confirm-datetime>—</span>
+                </div>
+                <span class="appointment-confirm-card__patient visit-card__patient visit-card__patient--accent"
+                  data-confirm-patient>—</span>
+              </div>
+
+              <div class="appointment-confirm-reason">
+                <label class="appointment-confirm-reason__label" for="appointment-reason">Укажите причину посещения
+                  врача:</label>
+                <input type="text" class="form-input appointment-confirm-reason__input" id="appointment-reason"
+                  name="reason" placeholder="Повторный приём, температура, справка..." data-appointment-reason>
+              </div>
+
+              <div class="appointment-step__actions appointment-step__actions--center">
+                <button type="submit" form="appointment-form" class="btn btn--primary">Подтвердить запись</button>
+                <a href="#/patient/appointments" class="btn btn--outline" data-nav data-appointment-cancel>Отменить</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div class="appointment-success-block" data-appointment-success hidden>
+        <div class="appointment-wizard__panels appointment-wizard__panels--success">
+          <section class="appointment-step appointment-step--success">
+            <div class="appointment-success">
+              <img class="appointment-success__illustration" src="../../images/recording.png" alt="" width="120"
+                height="120" aria-hidden="true">
+              <h3 class="appointment-success__title">Запись успешно создана!</h3>
+              <p class="appointment-success__text text text--muted">Мы отправили подтверждение на email</p>
+
+              <div class="appointment-confirm-card appointment-success__card" data-appointment-success-card>
+                <span class="appointment-confirm-card__doctor" data-success-doctor>—</span>
+                <div class="appointment-confirm-card__meta">
+                  <span class="appointment-confirm-card__clinic" data-success-clinic>—</span>
+                  <span class="appointment-confirm-card__datetime" data-success-datetime>—</span>
+                </div>
+                <span class="appointment-confirm-card__patient visit-card__patient visit-card__patient--accent"
+                  data-success-patient>—</span>
+              </div>
+
+              <div class="appointment-step__actions appointment-step__actions--center">
+                <a href="#/patient/appointments" class="btn btn--primary" data-nav>К списку записей</a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <form id="appointment-form" action="appointments.html" method="get">
+        <div class="appointment-new__hidden-fields visually-hidden">
+          <div class="field">
+            <label class="field__label" for="clinic">Медучреждение</label>
+            <select class="field__input form-input" id="clinic" name="clinic">
+              <option>34-я поликлиника</option>
+              <option>Клиника “Мерси”</option>
+              <option>ЛОДЭ</option>
+              <option>24-я поликлиника</option>
+              <option>Ева Клиник</option>
+              <option>5-я поликлиника</option>
+              <option>Кравира</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field__label" for="spec">Специализация</label>
+            <select class="field__input form-input" id="spec" name="spec">
+              <option>Терапевт</option>
+              <option>Кардиолог</option>
+              <option>Педиатр</option>
+              <option>Невролог</option>
+              <option>ЛОР</option>
+              <option>Офтальмолог</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field__label" for="doctor">Врач</label>
+            <select class="field__input form-input" id="doctor" name="doctor">
+              <option>Кардиолог Смирнова Н.В.</option>
+              <option>Педиатр Петров А.И.</option>
+              <option>Терапевт Иванов И.Н.</option>
+              <option>Невролог Козлова Е.А.</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field__label" for="datetime">Дата и время</label>
+            <input class="field__input form-input" type="datetime-local" id="datetime" name="datetime"
+              value="2026-05-14T12:00">
+          </div>
+          <div class="field">
+            <label class="field__label" for="patient">Пациент</label>
+            <select class="field__input form-input" id="patient" name="patient">
+              <option>—</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="visually-hidden">Подтвердить запись</button>
+      </form>
+    </div>
+  </article>
+</main>

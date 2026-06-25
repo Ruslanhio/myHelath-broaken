@@ -1,0 +1,56 @@
+/* ── Greeting / Dashboard ── */
+.greeting,
+.page-greeting {
+  margin-bottom: 2rem;
+}
+
+.greeting__title,
+.page-greeting__title {
+  margin-bottom: 0.5rem;
+}
+
+.dashboard__stats,
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard__stats--family {
+  grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
+}
+
+.dashboard__stats .appointments-stat {
+  min-width: 0;
+
+  .appointments-stat__value {
+    font-size: $font-size-2xl;
+  }
+
+  .appointments-stat__label {
+    font-size: $font-size-sm;
+    line-height: 1.35;
+    color: $color-text-muted;
+  }
+}
+
+.dashboard,
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 33.6875rem;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.dashboard__main,
+.dashboard-grid__main {
+  min-width: 0;
+}
+
+.dashboard__side,
+.dashboard-grid__side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

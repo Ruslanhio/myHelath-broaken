@@ -1,0 +1,27 @@
+<script>location.replace('../../index.html#/patient/documents/doc-1');</script>
+<main class="layout__content">
+      <a href="documents.html" class="btn btn--ghost"><svg class="icon" aria-hidden="true"><use href="../../images/icons.svg#icon-arrow-back"/></svg> Назад к документам</a>
+      <article class="card">
+        <header class="card__header"><h2 class="title title--h2">Общий анализ крови</h2><p class="text text--muted">Анализы · Инвитро · 05.05.2026 · Анна М.</p></header>
+        <div class="card__body">
+          <figure class="card__preview"><img src="../../images/icon-blood.svg" alt="" width="64" height="64"><figcaption class="text text--muted">Предпросмотр документа</figcaption><p class="text text--muted">PDF · 245 КБ</p></figure>
+          <div class="card__actions">
+            <button type="button" class="btn btn--primary btn--md">Скачать</button>
+            <button type="button" class="btn btn--outline btn--md" data-modal-open="modal-history">История просмотров</button>
+            <a href="access-grant.html" class="btn btn--outline btn--md">Поделиться с врачом</a>
+          </div>
+        </div>
+      </article>
+  <div class="modal-overlay" id="modal-history" aria-hidden="true" role="dialog" aria-labelledby="modal-history-title">
+    <div class="modal">
+      <div class="modal__header">
+        <h2 class="modal__title title title--h3" id="modal-history-title">История просмотров документов</h2>
+        <button type="button" class="modal__close" data-modal-close aria-label="Закрыть"><svg class="icon" aria-hidden="true"><use href="../../images/icons.svg#icon-close"/></svg></button>
+      </div>
+      <div class="modal__body">
+        <div class="settings__session"><div class="settings__session-info"><p class="settings__session-name">Вы</p><p class="settings__session-date text text--muted">05.05.2026, 14:30</p></div></div>
+        <div class="settings__session"><div class="settings__session-info"><p class="settings__session-name">Др. Смирнова Н.В.</p><p class="settings__session-date text text--muted">04.05.2026, 11:15</p></div></div>
+      </div>
+    </div>
+  </div>
+    </main>

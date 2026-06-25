@@ -1,0 +1,12 @@
+// ============================================================
+// MyHealth — дашборд SPA (shell, страницы, адаптив)
+// Подключать после core.css (+ auth.css на index.html)
+// Сборка: npx sass css/app.scss css/app.css
+// ============================================================
+
+@import "functions";
+@import "variables";
+@import "pages-app";
+@import "pages/profile";
+@import "theme";
+@import "responsive";

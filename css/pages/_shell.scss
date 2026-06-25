@@ -1,0 +1,128 @@
+/* ── Sidebar ── */
+
+.sidebar {
+  width: var(--sidebar-width, $sidebar-width);
+  min-height: 100vh;
+  background: $gradient-sidebar;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  padding: 1.5rem 1.125rem;
+
+  > .logo {
+    align-self: center;
+    margin-bottom: 0.875rem;
+
+    &.logo--card {
+      width: 100%;
+      max-width: rem(237);
+      padding: 0.75rem 0.75rem 0.875rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.0625rem;
+    color: $color-white;
+    text-align: center;
+    
+  }
+
+  &__nav {
+    flex: 1;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 4.3125rem;
+  }
+
+  &__group {
+    margin-bottom: 2.5rem;
+  }
+
+  &__logout {
+    padding: 0 0.375rem;
+    margin-top: auto;
+  }
+}
+
+
+.sidebar__group-label {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-secondary-01;
+  margin-bottom: 1.125rem;
+}
+
+// Базовые стили ссылки — .nav-item в _ui-kit.scss (селектор .sidebar__link)
+
+.sidebar--suppress-hover .sidebar__link:hover {
+  background-color: transparent;
+  color: $color-white;
+}
+
+.sidebar--suppress-hover .sidebar__link.sidebar__link--active:hover {
+  background-color: $color-white;
+  color: $color-primary-02;
+}
+
+/* ── Header ── */
+.header {
+  background: $color-white;
+  border-bottom: 0.0625rem solid $color-surface;
+  display: flex;
+  align-items: center;
+  padding: $header-padding-y 3.3125rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header__title {
+  font-size: 1.5rem;
+  font-weight: $font-weight-semibold;
+  color: $color-primary-02;
+  flex: 1;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+}
+
+.header__notify {
+  position: relative;
+  display: flex;
+  color: $color-text-muted;
+}
+
+.header__user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  text-align: left;
+}
+
+.header__user-name {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text;
+}
+
+.header__user-role {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}

@@ -1,0 +1,15 @@
+<script>location.replace('../../index.html#/patient/access/grant');</script>
+<main class="layout__content">
+      <a href="access.html" class="btn btn--ghost"><svg class="icon" aria-hidden="true"><use href="../../images/icons.svg#icon-arrow-back"/></svg> Назад</a>
+      <article class="card">
+        <header class="card__header"><h2 class="title title--h2">Запрос доступа врачу</h2></header>
+        <div class="card__body">
+          <form class="auth__form" action="access.html" method="get">
+            <div class="field"><label class="field__label" for="doctor-email">Email врача</label><input class="field__input form-input" type="email" id="doctor-email" name="email" placeholder="doctor@clinic.by"></div>
+            <div class="field"><label class="field__label" for="docs-scope">Документы</label><select class="field__input form-input" id="docs-scope" name="scope"><option>Все документы</option><option>Только анализы</option><option>Выбрать вручную</option></select></div>
+            <div class="field"><span class="field__label">Срок доступа</span><div class="segmented" data-segmented><button type="button" class="segmented__btn segmented__btn--active" data-segment="7">7 дней</button><button type="button" class="segmented__btn" data-segment="30">30 дней</button><button type="button" class="segmented__btn" data-segment="90">3 месяца</button></div></div>
+            <button type="submit" class="btn btn--primary">Отправить запрос</button>
+          </form>
+        </div>
+      </article>
+    </main>

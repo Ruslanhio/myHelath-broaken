@@ -1,0 +1,21 @@
+<script>location.replace('../../index.html#/patient/access');</script>
+<main class="layout__content">
+      <div class="tabs tabs--settings" data-tabs="access">
+        <button type="button" class="tab tab--active" data-tab="active">Активный доступ</button>
+        <button type="button" class="tab" data-tab="incoming">Входящий</button>
+        <button type="button" class="tab" data-tab="expired">Истёкший</button>
+      </div>
+      <div class="toolbar"><span></span><a href="access-grant.html" class="btn btn--primary btn--md">Дать доступ врачу</a></div>
+      <div class="tab-panel tab-panel--active" data-tab-panel="access" data-panel="active">
+        <div class="doc-list">
+          <article class="doc-list__item doc-list__item--static"><div class="avatar">СН</div><div class="doc-list__body"><p class="doc-list__title">Др. Смирнова Н.В.</p><p class="doc-list__meta text text--muted">Кардиолог · до 15.06.2026</p></div><button type="button" class="btn btn--danger-outline btn--sm">Отозвать</button></article>
+          <article class="doc-list__item doc-list__item--static"><div class="avatar">ПА</div><div class="doc-list__body"><p class="doc-list__title">Др. Петров А.И.</p><p class="doc-list__meta text text--muted">Педиатр · до 01.07.2026</p></div><button type="button" class="btn btn--danger-outline btn--sm">Отозвать</button></article>
+        </div>
+      </div>
+      <div class="tab-panel" data-tab-panel="access" data-panel="incoming">
+        <div class="doc-list"><article class="doc-list__item doc-list__item--static"><div class="avatar">КВ</div><div class="doc-list__body"><p class="doc-list__title">Др. Козлов В.П.</p><p class="doc-list__meta text text--muted">Невролог · Запрос от 01.06.2026</p></div><button type="button" class="btn btn--primary btn--sm">Принять</button></article></div>
+      </div>
+      <div class="tab-panel" data-tab-panel="access" data-panel="expired">
+        <div class="doc-list"><article class="doc-list__item doc-list__item--static"><div class="avatar">ИЕ</div><div class="doc-list__body"><p class="doc-list__title">Др. Иванова Е.С.</p><p class="doc-list__meta text text--muted">Терапевт · Истёк 20.04.2026</p></div><a href="access-grant.html" class="btn btn--outline btn--sm">Запросить снова</a></article></div>
+      </div>
+    </main>

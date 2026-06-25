@@ -1,0 +1,524 @@
+/* ── Doctor access request page ── */
+.doctor-access-request-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  &__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: $color-primary-02;
+    text-decoration: none;
+
+    .icon {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+  }
+}
+
+.doctor-access-request {
+  width: 100%;
+  max-width: 36.75rem;
+  padding: 1.75rem 2.5rem 2.5rem;
+  border: 0.0625rem solid $color-surface;
+  box-shadow: $shadow-card;
+
+  &__accent {
+    display: block;
+    width: 3rem;
+    height: 0.25rem;
+    margin: 0 auto 1.75rem;
+    border-radius: 62.4375rem;
+    background: $color-primary-03;
+  }
+
+  &__header {
+    margin-bottom: 1.75rem;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    line-height: 1.35;
+    color: $color-text;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__doc-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.75rem 1.25rem;
+    border: 0.0625rem solid transparent;
+    border-radius: $radius-md;
+    background: $color-secondary-10;
+    color: $color-secondary-40;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    line-height: 1.35;
+    cursor: pointer;
+    transition: background-color $transition-fast, border-color $transition-fast;
+
+    &:hover {
+      background: $color-secondary-70;
+      border-color: $color-primary-01;
+      color: $color-primary-02;
+    }
+  }
+
+  &__submit {
+    align-self: stretch;
+    width: 100%;
+    min-height: 3rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* ── Doctor access page ── */
+.doctor-access-toolbar {
+  display: grid;
+  grid-template-columns: minmax(17.5rem, 25rem) minmax(13.75rem, 1fr) auto;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+
+  &__search {
+    min-width: 0;
+  }
+
+  &__hint {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin: 0;
+    min-width: 0;
+    padding: 0.75rem 1rem;
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    background: $color-secondary-70;
+    border-radius: $radius-md;
+    line-height: 1.35;
+  }
+
+  &__hint-icon {
+    flex-shrink: 0;
+    color: $color-primary-dark;
+  }
+
+  &__action {
+    justify-self: end;
+  }
+}
+
+.doctor-access-card-wrap {
+  overflow: hidden;
+}
+
+.doctor-access-card__body {
+  padding: 1.5rem 1.875rem 1.875rem;
+}
+
+.doctor-access-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.doctor-access-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(8.75rem, 11.25rem) auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: $color-white;
+  border: 0.0625rem solid $color-surface;
+  border-radius: $radius-lg;
+
+  &--incoming {
+    border-color: #fb963e;
+  }
+
+  &--expired {
+    .doctor-access-row__tag--direction {
+      background: $color-secondary-10;
+      color: $color-text-muted;
+    }
+  }
+
+  &__icon {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: $radius-lg;
+    background: $color-surface-soft;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-primary-dark;
+  }
+
+  &__main {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__name {
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+    color: $color-text;
+  }
+
+  &__desc {
+    font-size: $font-size-base;
+    color: $color-text;
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  &__dates {
+    font-size: $font-size-base;
+    color: $color-text-muted;
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  &__docs {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  &__docs-label {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    line-height: 1.3;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  &__tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.625rem;
+    border-radius: 62.4375rem;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    line-height: 1.2;
+    white-space: nowrap;
+
+    &--direction {
+      background: $color-primary-02;
+      color: $color-white;
+    }
+
+    &--waiting,
+    &--review {
+      background: #fff0e0;
+      color: #d9790a;
+    }
+
+    &--expired {
+      background: $color-secondary-10;
+      color: $color-text-muted;
+    }
+
+    &--doc {
+      background: #ffe8d6;
+      color: #c45a00;
+    }
+
+    &--doc-muted {
+      background: $color-secondary-10;
+      color: $color-text-muted;
+    }
+  }
+
+  &__aside {
+    grid-column: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 0.625rem;
+    flex-shrink: 0;
+  }
+
+  &__days {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    white-space: nowrap;
+
+    &--warning {
+      color: $color-accent;
+    }
+
+    &--ok {
+      color: $color-primary-dark;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  &--history {
+    padding: 0.875rem 1.25rem;
+
+    .doctor-access-row__aside {
+      align-items: flex-end;
+      justify-content: center;
+    }
+  }
+
+  &__note {
+    margin: 0;
+    font-size: $font-size-sm;
+    line-height: 1.4;
+    text-align: right;
+    max-width: 11.25rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .doctor-access-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-access-toolbar__action {
+    justify-self: stretch;
+  }
+
+  .doctor-access-row {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas:
+      'icon main'
+      'icon docs'
+      'icon aside';
+
+    &__icon {
+      grid-area: icon;
+    }
+
+    &__main {
+      grid-area: main;
+    }
+
+    &__docs {
+      grid-area: docs;
+    }
+
+    &__aside {
+      grid-area: aside;
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+/* ── Doctor home ── */
+.tabs--doctor-home {
+  .tab {
+    flex: 0 1 auto;
+    width: auto;
+    min-width: 11.25rem;
+    max-width: 15rem;
+  }
+}
+
+.access-request {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
+  background: $color-white;
+  border: 0.0625rem solid #fb963e;
+  border-radius: $radius-lg;
+
+  &__icon {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: $radius-lg;
+    background: $color-surface-soft;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-primary-dark;
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__name {
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+    color: $color-text;
+    margin-bottom: 0.25rem;
+  }
+
+  &__meta {
+    font-size: $font-size-base;
+    color: $color-text-muted;
+    line-height: 1.35;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+}
+
+.access-request-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.doctor-data-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  &__item {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__status {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    flex-shrink: 0;
+
+    &--done {
+      color: $color-primary-dark;
+    }
+
+    &--progress {
+      color: $color-text-muted;
+    }
+  }
+}
+
+.doctor-access-panel {
+  background: linear-gradient(138deg, #f7aeae 0%, #ffd7d7 100%);
+  border-radius: $radius-2xl;
+  padding: 1.5rem 1.75rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  &__title {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.625rem 1.25rem;
+    border-radius: $radius-md;
+    background: rgba(255, 255, 255, 0.55);
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+    align-self: flex-start;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    align-self: flex-end;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: $color-text;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+  }
+}
+
+.doctor-access-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: $radius-lg;
+
+  &__body {
+    min-width: 0;
+  }
+
+  &__name {
+    display: block;
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+    color: $color-text;
+    margin-bottom: 0.25rem;
+  }
+
+  &__meta {
+    display: block;
+    font-size: $font-size-base;
+    color: $color-text-muted;
+    line-height: 1.35;
+  }
+
+  &__days {
+    flex-shrink: 0;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-primary-dark;
+    white-space: nowrap;
+  }
+}

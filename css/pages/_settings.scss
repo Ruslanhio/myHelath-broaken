@@ -1,0 +1,213 @@
+/* ── Settings ── */
+.settings-layout {
+  max-width: 60.4375rem;
+
+  &--help {
+    max-width: 56.75rem;
+  }
+}
+
+.settings {
+  background: $color-white;
+  border: 0.0625rem solid $color-surface;
+  border-radius: $radius-2xl;
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.settings-layout .card > .tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.settings-layout .card > .card__body {
+  gap: 0;
+}
+
+// .settings-section — не используется в разметке
+
+.settings__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 0.0625rem solid $color-surface;
+  gap: 1rem;
+}
+
+.settings__row:last-child {
+  border-bottom: none;
+}
+
+.settings__row > .checkbox,
+.settings__row > .switch {
+  flex-shrink: 0;
+}
+
+.settings__group {
+  & + & {
+    margin-top: 0.25rem;
+  }
+}
+
+.settings__group-label {
+  margin: 0;
+  padding: 0.25rem 0 0.75rem;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $color-text-muted;
+}
+
+.settings__row--toggle {
+  .settings__label {
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+    line-height: 1.35;
+    color: $color-text;
+  }
+}
+
+.settings__row--action {
+  justify-content: flex-end;
+  border-bottom: none;
+  padding-top: 0.5rem;
+}
+
+.settings__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.settings__info h3,
+.settings__info h4 {
+  margin-bottom: 0;
+}
+
+// .settings-row, .settings-row__info — legacy-алиасы, не используются
+
+.settings__lead {
+  margin: 0 0 1.5rem;
+  font-size: $font-size-base;
+  line-height: 1.5;
+}
+
+.settings__profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 0.0625rem solid $color-surface;
+}
+
+.settings__profile-header .btn {
+  margin-left: auto;
+  width: auto;
+}
+
+.settings__session,
+.session-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8125rem;
+  border: 0.0625rem solid $color-surface;
+  border-radius: $radius-md;
+}
+
+.tab-panel--active:has(.settings__session),
+.tab-panel--active:has(.session-row) {
+  gap: 0.5rem;
+}
+
+.settings__session + .settings__session,
+.session-row + .session-row {
+  margin-top: 0;
+}
+
+.settings__session-icon,
+.session-row__icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  background: $color-surface-soft;
+  border-radius: $radius-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.settings__session-info,
+.session-row__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.settings__session-name,
+.session-row__name {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text;
+}
+
+.settings__session-date--current {
+  color: $color-primary-01;
+}
+
+.settings-language-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.settings-language-option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 2.9375rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: $radius-md;
+  background: #f8f8f8;
+  color: #424242;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  text-align: left;
+  cursor: pointer;
+  transition: color $transition-fast, background-color $transition-fast;
+
+  &--active {
+    color: $color-primary-01;
+  }
+
+  &:hover:not(&--active) {
+    background: $color-secondary-70;
+  }
+}
+
+.settings__faq {
+  padding: 1rem 0;
+  border-bottom: 0.0625rem solid $color-surface;
+}
+
+.settings__faq summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.settings__faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.settings__faq p {
+  margin-top: 0.75rem;
+}

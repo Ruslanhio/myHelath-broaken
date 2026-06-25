@@ -1,0 +1,193 @@
+<script>location.replace('../../index.html#/doctor/notifications');</script>
+<main class="layout__content">
+  <div class="notifications-page__actions">
+          <button type="button" class="btn btn--action btn--md btn--auto" data-action="mark-notifications-read">
+      <img class="icon" src="../../images/read-icon.png" alt="" width="18" height="18" aria-hidden="true">
+      Отметить все прочитанными
+    </button>
+  </div>
+
+  <article class="card notifications-card">
+    <div class="tabs tabs--access-doctor" data-tabs="notifications" role="tablist" aria-label="Фильтр уведомлений">
+      <button type="button" class="tab tab--active" data-tab="all" role="tab" aria-selected="true">Все</button>
+      <button type="button" class="tab" data-tab="access" role="tab" aria-selected="false">Доступ</button>
+      <button type="button" class="tab" data-tab="system" role="tab" aria-selected="false">Система</button>
+    </div>
+
+    <div class="card__body notifications-card__body">
+      <div class="tab-panel tab-panel--active" data-tab-panel="notifications" data-panel="all" id="notifications-list" role="tabpanel">
+        <div class="notification-list">
+          <article class="notification-item notification-item--access">
+            <span class="notification-item__icon notification-item__icon--white" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div class="notification-item__body">
+              <p class="notification-item__title">Предоставлен доступ на 7 дней</p>
+              <p class="notification-item__meta">Иванов И.И. | МРТ</p>
+              <p class="notification-item__time">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.1"/>
+                  <path d="M7 4.2V7L8.8 8.2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Сегодня, 19:00
+              </p>
+            </div>
+          </article>
+
+          <article class="notification-item notification-item--request">
+            <span class="notification-item__icon notification-item__icon--white" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div class="notification-item__body">
+              <p class="notification-item__title">Входящий запрос</p>
+              <p class="notification-item__meta">Гришина Р.Л. | Общий анализ крови</p>
+              <p class="notification-item__time">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.1"/>
+                  <path d="M7 4.2V7L8.8 8.2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Сегодня, 18:30
+              </p>
+            </div>
+            <div class="notification-item__actions">
+              <button type="button" class="btn btn--primary btn--sm btn--auto">Принять</button>
+              <button type="button" class="btn btn--outline btn--sm btn--auto">Отклонить</button>
+            </div>
+          </article>
+
+          <article class="notification-item">
+            <span class="notification-item__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div class="notification-item__body">
+              <p class="notification-item__title">Новый вход в аккаунт</p>
+              <p class="notification-item__meta">Обнаружен вход с нового устройства — iPhone 17, Минск</p>
+              <p class="notification-item__time">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.1"/>
+                  <path d="M7 4.2V7L8.8 8.2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                5 апреля, 12:43
+              </p>
+            </div>
+          </article>
+
+          <article class="notification-item">
+            <span class="notification-item__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 8V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="12" cy="16" r="1" fill="currentColor"/>
+              </svg>
+            </span>
+            <div class="notification-item__body">
+              <p class="notification-item__title">Профиль верифицирован</p>
+              <p class="notification-item__meta">Ваша лицензия подтверждена. Теперь пациенты видят знак верификации</p>
+              <p class="notification-item__time">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.1"/>
+                  <path d="M7 4.2V7L8.8 8.2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                19 марта, 15:45
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-tab-panel="notifications" data-panel="access" role="tabpanel">
+        <div class="notification-list">
+          <article class="notification-item notification-item--access">
+            <span class="notification-item__icon notification-item__icon--white" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div class="notification-item__body">
+              <p class="notification-item__title">Предоставлен доступ на 7 дней</p>
+              <p class="notification-item__meta">Иванов И.И. | МРТ</p>
+              <p class="notification-item__time">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.1"/>
+                  <path d="M7 4.2V7L8.8 8.2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Сегодня, 19:00
+              </p>
+            </div>
+          </article>
+          <article class="notification-item notification-item--request">
+            <span class="notification-item__icon notification-item__icon--white" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div class="notification-item__body">
+              <p class="notification-item__title">Входящий запрос</p>
+              <p class="notification-item__meta">Гришина Р.Л. | Общий анализ крови</p>
+              <p class="notification-item__time">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.1"/>
+                  <path d="M7 4.2V7L8.8 8.2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Сегодня, 18:30
+              </p>
+            </div>
+            <div class="notification-item__actions">
+              <button type="button" class="btn btn--primary btn--sm btn--auto">Принять</button>
+              <button type="button" class="btn btn--outline btn--sm btn--auto">Отклонить</button>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-tab-panel="notifications" data-panel="system" role="tabpanel">
+        <div class="notification-list">
+          <article class="notification-item">
+            <span class="notification-item__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div class="notification-item__body">
+              <p class="notification-item__title">Новый вход в аккаунт</p>
+              <p class="notification-item__meta">Обнаружен вход с нового устройства — iPhone 17, Минск</p>
+              <p class="notification-item__time">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.1"/>
+                  <path d="M7 4.2V7L8.8 8.2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                5 апреля, 12:43
+              </p>
+            </div>
+          </article>
+          <article class="notification-item">
+            <span class="notification-item__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 8V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="12" cy="16" r="1" fill="currentColor"/>
+              </svg>
+            </span>
+            <div class="notification-item__body">
+              <p class="notification-item__title">Профиль верифицирован</p>
+              <p class="notification-item__meta">Ваша лицензия подтверждена. Теперь пациенты видят знак верификации</p>
+              <p class="notification-item__time">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.1"/>
+                  <path d="M7 4.2V7L8.8 8.2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                19 марта, 15:45
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </article>
+</main>

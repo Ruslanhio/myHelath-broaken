@@ -1,0 +1,100 @@
+@import "functions";
+
+// Primary
+$color-primary: #1a9b9a;
+$color-primary-dark: #156b6a;
+$color-accent: #c86262;
+$color-accent-soft: #f7aeae;
+$color-accent-bg: #ffd7d7;
+
+// Neutrals
+$color-text: #15200e;
+$color-text-muted: #767676;
+$color-text-label: #0f172a;
+$color-text-link: #424242;
+$color-surface: #ededed;
+$color-surface-soft: #e9f5f5;
+$color-border: #d5d5d5;
+$color-white: #ffffff;
+$color-bg-page: #fafbfc;
+
+// Legacy aliases
+$color-primary-01: $color-primary;
+$color-primary-02: $color-primary-dark;
+$color-primary-03: $color-accent-soft;
+$color-secondary-40: $color-text;
+$color-secondary-50: $color-text-muted;
+$color-secondary-30: $color-accent;
+$color-secondary-10: $color-surface;
+$color-secondary-01: $color-border;
+$color-secondary-70: $color-surface-soft;
+$color-neutral-10: $color-white;
+$color-neutral-11: #f0faf4;
+
+// Typography — фиксированные размеры по макету (px → rem)
+$font-family: "Inter", sans-serif;
+$font-size-xs: rem(12);
+$font-size-sm: rem(12);
+$font-size-base: rem(14);
+$font-size-md: rem(16);
+$font-size-lg: rem(20);
+$font-size-xl: rem(24);
+$font-size-2xl: rem(30);
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$line-height-tight: 1.25;
+$line-height-normal: 1.5;
+
+// Spacing
+$space-xs: rem(4);
+$space-sm: rem(8);
+$space-md: rem(12);
+$space-lg: rem(16);
+$space-xl: rem(24);
+$space-2xl: rem(32);
+$space-3xl: rem(48);
+
+// Radius
+$radius-sm: rem(4);
+$radius-md: rem(8);
+$radius-lg: rem(10);
+$radius-xl: rem(12);
+$radius-2xl: rem(16);
+
+// Layout
+$sidebar-width: rem(319);
+$header-padding-y: rem(22);
+$header-offset: rem(70); // approximate sticky header size for calc() layouts
+$content-max-width: rem(1601);
+$auth-hero-width: rem(474);
+$auth-card-width: rem(448);
+$auth-doctor-card-width: rem(856);
+
+// Shadows
+$shadow-sm: 0 rem(1) rem(1) rgba(0, 0, 0, 0.1);
+$shadow-card: 0 0 rem(2.5) rgba(0, 0, 0, 0.08);
+$shadow-modal: 0 rem(24) rem(48) rgba(21, 32, 14, 0.12);
+
+// Transitions
+$transition-fast: 150ms ease;
+$transition-base: 250ms ease;
+
+// UI Kit
+$color-component-set-border: #9747ff;
+$color-tab-inactive: #fff8f8;
+$color-list-item-click: #f0f0f0;
+$color-list-item-disabled: #dbdbdb;
+$shadow-list-item: 0 0 rem(5) rgba(0, 0, 0, 0.08);
+$tab-width: rem(228);
+$tab-padding-y: rem(10);
+$btn-auth-width: rem(384);
+$input-kit-width: rem(424);
+$list-item-kit-width: rem(854);
+$visit-card-kit-width: rem(475);
+
+// Gradients
+$gradient-sidebar: linear-gradient(180deg, #39bdbc 0%, #0f7676 40.54%, #0f7676 65.29%, #39bdbc 100%);
+$gradient-quick-actions: linear-gradient(135deg, #1a9b9a 0%, #1a9998 7.14%, #199695 14.29%, #199493 21.43%, #199190 28.57%, #188f8e 35.71%, #188c8b 42.86%, #188a89 50%, #178786 57.14%, #178584 64.29%, #168382 71.43%, #16807f 78.57%, #167e7d 85.71%, #157b7a 92.86%, #157978 100%);

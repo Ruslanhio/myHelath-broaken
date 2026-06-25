@@ -1,0 +1,16 @@
+<script>location.replace('../../index.html#/patient/documents/upload');</script>
+<main class="layout__content">
+      <a href="documents.html" class="btn btn--ghost"><svg class="icon" aria-hidden="true"><use href="../../images/icons.svg#icon-arrow-back"/></svg> Назад</a>
+      <article class="card">
+        <header class="card__header"><h2 class="title title--h2">Загрузить документ</h2></header>
+        <div class="card__body">
+          <form class="auth__form" action="documents.html" method="get">
+            <div class="field"><label class="field__label" for="doc-title">Название документа</label><input class="field__input form-input" type="text" id="doc-title" name="title" placeholder="Общий анализ крови"></div>
+            <div class="field"><label class="field__label" for="doc-cat">Категория</label><select class="field__input form-input" id="doc-cat" name="category"><option>Анализы</option><option>Снимки</option><option>Рецепты</option><option>Заключения</option><option>Прививки</option></select></div>
+            <div class="field"><label class="field__label" for="doc-member">Член семьи</label><select class="field__input form-input" id="doc-member" name="member"><option>Анна Морозова</option><option>Иван Морозов</option><option>София Морозова</option><option>Миша Морозов</option></select></div>
+            <div class="card__dropzone"><svg class="icon" aria-hidden="true"><use href="../../images/icons.svg#icon-upload"/></svg><p class="text">Перетащите файл или <span class="link">выберите</span></p><p class="text text--muted">PDF, JPG, PNG до 10 МБ</p></div>
+            <button type="submit" class="btn btn--primary">Загрузить документ</button>
+          </form>
+        </div>
+      </article>
+    </main>

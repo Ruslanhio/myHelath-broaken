@@ -1,0 +1,6 @@
+// Базовый размер для rem (1rem = 16px)
+$rem-base: 16 !default;
+
+@function rem($px) {
+  @return calc($px / $rem-base) * 1rem;
+}

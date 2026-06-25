@@ -1,0 +1,68 @@
+/* ── Help / Support ── */
+.documents-search--help {
+  margin-bottom: 1.5rem;
+}
+
+.support-section {
+  margin-top: 2rem;
+
+  &__lead {
+    margin: 0.5rem 0 1.5rem;
+    font-size: $font-size-base;
+  }
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.support-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem 1.25rem;
+  background: $color-white;
+  border: 0.0625rem solid $color-surface;
+  border-radius: $radius-xl;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow $transition-fast;
+
+  &:hover {
+    box-shadow: $shadow-card;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: $radius-md;
+    background: $color-surface-soft;
+    color: $color-primary-dark;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__title {
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: $color-text;
+  }
+
+  &__meta {
+    font-size: $font-size-sm;
+  }
+}
+
+.toolbar--notifications {
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,119 @@
+// Тёмная тема — переопределение токенов и основных поверхностей
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-text: #e8ecef;
+  --color-text-muted: #9aa3ab;
+  --color-text-label: #e8ecef;
+  --color-text-link: #c5cdd4;
+  --color-surface: #2a343c;
+  --color-surface-soft: #1e2a30;
+  --color-border: #3a454d;
+  --color-white: #1a2228;
+  --color-bg-page: #0f1419;
+  --color-hover-overlay: rgba(255, 255, 255, 0.06);
+  --shadow-card: 0 0 0.1563rem rgba(0, 0, 0, 0.35);
+  --shadow-modal: 0 1.5rem 3rem rgba(0, 0, 0, 0.45);
+
+  .layout__content-bg {
+    background: var(--color-bg-page);
+  }
+
+  .header,
+  .app-header {
+    background: var(--color-white);
+    border-bottom-color: var(--color-surface);
+  }
+
+  .header__notify path {
+    fill: var(--color-text);
+  }
+
+  .settings,
+  .card,
+  .stat-card,
+  .notifications-card,
+  .doctor-access-card,
+  .list-item,
+  .list-item--static,
+  .notification-item,
+  .doc-list__item,
+  .access-request,
+  .doctor-access-row,
+  .modal,
+  .documents-search,
+  .form-input,
+  .field__input {
+    background-color: var(--color-white);
+    border-color: var(--color-surface);
+    color: var(--color-text);
+  }
+
+  .stat-card__footer {
+    background-color: var(--color-surface);
+  }
+
+  .settings__row,
+  .settings__profile-header,
+  .settings__faq,
+  .card__header {
+    border-color: var(--color-surface);
+  }
+
+  .tab:not(.tab--active) {
+    background: var(--color-white);
+    border-color: var(--color-surface);
+    color: var(--color-text-muted);
+  }
+
+  .tabs--settings .tab--active {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .checkbox__box {
+    border-color: #6b7780;
+  }
+
+  .switch__track {
+    background-color: rgba(255, 255, 255, 0.16);
+  }
+
+  .switch__track::after {
+    background-color: #ffffff;
+    box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.35);
+  }
+
+  .switch__input:checked + .switch__track {
+    background-color: var(--color-primary);
+  }
+
+  .btn--delete {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: rgba(247, 174, 174, 0.55);
+    color: $color-accent-soft;
+  }
+
+  .btn--delete:hover:not(:disabled) {
+    background-color: rgba(255, 80, 80, 0.12);
+  }
+
+  .btn--outline {
+    border-color: var(--color-surface);
+    color: var(--color-text);
+  }
+
+  .text--muted {
+    color: var(--color-text-muted);
+  }
+
+  .title {
+    color: var(--color-text);
+  }
+
+  .greeting__title,
+  .page-greeting__title,
+  .header__title {
+    color: #5ec4c3;
+  }
+}

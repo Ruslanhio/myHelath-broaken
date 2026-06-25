@@ -1,0 +1,105 @@
+/* ── Legal document modals (privacy, terms) ── */
+.legal-doc__logo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 3.75rem;
+
+  img {
+    width: 12.375rem;
+    height: 3rem;
+    object-fit: contain;
+  }
+}
+
+.privacy-doc {
+  &__head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 3.25rem;
+    text-align: left;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    line-height: 2.25rem;
+    margin: 0;
+    color: $color-text;
+  }
+
+  &__heading {
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    line-height: 1.4rem;
+    margin: 1.5rem 0 0.75rem;
+    color: $color-text;
+  }
+
+  &__list {
+    list-style-type: disc;
+    list-style-position: outside;
+    padding-left: 1.25rem;
+    margin: 0 0 0.75rem;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__divider {
+    border: none;
+    border-top: 0.0625rem solid $color-surface;
+    margin: 1.75rem 0 1.25rem;
+  }
+
+  &__copyright {
+    margin-top: 1rem;
+  }
+}
+
+.terms-doc {
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 3.25rem;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    line-height: 2.25rem;
+    margin: 0;
+    color: $color-text;
+  }
+
+  &__heading {
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    line-height: 1.4rem;
+    margin: 1.5rem 0 0.75rem;
+    color: $color-text;
+  }
+
+ 
+  &__list {
+    padding-left: 0;
+    margin: 0 0 0.75rem;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.25rem;
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}

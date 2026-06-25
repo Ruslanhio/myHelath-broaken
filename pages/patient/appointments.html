@@ -1,0 +1,297 @@
+<script>location.replace('../../index.html#/patient/appointments');</script>
+<main class="layout__content">
+      <div class="appointments-header">
+        <div class="appointments-stat">
+          <div class="appointments-stat__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M4.125 4.125C3.36561 4.125 2.75 4.74061 2.75 5.5V17.875C2.75 18.6344 3.36561 19.25 4.125 19.25H17.875C18.6344 19.25 19.25 18.6344 19.25 17.875V5.5C19.25 4.74061 18.6344 4.125 17.875 4.125H4.125ZM1.375 5.5C1.375 3.98122 2.60622 2.75 4.125 2.75H17.875C19.3938 2.75 20.625 3.98122 20.625 5.5V17.875C20.625 19.3938 19.3938 20.625 17.875 20.625H4.125C2.60622 20.625 1.375 19.3938 1.375 17.875V5.5Z" fill="#156B6A"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 1.375C5.8797 1.375 6.1875 1.6828 6.1875 2.0625V3.4375C6.1875 3.8172 5.8797 4.125 5.5 4.125C5.1203 4.125 4.8125 3.8172 4.8125 3.4375V2.0625C4.8125 1.6828 5.1203 1.375 5.5 1.375Z" fill="#156B6A"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5 1.375C16.8797 1.375 17.1875 1.6828 17.1875 2.0625V3.4375C17.1875 3.8172 16.8797 4.125 16.5 4.125C16.1203 4.125 15.8125 3.8172 15.8125 3.4375V2.0625C15.8125 1.6828 16.1203 1.375 16.5 1.375Z" fill="#156B6A"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M1.375 6.875C1.375 6.4953 1.6828 6.1875 2.0625 6.1875H19.9375C20.3172 6.1875 20.625 6.4953 20.625 6.875C20.625 7.2547 20.3172 7.5625 19.9375 7.5625H2.0625C1.6828 7.5625 1.375 7.2547 1.375 6.875Z" fill="#156B6A"/>
+            </svg>
+          </div>
+          <div class="appointments-stat__content">
+            <p class="appointments-stat__value">2</p>
+            <p class="appointments-stat__label">предстоящих<br>визита</p>
+          </div>
+        </div>
+        <div class="appointments-header__actions">
+          <button type="button" class="btn btn--action btn--md btn--auto">
+            <svg class="icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M2.25 3.75H15.75L10.5 9.75V14.25L7.5 15.75V9.75L2.25 3.75Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Фильтры
+          </button>
+          <a href="appointment-new.html" class="btn btn--primary-pink btn--md btn--auto">
+            <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M10 1.875C10.3452 1.875 10.625 2.15482 10.625 2.5V9.375H17.5C17.8452 9.375 18.125 9.65482 18.125 10C18.125 10.3452 17.8452 10.625 17.5 10.625H10.625V17.5C10.625 17.8452 10.3452 18.125 10 18.125C9.65482 18.125 9.375 17.8452 9.375 17.5V10.625H2.5C2.15482 10.625 1.875 10.3452 1.875 10C1.875 9.65482 2.15482 9.375 2.5 9.375H9.375V2.5C9.375 2.15482 9.65482 1.875 10 1.875Z" fill="currentColor"/>
+            </svg>
+            Записаться к врачу
+          </a>
+        </div>
+      </div>
+
+      <article class="card appointments-card">
+        <div class="tabs tabs--documents" data-tabs="appointments">
+          <button type="button" class="tab tab--active" data-tab="all"><span class="tab__label">Все</span></button>
+          <button type="button" class="tab" data-tab="upcoming"><span class="tab__label">Предстоящие</span></button>
+          <button type="button" class="tab" data-tab="past"><span class="tab__label">Прошедшие</span></button>
+        </div>
+        <div class="card__body">
+          <div class="tab-panel tab-panel--active" data-tab-panel="appointments" data-panel="all">
+            <div class="appointment-list">
+              <article class="appointment-item">
+                <div class="appointment-item__date">
+                  <span class="appointment-item__day">25</span>
+                  <span class="appointment-item__month">мая</span>
+                </div>
+                <div class="appointment-item__body">
+                  <div class="appointment-item__head">
+                    <h2 class="appointment-item__doctor">Педиатр Петров Алексей Иванович</h2>
+                    <div class="appointment-item__aside">
+                      <span class="appointment-item__patient">Миша М.</span>
+                      <span class="status-badge status-badge--upcoming">Предстоящий</span>
+                    </div>
+                  </div>
+                  <div class="appointment-item__meta">
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      14:00
+                    </span>
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s7-4.5 7-10a7 7 0 10-14 0c0 5.5 7 10 7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+                      Клиника «Мерси»
+                    </span>
+                  </div>
+                  <p class="appointment-item__reason">Причина: высокая температура</p>
+                  <div class="appointment-item__actions">
+                    <button type="button" class="btn btn--primary btn--sm btn--auto">Перенести запись</button>
+                    <button type="button" class="btn btn--action btn--sm btn--auto">Отменить</button>
+                  </div>
+                </div>
+              </article>
+              <article class="appointment-item">
+                <div class="appointment-item__date">
+                  <span class="appointment-item__day">4</span>
+                  <span class="appointment-item__month">июня</span>
+                </div>
+                <div class="appointment-item__body">
+                  <div class="appointment-item__head">
+                    <h2 class="appointment-item__doctor">Кардиолог Смирнова Наталья Владимировна</h2>
+                    <div class="appointment-item__aside">
+                      <span class="appointment-item__patient appointment-item__patient--accent">Анна М.</span>
+                      <span class="status-badge status-badge--upcoming">Предстоящий</span>
+                    </div>
+                  </div>
+                  <div class="appointment-item__meta">
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      10:30
+                    </span>
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s7-4.5 7-10a7 7 0 10-14 0c0 5.5 7 10 7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+                      34-я поликлиника
+                    </span>
+                  </div>
+                  <p class="appointment-item__reason">Причина: повторный приём</p>
+                  <div class="appointment-item__actions">
+                    <button type="button" class="btn btn--primary btn--sm btn--auto">Перенести запись</button>
+                    <button type="button" class="btn btn--action btn--sm btn--auto">Отменить</button>
+                  </div>
+                </div>
+              </article>
+              <article class="appointment-item">
+                <div class="appointment-item__date appointment-item__date--past">
+                  <span class="appointment-item__day">23</span>
+                  <span class="appointment-item__month">мая</span>
+                </div>
+                <div class="appointment-item__body">
+                  <div class="appointment-item__head">
+                    <h2 class="appointment-item__doctor">Терапевт Иванов Иван Николаевич</h2>
+                    <div class="appointment-item__aside">
+                      <span class="appointment-item__patient">Иван М.</span>
+                      <span class="status-badge status-badge--past">Прошедший</span>
+                    </div>
+                  </div>
+                  <div class="appointment-item__meta">
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      17:20
+                    </span>
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s7-4.5 7-10a7 7 0 10-14 0c0 5.5 7 10 7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+                      ЛОДЭ
+                    </span>
+                  </div>
+                  <p class="appointment-item__reason">Причина: справка</p>
+                  <div class="appointment-item__actions">
+                    <button type="button" class="btn btn--action btn--sm btn--auto">Повторить запись</button>
+                    <button type="button" class="btn btn--action btn--sm btn--auto">Заключение врача</button>
+                  </div>
+                </div>
+              </article>
+              <article class="appointment-item">
+                <div class="appointment-item__date appointment-item__date--past">
+                  <span class="appointment-item__day">5</span>
+                  <span class="appointment-item__month">мая</span>
+                </div>
+                <div class="appointment-item__body">
+                  <div class="appointment-item__head">
+                    <h2 class="appointment-item__doctor">Аллерголог Шевчук Александра Александровна</h2>
+                    <div class="appointment-item__aside">
+                      <span class="appointment-item__patient">София М.</span>
+                      <span class="status-badge status-badge--past">Прошедший</span>
+                    </div>
+                  </div>
+                  <div class="appointment-item__meta">
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      13:40
+                    </span>
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s7-4.5 7-10a7 7 0 10-14 0c0 5.5 7 10 7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+                      34-я поликлиника
+                    </span>
+                  </div>
+                  <p class="appointment-item__reason">Причина: зуд глаз, насморк</p>
+                  <div class="appointment-item__actions">
+                    <button type="button" class="btn btn--action btn--sm btn--auto">Повторить запись</button>
+                    <button type="button" class="btn btn--action btn--sm btn--auto">Заключение врача</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="appointments" data-panel="upcoming">
+            <div class="appointment-list">
+              <article class="appointment-item">
+                <div class="appointment-item__date">
+                  <span class="appointment-item__day">25</span>
+                  <span class="appointment-item__month">мая</span>
+                </div>
+                <div class="appointment-item__body">
+                  <div class="appointment-item__head">
+                    <h2 class="appointment-item__doctor">Педиатр Петров Алексей Иванович</h2>
+                    <div class="appointment-item__aside">
+                      <span class="appointment-item__patient">Миша М.</span>
+                      <span class="status-badge status-badge--upcoming">Предстоящий</span>
+                    </div>
+                  </div>
+                  <div class="appointment-item__meta">
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      14:00
+                    </span>
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s7-4.5 7-10a7 7 0 10-14 0c0 5.5 7 10 7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+                      Клиника «Мерси»
+                    </span>
+                  </div>
+                  <p class="appointment-item__reason">Причина: высокая температура</p>
+                  <div class="appointment-item__actions">
+                    <button type="button" class="btn btn--primary btn--sm btn--auto">Перенести запись</button>
+                    <button type="button" class="btn btn--action btn--sm btn--auto">Отменить</button>
+                  </div>
+                </div>
+              </article>
+              <article class="appointment-item">
+                <div class="appointment-item__date">
+                  <span class="appointment-item__day">4</span>
+                  <span class="appointment-item__month">июня</span>
+                </div>
+                <div class="appointment-item__body">
+                  <div class="appointment-item__head">
+                    <h2 class="appointment-item__doctor">Кардиолог Смирнова Наталья Владимировна</h2>
+                    <div class="appointment-item__aside">
+                      <span class="appointment-item__patient appointment-item__patient--accent">Анна М.</span>
+                      <span class="status-badge status-badge--upcoming">Предстоящий</span>
+                    </div>
+                  </div>
+                  <div class="appointment-item__meta">
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      10:30
+                    </span>
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s7-4.5 7-10a7 7 0 10-14 0c0 5.5 7 10 7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+                      34-я поликлиника
+                    </span>
+                  </div>
+                  <p class="appointment-item__reason">Причина: повторный приём</p>
+                  <div class="appointment-item__actions">
+                    <button type="button" class="btn btn--primary btn--sm btn--auto">Перенести запись</button>
+                    <button type="button" class="btn btn--action btn--sm btn--auto">Отменить</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="appointments" data-panel="past">
+            <div class="appointment-list">
+              <article class="appointment-item">
+                <div class="appointment-item__date appointment-item__date--past">
+                  <span class="appointment-item__day">23</span>
+                  <span class="appointment-item__month">мая</span>
+                </div>
+                <div class="appointment-item__body">
+                  <div class="appointment-item__head">
+                    <h2 class="appointment-item__doctor">Терапевт Иванов Иван Николаевич</h2>
+                    <div class="appointment-item__aside">
+                      <span class="appointment-item__patient">Иван М.</span>
+                      <span class="status-badge status-badge--past">Прошедший</span>
+                    </div>
+                  </div>
+                  <div class="appointment-item__meta">
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      17:20
+                    </span>
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s7-4.5 7-10a7 7 0 10-14 0c0 5.5 7 10 7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+                      ЛОДЭ
+                    </span>
+                  </div>
+                  <p class="appointment-item__reason">Причина: справка</p>
+                  <div class="appointment-item__actions">
+                    <button type="button" class="btn btn--action btn--sm btn--auto">Повторить запись</button>
+                    <button type="button" class="btn btn--action btn--sm btn--auto">Заключение врача</button>
+                  </div>
+                </div>
+              </article>
+              <article class="appointment-item">
+                <div class="appointment-item__date appointment-item__date--past">
+                  <span class="appointment-item__day">5</span>
+                  <span class="appointment-item__month">мая</span>
+                </div>
+                <div class="appointment-item__body">
+                  <div class="appointment-item__head">
+                    <h2 class="appointment-item__doctor">Аллерголог Шевчук Александра Александровна</h2>
+                    <div class="appointment-item__aside">
+                      <span class="appointment-item__patient">София М.</span>
+                      <span class="status-badge status-badge--past">Прошедший</span>
+                    </div>
+                  </div>
+                  <div class="appointment-item__meta">
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      13:40
+                    </span>
+                    <span>
+                      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s7-4.5 7-10a7 7 0 10-14 0c0 5.5 7 10 7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+                      34-я поликлиника
+                    </span>
+                  </div>
+                  <p class="appointment-item__reason">Причина: зуд глаз, насморк</p>
+                  <div class="appointment-item__actions">
+                    <button type="button" class="btn btn--action btn--sm btn--auto">Повторить запись</button>
+                    <button type="button" class="btn btn--action btn--sm btn--auto">Заключение врача</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>

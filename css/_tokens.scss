@@ -1,0 +1,102 @@
+@import "functions";
+@import "variables";
+
+// CSS custom properties — design tokens (runtime + theming)
+:root {
+  --color-canvas: #b4b4b4;
+  --color-frame-dark: #333333;
+
+  --color-primary: #{$color-primary};
+  --color-primary-dark: #{$color-primary-dark};
+  --color-accent: #{$color-accent};
+  --color-accent-soft: #{$color-accent-soft};
+  --color-accent-bg: #{$color-accent-bg};
+
+  --color-text: #{$color-text};
+  --color-text-muted: #{$color-text-muted};
+  --color-text-label: #{$color-text-label};
+  --color-text-link: #{$color-text-link};
+  --color-surface: #{$color-surface};
+  --color-surface-soft: #{$color-surface-soft};
+  --color-border: #{$color-border};
+  --color-white: #{$color-white};
+  --color-bg-page: #{$color-bg-page};
+
+  --gradient-sidebar: #{$gradient-sidebar};
+  --gradient-quick-actions: #{$gradient-quick-actions};
+
+  --font-family: #{$font-family};
+  --font-size-xs: #{$font-size-xs};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-base: #{$font-size-base};
+  --font-size-md: #{$font-size-md};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-2xl: #{$font-size-2xl};
+
+  --space-xs: #{$space-xs};
+  --space-sm: #{$space-sm};
+  --space-md: #{$space-md};
+  --space-lg: #{$space-lg};
+  --space-xl: #{$space-xl};
+  --space-2xl: #{$space-2xl};
+  --space-3xl: #{$space-3xl};
+
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-xl: #{$radius-xl};
+  --radius-2xl: #{$radius-2xl};
+
+  --sidebar-width: #{$sidebar-width};
+  --sidebar-width-tablet: #{rem(288)};
+  --sidebar-width-mobile: #{rem(176)};
+  --content-max-width: #{$content-max-width};
+
+  --shadow-sm: #{$shadow-sm};
+  --shadow-card: #{$shadow-card};
+  --shadow-modal: #{$shadow-modal};
+
+  --transition-fast: #{$transition-fast};
+  --transition-base: #{$transition-base};
+
+  --color-focus-ring: #{$color-primary};
+  --color-hover-overlay: rgba(0, 0, 0, 0.04);
+  --focus-ring: 0 0 0 #{rem(2)} var(--color-white), 0 0 0 #{rem(4)} var(--color-focus-ring);
+}
+
+.sidebar__link:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar__link:focus-visible,
+.btn:focus-visible,
+.tab:focus-visible,
+.view-toggle__btn:focus-visible {
+  box-shadow: var(--focus-ring);
+  outline: none;
+}
+
+.layout__burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: rem(40);
+  height: rem(40);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+}
+
+.layout__burger:hover {
+  background: var(--color-hover-overlay);
+}
+
+.layout__burger:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: var(--sidebar-width-tablet);
+  }
+}

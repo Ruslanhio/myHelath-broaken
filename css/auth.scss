@@ -1,0 +1,10 @@
+// ============================================================
+// MyHealth — авторизация, legal, 404
+// Подключать после core.css
+// Сборка: npx sass css/auth.scss css/auth.css
+// ============================================================
+
+@import "functions";
+@import "variables";
+@import "pages/auth-pages";
+@import "pages/legal";

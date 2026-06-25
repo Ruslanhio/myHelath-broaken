@@ -1,0 +1,17 @@
+// Page-specific BEM blocks
+// Auth/legal → css/auth.scss | остальное → css/_pages-app.scss (через app.scss)
+@import "pages/shell";
+@import "pages/legal";
+@import "pages/auth-pages";
+@import "pages/forms";
+@import "pages/dashboard";
+@import "pages/documents";
+@import "pages/appointments";
+@import "pages/settings";
+@import "pages/family";
+@import "pages/help";
+@import "pages/notifications";
+@import "pages/ai-assistant";
+@import "pages/misc";
+@import "pages/doctor";
+@import "pages/appointment-wizard";

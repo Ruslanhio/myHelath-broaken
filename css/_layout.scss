@@ -1,0 +1,789 @@
+.layout--auth {
+  display: block;
+}
+
+.layout--legal-modal {
+  background: $color-bg-page;
+  min-height: 100vh;
+}
+
+.layout--auth-modal {
+  background: $gradient-quick-actions;
+  min-height: 100vh;
+}
+
+.layout--auth-page {
+  min-height: 100vh;
+  background: $color-bg-page;
+}
+
+.auth-page {
+  width: 100%;
+  max-width: 30rem;
+}
+
+body {
+  font-family: $font-family;
+  color: $color-text;
+}
+
+.container {
+  width: 100%;
+  max-width: $content-max-width;
+  margin: 0 auto;
+  padding: 0 $space-lg;
+}
+
+/* ── Typography (BEM) ── */
+.title {
+  color: $color-text;
+
+  &--h1 {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    line-height: 150%;
+    margin-bottom: 0.4375rem
+  }
+
+  &--h2 {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+  }
+
+  &--h3 {
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+  }
+
+  &--h4 {
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.text {
+  font-size: $font-size-base;
+  color: $color-text;
+
+  &--muted {
+    color: #767676;
+  }
+
+  &--accent {
+    color: $color-accent;
+  }
+
+  &--primary {
+    color: $color-primary;
+  }
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.quick-actions__btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: $radius-md;
+  font-size: $font-size-base;
+  color: $color-text;
+  text-decoration: none;
+  transition: $transition-fast;
+  width: 100%;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.85);
+  }
+}
+
+.auth__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 28rem;
+  gap: 1rem;
+
+  &-icon {
+    width: 7.5rem;
+    height: 7.5rem;
+    color: $color-primary;
+
+    .icon {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/* ============================================================
+   App Shell Layout
+   ============================================================ */
+.layout,
+.app {
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.app--auth {
+  display: block;
+}
+
+.layout__main,
+.app__main {
+  flex: 1;
+  margin-left: var(--sidebar-width, $sidebar-width);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 0;
+}
+
+.layout__content-bg {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 0;
+  background: $color-bg-page;
+}
+
+.layout__content,
+.app-content {
+  flex: 1;
+  padding: 2rem 3rem 3rem;
+
+}
+
+/* --- Sidebar shell / mobile drawer --- */
+
+.layout__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(21, 32, 14, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--transition-base),
+    visibility var(--transition-base);
+}
+
+.layout--sidebar-open .layout__overlay {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+body.layout-sidebar-open {
+  overflow: hidden;
+}
+
+/* Legacy header alias */
+.app-header {
+  background: $color-white;
+  border-bottom: 0.0625rem solid $color-surface;
+  display: flex;
+  align-items: center;
+  padding: $header-padding-y 3.3125rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-primary-02;
+    flex: 1;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 2.75rem;
+  }
+
+  &__notify {
+    position: relative;
+    width: 1.625rem;
+    height: 1.625rem;
+    color: $color-text-muted;
+    cursor: pointer;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    text-align: left;
+  }
+
+  &__user-name {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-text;
+  }
+
+  &__user-role {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+  }
+}
+
+/* ============================================================
+   Tab cards / visits (legacy markup)
+   ============================================================ */
+.tab-panel {
+  display: none;
+
+  &--active {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.tab-content-card {
+  border: 0.0625rem solid $color-surface;
+  border-radius: $radius-2xl;
+  background: $color-white;
+  overflow: hidden;
+
+  &__tabs {
+    padding: 0.5rem 1.9375rem 0;
+    display: flex;
+    gap: 0.875rem;
+  }
+
+  &__body {
+    padding: 1.5rem 1.9375rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+  }
+}
+
+.visits-card {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1.9375rem 0;
+  }
+
+  &__body {
+    padding: 1.5rem 1.9375rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* ============================================================
+   Static / Error / Success pages
+   ============================================================ */
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+
+  &__code {
+    font-size: 7.5rem;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    line-height: 1;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    margin: 1rem 0 0.5rem;
+  }
+}
+
+.static-page {
+  max-width: 50rem;
+  background: $color-white;
+  border-radius: $radius-2xl;
+  padding: 3rem;
+  border: 0.0625rem solid $color-surface;
+
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    color: $color-text-muted;
+    line-height: 1.7;
+  }
+}
+
+.success-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  max-width: 36.75rem;
+  margin: 0 auto;
+
+  &__icon {
+    width: 12.5rem;
+    height: 12.5rem;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    font-size: $font-size-base;
+    color: $color-text-muted;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+}
+
+/* ============================================================
+   UI Kit showcase page
+   ============================================================ */
+.uikit-page {
+  padding: 3rem;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.uikit-section {
+  margin-bottom: 4rem;
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.125rem solid $color-surface;
+  }
+
+  &__desc {
+    color: $color-text-muted;
+    margin-bottom: 2rem;
+  }
+}
+
+.uikit-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.uikit-colors {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8.75rem, 1fr));
+  gap: 1rem;
+}
+
+.uikit-page__header {
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.uikit-page__logo {
+  height: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.uikit-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &--gap-lg {
+    gap: 1.25rem;
+  }
+
+  &--gap-sm {
+    gap: 0.75rem;
+  }
+}
+
+.uikit-demo {
+  max-width: 25rem;
+
+  &--sm {
+    max-width: 22.4375rem;
+  }
+
+  &--md {
+    max-width: 31.25rem;
+  }
+
+  &--lg {
+    max-width: 43.75rem;
+  }
+
+  &--role {
+    max-width: 24rem;
+  }
+
+  &--segmented {
+    max-width: 33.75rem;
+  }
+}
+
+.uikit-tabs {
+  margin-bottom: 1rem;
+}
+
+.uikit-tabs-settings {
+  margin-top: 2rem;
+}
+
+.uikit-sidebar-demo {
+  background: $gradient-sidebar;
+  padding: 1.5rem;
+  border-radius: $radius-2xl;
+  max-width: 19.1875rem;
+
+  .btn {
+    width: 100%;
+  }
+}
+
+.uikit-color {
+  border-radius: $radius-md;
+  overflow: hidden;
+  border: 0.0625rem solid $color-surface;
+
+  &__swatch {
+    height: 5rem;
+
+    &--primary {
+      background: $color-primary;
+    }
+
+    &--primary-dark {
+      background: $color-primary-dark;
+    }
+
+    &--text {
+      background: $color-text;
+    }
+
+    &--text-muted {
+      background: $color-text-muted;
+    }
+
+    &--surface {
+      background: $color-surface;
+    }
+
+    &--accent {
+      background: $color-accent;
+    }
+
+    &--surface-soft {
+      background: $color-surface-soft;
+    }
+
+    &--neutral-11 {
+      background: $color-neutral-11;
+    }
+  }
+
+  &__label {
+    padding: 0.5rem 0.75rem;
+    font-size: $font-size-sm;
+    background: $color-white;
+  }
+
+  &__hex {
+    padding: 0 0.75rem 0.5rem;
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+}
+
+/* --- Buttons board (Figma component sets) --- */
+.buttons-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.component-set {
+  border: 0.0625rem dashed $color-component-set-border;
+  border-radius: $radius-md;
+  padding: 1.25rem;
+  background: $color-white;
+  min-width: 0;
+
+  &--wide {
+    grid-column: span 2;
+  }
+
+  &--sidebar {
+    background: $gradient-sidebar;
+    border-color: rgba($color-component-set-border, 0.65);
+
+    .component-set__name {
+      color: rgba(255, 255, 255, 0.92);
+    }
+  }
+
+  &--gradient {
+    background: $gradient-quick-actions;
+    border-color: rgba($color-component-set-border, 0.65);
+  }
+
+  &__name {
+    display: block;
+    margin: -0.5rem 0 1rem;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    letter-spacing: 0.02em;
+    color: $color-component-set-border;
+  }
+
+  &__demo-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: -0.25rem 0 1rem;
+  }
+
+  &__demo-control {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
+    padding: 0.375rem 0.75rem;
+    border: 0.0625rem solid $color-secondary-01;
+    border-radius: $radius-md;
+    background: $color-neutral-10;
+    color: $color-secondary-40;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    transition:
+      background-color $transition-fast,
+      color $transition-fast,
+      border-color $transition-fast;
+  }
+
+  &__demo-control:hover {
+    background: $color-secondary-10;
+  }
+
+  &__demo-control.is-active {
+    background: $color-primary-01;
+    border-color: $color-primary-01;
+    color: $color-neutral-10;
+  }
+
+  &__states {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.component-state {
+  min-height: 0;
+
+  &__slot {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .list-item,
+  .visit-card {
+    width: 100%;
+  }
+
+  .nav-item,
+  .sidebar__link {
+    width: 100%;
+    max-width: 17.6875rem;
+  }
+
+  .buttons-board__sidebar-nav {
+    width: 100%;
+    max-width: 17.6875rem;
+  }
+
+  .link-upload,
+  .quick-actions__btn {
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .form-input-wrap,
+  .form-input {
+    width: 100%;
+    max-width: $btn-auth-width;
+  }
+
+  .question-item {
+    width: 100%;
+    max-width: 59.125rem;
+  }
+
+  .btn--primary.btn--demo {
+    width: $btn-auth-width;
+  }
+
+  .btn--outline,
+  .btn--success,
+  .btn--danger-soft,
+  .btn--not-active,
+  .btn--action,
+  .tab-chip,
+  .role-pill {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .role-toggle {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .tabs {
+    width: auto;
+  }
+
+  .tab {
+    flex: 0 0 $tab-width;
+    width: $tab-width;
+  }
+}
+
+.component-set--wide .component-state__slot {
+  width: 100%;
+  max-width: $list-item-kit-width;
+}
+
+.component-set:not(.component-set--wide) .component-state__slot--visit {
+  max-width: $visit-card-kit-width;
+}
+
+.visit-card:hover,
+.visit-card--hover,
+.visit-card--click,
+.visit-card.is-active {
+  background: #dff0f0;
+}
+
+.visit-card--disabled,
+.visit-card[aria-disabled="true"],
+.visit-card.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .component-set--wide {
+    grid-column: span 1;
+  }
+}
+
+.uikit-button-states {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 26.25rem;
+}
+
+.uikit-button-state {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &__label {
+    flex-shrink: 0;
+    width: 5.5rem;
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+  }
+
+  .btn,
+  .quick-actions__btn {
+    flex: 1;
+  }
+}
+
+.uikit-button-state__hover.btn--primary {
+  background-color: $color-primary-dark;
+}
+
+.uikit-button-state__hover.btn--outline {
+  background-color: $color-surface-soft;
+}
+
+.uikit-button-state__hover.btn--action {
+  background-color: $color-surface;
+}
+
+.uikit-button-state__active.btn--primary {
+  background-color: $color-primary-dark;
+}
+
+.uikit-button-state__active.btn--outline {
+  background-color: $color-surface-soft;
+  border-color: $color-primary-dark;
+  color: $color-primary-dark;
+}
+
+.uikit-demo--buttons {
+  max-width: 24rem;
+}
+
+.uikit-demo--quick-actions {
+  max-width: none;
+  padding: 0;
+  background: none;
+}
+
+.uikit-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .uikit-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}

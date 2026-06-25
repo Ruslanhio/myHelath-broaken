@@ -1,0 +1,12 @@
+{
+  "name": "myhealth",
+  "private": true,
+  "scripts": {
+    "build:templates": "node scripts/build-templates.mjs",
+    "build:css": "npx sass css/core.scss:css/core.css css/auth.scss:css/auth.css css/app.scss:css/app.css",
+    "convert:rem": "node scripts/px-to-rem.mjs",
+    "ensure:redirects": "node scripts/ensure-page-redirects.mjs",
+    "build": "npm run ensure:redirects && npm run build:templates && npm run build:css",
+    "verify:templates": "node scripts/verify-templates.mjs"
+  }
+}
