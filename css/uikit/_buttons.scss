@@ -1,0 +1,390 @@
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-sm;
+  font-family: $font-family;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-md;
+  line-height: 1.5rem;
+  border: none;
+  border-radius: $radius-md;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color $transition-fast,
+    border-color $transition-fast,
+    color $transition-fast,
+    opacity $transition-fast;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"],
+.btn.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn--primary {
+  background-color: $color-primary-01;
+  color: $color-neutral-10;
+  padding: 0.75rem $space-xl;
+  width: 100%;
+}
+
+.btn--primary:hover:not(:disabled) {
+  background-color: $color-primary-02;
+}
+
+.btn--primary:active:not(:disabled) {
+  background-color: $color-primary-02;
+}
+
+.btn--primary.is-active {
+  background-color: $color-primary-02;
+}
+
+.btn--primary.btn--md,
+.btn--primary.btn--sm,
+.btn--primary.btn--auto {
+  width: auto;
+}
+
+.btn--secondary {
+  background-color: $color-secondary-10;
+  color: $color-secondary-40;
+  padding: 0.75rem $space-xl;
+  width: auto;
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background-color: $color-secondary-01;
+}
+
+.btn--secondary:active:not(:disabled) {
+  background-color: $color-secondary-01;
+}
+
+.btn--secondary.is-active {
+  background-color: $color-secondary-01;
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: $color-primary-01;
+  border: 0.0625rem solid $color-primary-01;
+  padding: 0.4375rem $space-lg;
+  font-size: $font-size-base;
+  width: auto;
+}
+
+.btn--outline:hover:not(:disabled) {
+  background-color: $color-secondary-70;
+}
+
+.btn--outline:active:not(:disabled) {
+  background-color: $color-secondary-70;
+  border-color: $color-primary-02;
+  color: $color-primary-02;
+}
+
+.btn--outline.is-active {
+  background-color: $color-secondary-70;
+  border-color: $color-primary-02;
+  color: $color-primary-02;
+}
+
+.btn--neutral-outline {
+  background-color: $color-white;
+  color: $color-text;
+  border: 0.0625rem solid $color-border;
+  padding: 0.5rem 1.8125rem;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: 133%;
+  width: auto;
+}
+
+.btn--neutral-outline:hover:not(:disabled) {
+  background-color: $color-secondary-70;
+}
+
+.btn--neutral-outline:active:not(:disabled) {
+  background-color: $color-surface;
+}
+
+.btn--primary.btn--compact {
+  padding: 0.5rem 1.8125rem;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: 133%;
+  width: auto;
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: $color-text-link;
+  padding: 0.625rem 0;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  width: auto;
+}
+
+.btn--ghost:hover:not(:disabled) {
+  color: $color-primary-02;
+}
+
+.btn--ghost:active:not(:disabled) {
+  color: $color-primary-02;
+}
+
+.btn--ghost.is-active {
+  color: $color-primary-02;
+}
+
+.btn--sm {
+  padding: 0.25rem $space-md;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+}
+
+.btn--md {
+  padding: 0.4375rem $space-xl;
+  font-size: $font-size-sm;
+  color: $color-text;
+}
+
+.btn--primary.btn--md {
+  color: $color-neutral-10;
+}
+
+.btn--auto {
+  width: auto;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+.btn--danger {
+  background-color: $color-secondary-30;
+  color: $color-neutral-10;
+  padding: 0.25rem $space-lg;
+  font-size: $font-size-sm;
+  width: auto;
+}
+
+.btn--danger:hover:not(:disabled) {
+  background-color: #b85555;
+}
+
+.btn--danger:active:not(:disabled) {
+  background-color: #a84a4a;
+}
+
+.btn--danger.is-active {
+  background-color: #a84a4a;
+}
+
+.btn--danger-outline {
+  background-color: transparent;
+  color: $color-secondary-30;
+  border: 0.0625rem solid $color-secondary-30;
+  padding: 0.25rem $space-lg;
+  font-size: $font-size-sm;
+  width: auto;
+}
+
+.btn--danger-outline:hover:not(:disabled) {
+  background-color: #fff0f0;
+}
+
+.btn--danger-outline:active:not(:disabled) {
+  background-color: #ffe4e4;
+}
+
+.btn--danger-outline.is-active {
+  background-color: #ffe4e4;
+}
+
+/* Figma: Button / node 137:6641 — удаление аккаунта */
+.btn--delete {
+  gap: 0.625rem;
+  padding: 0.875rem 1.75rem;
+  background-color: $color-white;
+  border: 0.0625rem solid $color-accent-soft;
+  color: $color-accent;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  width: auto;
+
+  .icon,
+  img {
+    flex-shrink: 0;
+    display: block;
+  }
+}
+
+.btn--delete:hover:not(:disabled) {
+  background-color: #fff0f0;
+}
+
+.btn--delete:active:not(:disabled) {
+  background-color: #ffe4e4;
+}
+
+.btn--icon {
+  padding: 0.625rem;
+  border-radius: 50%;
+  background-color: $color-secondary-70;
+  color: $color-primary-02;
+  flex-shrink: 0;
+}
+
+.btn--icon:hover:not(:disabled) {
+  background-color: #dcefed;
+}
+
+.btn--loading {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+
+.btn--loading::after {
+  content: "";
+  position: absolute;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 0.125rem solid rgba(255, 255, 255, 0.35);
+  border-top-color: $color-neutral-10;
+  border-radius: 50%;
+  animation: btn-spin 0.7s linear infinite;
+}
+
+.btn--outline.btn--loading::after,
+.btn--ghost.btn--loading::after,
+.btn--danger-outline.btn--loading::after {
+  border-color: rgba(26, 155, 154, 0.25);
+  border-top-color: $color-primary-01;
+}
+
+.btn--danger.btn--loading::after {
+  border-color: rgba(255, 255, 255, 0.35);
+  border-top-color: $color-neutral-10;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.modal__footer .btn--primary {
+  width: 100%;
+}
+
+.btn--success {
+  background-color: $color-neutral-11;
+  color: $color-primary-02;
+  border: 0.0625rem solid $color-primary-01;
+  padding: 0.75rem $space-xl;
+  font-size: $font-size-base;
+  width: auto;
+}
+
+.btn--danger-soft {
+  background-color: $color-accent-bg;
+  color: $color-secondary-30;
+  padding: 0.875rem $space-lg;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  width: auto;
+}
+
+.btn--loading-text {
+  position: relative;
+  pointer-events: none;
+  gap: $space-md;
+}
+
+.btn--loading-text::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border: 0.125rem solid rgba(255, 255, 255, 0.35);
+  border-top-color: $color-neutral-10;
+  border-radius: 50%;
+  animation: btn-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+.btn--outline.btn--loading-text::before,
+.btn--danger-soft.btn--loading-text::before {
+  border-color: rgba(26, 155, 154, 0.25);
+  border-top-color: $color-primary-01;
+}
+
+.btn--error {
+  background-color: $color-accent-bg;
+  color: $color-secondary-30;
+}
+
+.btn--primary-pink {
+  background-color: $color-primary-03;
+  color: $color-white;
+  border: 0.0625rem solid transparent;
+  padding: 0.875rem 1.5625rem;
+
+  &:hover:not(:disabled) {
+    background-color: #f99;
+  }
+
+  &.btn--action {
+    width: 100%;
+    max-width: rem(247);
+    min-height: rem(48);
+    padding: 0 $space-lg;
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+    line-height: 150%;
+    color: $color-white;
+    border-radius: $radius-md;
+    background-color: $color-primary-03;
+    border-color: transparent;
+
+    &:hover:not(:disabled) {
+      background-color: #f99;
+    }
+  }
+}
+
+.btn--not-active,
+.btn.is-disabled {
+  background-color: $color-secondary-10;
+  color: $color-secondary-50;
+}
+
+.quick-actions__btn--hover,
+.quick-actions__btn:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.quick-actions__btn--disabled,
+.quick-actions__btn[aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.btn--danger-soft.is-click {
+  background-color: #ffe4e4;
+}
+
+.btn--danger-soft:active:not(:disabled) {
+  background-color: #ffe4e4;
+}
+

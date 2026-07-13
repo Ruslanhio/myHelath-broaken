@@ -1,5 +1,5 @@
 import { loadSidebarElement, updateSidebarActive, repairSidebarIfNeeded } from './sidebar.js';
-import { renderTopbar, updateTopbarTitle, patchTopbarUser } from './topbar.js';
+import { loadTopbarElement, updateTopbarTitle, patchTopbarUser } from './topbar.js';
 import { State } from '../state.js';
 
 let shellRole = null;
@@ -29,7 +29,7 @@ export function mountAppShell(container, { role, title, activePath }) {
 
   const mainWrap = document.createElement('div');
   mainWrap.className = 'layout__main';
-  mainWrap.insertAdjacentHTML('beforeend', renderTopbar(title));
+  mainWrap.appendChild(loadTopbarElement(title, role));
 
   const pageBg = document.createElement('div');
   pageBg.className = 'layout__content-bg';
@@ -57,9 +57,20 @@ export function updateShell({ title, activePath, role }) {
   closeMobileSidebar();
 }
 
-export function setPageContent(html) {
+export function setPageContent(html, meta = {}) {
   const el = document.getElementById('page-content');
   if (!el) return;
+
+  const { contentClass = 'layout__content', dataAttrs = {} } = meta;
+
+  el.className = contentClass;
+  [...el.attributes]
+    .filter((attr) => attr.name.startsWith('data-'))
+    .forEach((attr) => el.removeAttribute(attr.name));
+  Object.entries(dataAttrs).forEach(([name, value]) => {
+    el.setAttribute(name, value);
+  });
+
   el.innerHTML = html;
   window.scrollTo(0, 0);
 }
@@ -143,6 +154,6 @@ function bindLayoutOnce() {
   });
 
   window.addEventListener('resize', () => {
-    if (window.matchMedia('(min-width: 768px)').matches) closeMobileSidebar();
+    if (window.matchMedia('(min-width: 48rem)').matches) closeMobileSidebar();
   });
 }

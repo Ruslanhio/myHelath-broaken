@@ -10,8 +10,30 @@ import {
   doctorTasks,
   users,
 } from './mock/data.js';
+import { formatPatientShort } from './views/appointment-calendar.js';
 
 const delay = (ms = 280) => new Promise((r) => setTimeout(r, ms));
+
+function formatAppointmentDateLabel(iso) {
+  if (!iso) return '—';
+  const [year, month, day] = iso.split('-').map(Number);
+  if (!year || !month || !day) return '—';
+  const date = new Date(year, month - 1, day);
+  return date.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+function formatDoctorName(doctor) {
+  if (!doctor) return '—';
+  const parts = doctor.trim().split(/\s+/);
+  if (parts.length > 2) return parts.slice(1).join(' ');
+  return doctor;
+}
+
+function formatClinicLabel(clinic) {
+  if (!clinic) return '—';
+  if (/^клиника/i.test(clinic.trim())) return clinic;
+  return clinic;
+}
 
 export async function login(email, password, role) {
   await delay();
@@ -36,17 +58,62 @@ export async function getDocument(id) {
   return { ...doc };
 }
 
-export async function uploadDocument(_file) {
+const DOC_ICON_BY_CATEGORY = {
+  tests: 'images/icon-blood.svg',
+  scans: 'images/icon-xray.svg',
+  prescriptions: 'images/icon-prescription.svg',
+  reports: 'images/icon-doctor.svg',
+  vaccines: 'images/icon-vaccine.svg',
+};
+
+function formatFileSize(bytes) {
+  if (!bytes || bytes <= 0) return '—';
+  if (bytes < 1024) return `${bytes} Б`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} КБ`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} МБ`;
+}
+
+function titleFromFileName(name) {
+  if (!name) return 'Новый документ';
+  return name.replace(/\.[^.]+$/, '') || name;
+}
+
+export async function uploadDocument(file, meta = {}) {
   await delay(500);
   if (State.flags.uploadSimulateError) {
     throw new Error('Не удалось загрузить файл. Попробуйте снова.');
   }
-  return {
+
+  const category = meta.category || 'tests';
+  const fileName = file?.name || 'document.pdf';
+  const today = new Date();
+  const iso = today.toISOString().slice(0, 10);
+  const dateLabel = today.toLocaleDateString('ru-RU', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+
+  const entry = {
     id: `doc-${Date.now()}`,
-    title: 'Новый документ',
-    status: 'success',
-    statusLabel: 'Загружен',
+    title: titleFromFileName(fileName),
+    category,
+    lab: 'Загружено',
+    date: iso,
+    dateLabel,
+    status: 'info',
+    statusLabel: 'Новое',
+    icon: DOC_ICON_BY_CATEGORY[category] || 'images/icon-pdf-preview.svg',
+    owner: meta.owner || 'anna',
+    patientName: meta.patientName || '',
+    pdf: {
+      fileName,
+      size: formatFileSize(file?.size),
+    },
   };
+
+  documents.unshift(entry);
+  return { ...entry };
 }
 
 export async function getAppointments() {
@@ -57,12 +124,22 @@ export async function getAppointments() {
 
 export async function createAppointment(draft) {
   await delay(400);
-  return {
+  const entry = {
     id: `apt-${Date.now()}`,
-    ...draft,
+    doctorTitle: draft.doctor || `${draft.specialty || '—'} ${formatDoctorName(draft.doctor)}`,
+    specialty: draft.specialty || '—',
+    doctor: formatDoctorName(draft.doctor),
+    clinic: formatClinicLabel(draft.clinic),
+    patient: formatPatientShort(draft.patient),
+    reason: draft.reason?.trim() || '',
+    date: draft.date,
+    dateLabel: formatAppointmentDateLabel(draft.date),
+    time: draft.time,
     status: 'upcoming',
-    statusLabel: 'Подтверждён',
+    statusLabel: 'Предстоящий',
   };
+  appointments.unshift(entry);
+  return entry;
 }
 
 export async function getNotifications() {

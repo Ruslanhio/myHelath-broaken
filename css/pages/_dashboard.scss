@@ -7,6 +7,13 @@
 .greeting__title,
 .page-greeting__title {
   margin-bottom: 0.5rem;
+  font-size: $font-size-xl;
+  line-height: 133%;
+  color: #000;
+}
+
+.greeting__subtitle {
+  line-height: $line-height-normal;
 }
 
 .dashboard__stats,

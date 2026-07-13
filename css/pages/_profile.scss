@@ -1,8 +1,7 @@
-// Профиль пациента — фреймы 137:6682, 137:4954, 137:4545, 137:1560
+
 
 .profile-page {
   width: 100%;
-  max-width: 60.4375rem;
 }
 
 .profile-hero {
@@ -19,12 +18,6 @@
 .profile-hero__avatar-wrap {
   position: relative;
   flex-shrink: 0;
-}
-
-.profile-hero__avatar {
-  width: 6rem;
-  height: 6rem;
-  font-size: 1.75rem;
 }
 
 .profile-hero__camera {
@@ -299,7 +292,7 @@
 
 // Figma 137:1560 — редактирование профиля (пациент / врач)
 .modal--profile-edit {
-  max-width: 64.4375rem;
+  max-width: $content-block-width-narrow;
 }
 
 .profile-edit__avatar {

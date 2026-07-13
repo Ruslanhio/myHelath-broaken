@@ -234,13 +234,7 @@
   gap: 1rem;
 }
 
-.visit-card,
-.visit-item {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-rows: auto auto;
-  align-items: start;
-  gap: 0.5rem 1rem;
+.visit-card {
   background: $color-surface-soft;
   border-radius: $radius-lg;
   padding: 1rem 2rem;
@@ -250,44 +244,79 @@
   border: none;
   width: 100%;
   text-align: left;
-}
 
-.visit-card:hover,
-.visit-item:hover {
-  background: #dff0f0;
-}
+  &:hover {
+    background: $color-primary;
 
-.visit-card__doctor,
-.visit-item__doctor {
-  grid-column: 1;
-  grid-row: 1;
-  font-size: $font-size-md;
-  font-weight: $font-weight-medium;
-  color: $color-text;
-}
+    &__doctor {
+      color: $color-white;
+    }
 
-.visit-card__meta,
-.visit-item__meta {
-  grid-column: 1;
-  grid-row: 2;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
+    &__patient {
+      color: $color-accent-soft;
+    }
 
-.visit-card__patient,
-.visit-item__patient {
-  grid-column: 2;
-  grid-row: 1 / -1;
-  align-self: start;
-  justify-self: end;
-  font-size: $font-size-sm;
-  color: $color-text-muted;
-}
+    &__meta {
+      color: $color-surface;
+    }
 
-.visit-card__patient--accent,
-.visit-item__patient--accent {
-  color: $color-accent;
+  }
+
+  &:active {
+    background: $color-primary-dark;
+
+    &__doctor {
+      color: $color-white;
+    }
+
+    &__patient {
+      color: $color-accent;
+    }
+
+    &__meta {
+      color: $color-surface;
+    }
+  }
+
+  &:disabled {
+    background-color: $color-border;
+
+    &__doctor,
+    &__patient,
+    &__meta {
+      color: $color-text-muted;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__doctor {
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+    color: $color-text;
+
+  }
+
+
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: $color-text-muted;
+    font-size: $font-size-sm;
+    line-height: 143%;
+
+    &__patient {
+      font-size: $font-size-sm;
+      line-height: 133%;
+      color: $color-accent;
+    }
+  }
 }
 
 /* ── Toolbar ── */

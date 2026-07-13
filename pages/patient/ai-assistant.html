@@ -2,11 +2,15 @@
 <main class="layout__content layout__content--flush">
   <section class="ai-assistant" data-ai-assistant>
     <header class="ai-assistant__header">
-      <a href="#/patient/home" class="ai-assistant__back" data-nav aria-label="Назад">
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <use href="../../images/icons.svg#icon-arrow-back" />
+      <div class="ai-assistant__back">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.93547 15.5003C9.8462 15.1542 9.66581 14.8384 9.41309 14.5856C9.16037 14.3329 8.84455 14.1525 8.49847 14.0633L2.36348 12.4813C2.25881 12.4515 2.16668 12.3885 2.10109 12.3017C2.03549 12.2149 2 12.1091 2 12.0003C2 11.8914 2.03549 11.7856 2.10109 11.6988C2.16668 11.612 2.25881 11.549 2.36348 11.5193L8.49847 9.93625C8.84442 9.84706 9.16017 9.66682 9.41288 9.41429C9.66559 9.16176 9.84604 8.84614 9.93547 8.50025L11.5175 2.36525C11.5469 2.26017 11.6099 2.16759 11.6968 2.10164C11.7837 2.0357 11.8899 2 11.999 2C12.1081 2 12.2142 2.0357 12.3012 2.10164C12.3881 2.16759 12.4511 2.26017 12.4805 2.36525L14.0615 8.50025C14.1508 8.84632 14.3311 9.16215 14.5839 9.41487C14.8366 9.66759 15.1524 9.84797 15.4985 9.93725L21.6335 11.5183C21.739 11.5474 21.832 11.6103 21.8983 11.6973C21.9646 11.7844 22.0005 11.8908 22.0005 12.0003C22.0005 12.1097 21.9646 12.2161 21.8983 12.3032C21.832 12.3902 21.739 12.4532 21.6335 12.4823L15.4985 14.0633C15.1524 14.1525 14.8366 14.3329 14.5839 14.5856C14.3311 14.8384 14.1508 15.1542 14.0615 15.5003L12.4795 21.6353C12.4501 21.7403 12.3871 21.8329 12.3002 21.8989C12.2132 21.9648 12.1071 22.0005 11.998 22.0005C11.8889 22.0005 11.7827 21.9648 11.6958 21.8989C11.6089 21.8329 11.5459 21.7403 11.5165 21.6353L9.93547 15.5003Z" stroke="#156B6A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M20 3V7" stroke="#156B6A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M22 5H18" stroke="#156B6A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M4 17V19" stroke="#156B6A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M5 18H3" stroke="#156B6A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-      </a>
+      </div>
       <div class="ai-assistant__heading">
         <h1 class="ai-assistant__title">ИИ-помощник</h1>
         <p class="ai-assistant__disclaimer">
@@ -35,14 +39,25 @@
       <div class="chat__messages ai-assistant__messages" id="chat-messages" role="log" aria-live="polite">
         <article class="ai-assistant__message" data-ai-greeting>
           <div class="ai-assistant__avatar" aria-hidden="true">
-            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <use href="../../images/icons.svg#icon-sparkles" />
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_137_6308)">
+                <path d="M5.797 9.03921C5.74492 8.83733 5.63969 8.6531 5.49227 8.50568C5.34485 8.35826 5.16062 8.25304 4.95875 8.20096L1.38 7.27813C1.31894 7.2608 1.2652 7.22402 1.22694 7.17338C1.18867 7.12275 1.16797 7.06101 1.16797 6.99754C1.16797 6.93407 1.18867 6.87234 1.22694 6.8217C1.2652 6.77106 1.31894 6.73429 1.38 6.71696L4.95875 5.79354C5.16055 5.74151 5.34473 5.63638 5.49215 5.48906C5.63956 5.34175 5.74483 5.15764 5.797 4.95588L6.71983 1.37712C6.73698 1.31583 6.77372 1.26182 6.82443 1.22335C6.87515 1.18489 6.93705 1.16406 7.0007 1.16406C7.06436 1.16406 7.12626 1.18489 7.17698 1.22335C7.22769 1.26182 7.26442 1.31583 7.28158 1.37712L8.20383 4.95588C8.25591 5.15775 8.36113 5.34198 8.50855 5.4894C8.65597 5.63682 8.8402 5.74205 9.04208 5.79413L12.6208 6.71638C12.6824 6.73335 12.7366 6.77005 12.7753 6.82084C12.814 6.87163 12.8349 6.9337 12.8349 6.99754C12.8349 7.06138 12.814 7.12346 12.7753 7.17425C12.7366 7.22504 12.6824 7.26173 12.6208 7.27871L9.04208 8.20096C8.8402 8.25304 8.65597 8.35826 8.50855 8.50568C8.36113 8.6531 8.25591 8.83733 8.20383 9.03921L7.281 12.618C7.26384 12.6793 7.22711 12.7333 7.17639 12.7717C7.12568 12.8102 7.06377 12.831 7.00012 12.831C6.93647 12.831 6.87456 12.8102 6.82385 12.7717C6.77314 12.7333 6.7364 12.6793 6.71925 12.618L5.797 9.03921Z" stroke="#156B6A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M11.668 1.75V4.08333" stroke="#156B6A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12.8333 2.91406H10.5" stroke="#156B6A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2.33203 9.91406V11.0807" stroke="#156B6A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2.91667 10.5H1.75" stroke="#156B6A" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+              <defs>
+                <clipPath id="clip0_137_6308">
+                  <rect width="14" height="14" fill="white" />
+                </clipPath>
+              </defs>
             </svg>
           </div>
           <div class="ai-assistant__bubble">
             <div class="ai-assistant__bubble-content">
-              <p class="ai-assistant__bubble-title" data-ai-greeting-title>Привет! Режим «Расшифровка» активен.</p>
-              <p class="ai-assistant__bubble-text" data-ai-greeting-text>Прикрепите документ с анализом или заключением
+              <p class="ai-assistant__bubble-title title--h3" data-ai-greeting-title>Привет! Режим <span>«Расшифровка»</span> активен.</p>
+              <p class="ai-assistant__bubble-text title--h3" data-ai-greeting-text>Прикрепите документ с анализом или заключением
                 — объясню простым языком без медицинского жаргона.</p>
             </div>
             <time class="ai-assistant__time" datetime="">13:02</time>

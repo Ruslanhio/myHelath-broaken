@@ -1,0 +1,41 @@
+---
+description: SCSS, БЭМ, типографика и адаптив MyHealth
+alwaysApply: true
+---
+# Стили и вёрстка
+
+## Переменные (проверять перед правкой)
+`css/variables.scss` — цвета, типографика, spacing, radius.
+Бандлы: `core.scss` (ui-kit + layout), `auth.scss`, `app.scss`.
+
+## Жёсткие правила
+1. **БЭМ**: `.block`, `.block__element`, `.block__element--modifier`
+2. **Без `style="..."`** в HTML
+3. **rem** для отступов и font-size
+4. Только переменные (`$color-primary-02`, `$font-size-md`, `$space-lg`, `$radius-md`). Исключения — комментарий в коде
+5. **Ширины**: `width: 100%` + `max-width` из макета; не `width: auto`, не жёсткий `width: Npx` без max-width
+6. **Файл = модуль**: компонент → `_ui-kit.scss`; страница → `css/pages/_*.scss`; shell → `css/layout/`
+
+## UI Kit — единый вид
+Одинаковые btn/input/tabs/badges/sidebar__link/cards — один источник в `_ui-kit.scss`. Page-SCSS только для layout экрана.
+
+## Шрифты Inter
+Веса 300–700, валидные файлы в `fonts/` (не 0 bytes). SemiBold (600) — кнопки, active sidebar, labels.
+
+## Breakpoints (без horizontal scroll)
+1440, 1200, 1024, 768, 480, 390 px. Особенно: auth, sidebar, documents, family, модалки.
+
+## Flex-ряды (карточки, тулбары, списки)
+1. Связанные блоки — **в одну группу** (`__lead`, `__meta` и т.п.)
+2. Между группами — **`justify-content: space-between`**, не `margin-left: auto` на последнем ребёнке
+3. **`flex-shrink: 0`** — только у иконок/бейджей с фиксированным размером; не по умолчанию на всё
+4. Текстовым колонкам — **`min-width: 0`**, чтобы не раздувать родителя
+
+## Desktop-first и подготовка к адаптиву
+1. Desktop: **`width: 100%` + `max-width`** из макета; колонки через **`minmax(0, 1fr)`**, не жёсткие `rem` без сжатия
+2. Сетки чипов/слотов: **`repeat(auto-fill, minmax(..., 1fr))`**, не фиксированное `repeat(4, 6.25rem)`
+3. Двухколоночные блоки (календарь + панель): `grid-template-columns: minmax(0, max) minmax(0, 1fr)`; на **1024px** — stack в колонку
+4. Адаптив — те же BEM-классы; на breakpoint менять только число колонок / `flex-direction`, не дублировать разметку
+
+## Pixel-perfect
+Сверять цвета, типографику, padding/gap, radius, shadow, сетку с Figma Dev Mode.

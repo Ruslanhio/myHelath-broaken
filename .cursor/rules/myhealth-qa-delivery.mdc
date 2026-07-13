@@ -1,0 +1,35 @@
+---
+description: Чек-лист приёмки и формат сдачи MyHealth
+alwaysApply: true
+---
+
+# Приёмка и сдача
+
+## P0 — блокирует приёмку
+- Network: нет 404 по HTML, CSS, JS, images, fonts
+- Логотипы и иконки видны (auth, sidebar, документы)
+- `Inter-SemiBold.woff2` и остальные веса — статус 200, не 0 bytes
+- JS подключён и работает (`js/ui.js` и точки входа)
+- Ссылки меню/форм → существующие экраны или согласованные заглушки
+
+## P1 — ключевые экраны
+- Auth ≈ Figma на 1440px; 1024/768/390 без horizontal scroll
+- Documents: sidebar, family pills, поиск, upload CTA, фильтры, tile/list toggle
+- Family: карточки профилей, «Добавить», сетка на breakpoints
+
+## P2 — полировка
+- Legal-модалки: open/close, overlay, Escape, scroll body
+- UI-kit единообразен; hover/focus с клавиатуры
+
+## Финальный чек-лист
+- Покрыты страницы Figma (или отчёт о пробелах)
+- Мок-сценарии: вход, меню, документы, upload, запись, settings, 404
+- Компоненты переиспользуемы (partials, ui-kit)
+- Проверка на стенде при наличии доступа
+
+## Формат сдачи
+1. Ссылка на стенд
+2. Список изменённых файлов
+3. Скриншоты auth, documents, family — desktop + mobile
+4. Подтверждение чистого Network
+5. Перечень заглушек / вопросов по макету

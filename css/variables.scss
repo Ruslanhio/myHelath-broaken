@@ -45,8 +45,8 @@ $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
-$line-height-tight: 1.25;
-$line-height-normal: 1.5;
+$line-height-tight: 125%;
+$line-height-normal: 150%;
 
 // Spacing
 $space-xs: rem(4);
@@ -68,14 +68,19 @@ $radius-2xl: rem(16);
 $sidebar-width: rem(319);
 $header-padding-y: rem(22);
 $header-offset: rem(70); // approximate sticky header size for calc() layouts
-$content-max-width: rem(1601);
+$content-max-width: rem(1497); // 93.5625rem
+$content-block-width-narrow: rem(1031); // ширина контентного блока по макету
+$content-width-narrow: rem(1129); // 70.5625rem = 1031 + боковые отступы shell (3rem × 2)
+$app-content-padding-x: 3rem;
+$font-size-13: rem(13);
+$font-size-15: rem(15);
 $auth-hero-width: rem(474);
 $auth-card-width: rem(448);
 $auth-doctor-card-width: rem(856);
 
 // Shadows
 $shadow-sm: 0 rem(1) rem(1) rgba(0, 0, 0, 0.1);
-$shadow-card: 0 0 rem(2.5) rgba(0, 0, 0, 0.08);
+$shadow-card: 0 0 rem(2.5) 0 rgba(0, 0, 0, 0.08);
 $shadow-modal: 0 rem(24) rem(48) rgba(21, 32, 14, 0.12);
 
 // Transitions

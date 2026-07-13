@@ -1,6 +1,5 @@
 // Page-specific BEM blocks
-// Auth/legal → css/auth.scss | остальное → css/_pages-app.scss (через app.scss)
-@import "pages/shell";
+// Auth/legal → css/auth.scss | shell → css/layout/_shell-*.scss (через core.scss)
 @import "pages/legal";
 @import "pages/auth-pages";
 @import "pages/forms";

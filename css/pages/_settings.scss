@@ -1,9 +1,9 @@
 /* ── Settings ── */
 .settings-layout {
-  max-width: 60.4375rem;
+  width: 100%;
 
   &--help {
-    max-width: 56.75rem;
+    max-width: $content-block-width-narrow;
   }
 }
 
@@ -15,14 +15,20 @@
   margin-top: 1.5rem;
 }
 
-.settings-layout .card > .tabs {
+.settings-layout .card>.tabs {
   display: inline-flex;
   flex-wrap: wrap;
   max-width: 100%;
+  gap: 0.875rem;
+  padding-top: 0.5625rem
 }
 
-.settings-layout .card > .card__body {
+.settings-layout .card>.card__body {
   gap: 0;
+}
+
+.settings-layout .tab-panel--active {
+  gap: $space-md; // 0.75rem
 }
 
 // .settings-section — не используется в разметке
@@ -31,22 +37,56 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
-  border-bottom: 0.0625rem solid $color-surface;
   gap: 1rem;
+  border: 1px solid #ededed;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.08);
+  padding: 22px 20px 22px 28px;
+  border-radius: 0.625rem;
 }
 
 .settings__row:last-child {
   border-bottom: none;
 }
 
-.settings__row > .checkbox,
-.settings__row > .switch {
+.settings__row>.checkbox,
+.settings__row>.switch {
   flex-shrink: 0;
 }
 
+.settings__row--nav {
+  width: 100%;
+  gap: $space-md;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  background: $color-white;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background: $color-secondary-70;
+  }
+
+  &:focus-visible {
+    outline: 0.125rem solid $color-primary;
+    outline-offset: 0.125rem;
+  }
+}
+
+button.settings__row--nav {
+  appearance: none;
+  font: inherit;
+  text-align: inherit;
+}
+
+.settings__row__chevron {
+  width: 1.0625rem;
+  height: 1.0625rem;
+  flex-shrink: 0;
+  color: $color-text-link;
+}
+
 .settings__group {
-  & + & {
+  &+& {
     margin-top: 0.25rem;
   }
 }
@@ -126,8 +166,8 @@
   gap: 0.5rem;
 }
 
-.settings__session + .settings__session,
-.session-row + .session-row {
+.settings__session+.settings__session,
+.session-row+.session-row {
   margin-top: 0;
 }
 

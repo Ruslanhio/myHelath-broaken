@@ -30,26 +30,136 @@ export function bindScenarios(route, params) {
 }
 
 function bindDocumentUpload() {
-  const form =
-    document.querySelector('[data-scenario="document-upload"]') ||
-    document.querySelector('.layout__content form');
+  if (!location.hash.includes('/documents/upload')) return;
 
-  const fileInput = document.querySelector('#document-file, input[type="file"]');
+  const form = document.querySelector('[data-scenario="document-upload"]');
+  if (!form || form.dataset.uploadBound) return;
+  form.dataset.uploadBound = '1';
 
-  const handler = async (e) => {
-    if (!location.hash.includes('/documents/upload')) return;
-    e?.preventDefault?.();
+  const fileInput = form.querySelector('#document-file');
+  const dropzone = form.querySelector('[data-upload-dropzone]');
+  const pickBtn = form.querySelector('.document-upload-card__pick-btn');
+  const titleEl = dropzone?.querySelector('.card__dropzone-title');
+  const hintEl = dropzone?.querySelector('.card__dropzone-hint');
+  const submitBtn = form.querySelector('.document-upload-card__submit');
+  const maxBytes = 50 * 1024 * 1024;
+
+  const OWNER_BY_TAB = {
+    anna: () => resolveFamilyPatientName('mine'),
+    ivan: () => resolveFamilyPatientName('ivan'),
+    sofia: () => resolveFamilyPatientName('sofia'),
+    misha: () => resolveFamilyPatientName('misha'),
+  };
+
+  const CATEGORY_BY_TAB = {
+    analyses: 'tests',
+    images: 'scans',
+    prescriptions: 'prescriptions',
+    reports: 'reports',
+    vaccines: 'vaccines',
+  };
+
+  const getActiveTabId = (groupId) =>
+    form.querySelector(`[data-tabs="${groupId}"] .tab--active`)?.dataset.tab || '';
+
+  const openPicker = () => fileInput?.click();
+
+  const clearFile = () => {
+    if (fileInput) fileInput.value = '';
+    dropzone?.classList.remove('document-upload-card__dropzone--has-file');
+    if (titleEl) titleEl.textContent = 'Перетащите файл';
+    if (hintEl) {
+      hintEl.textContent = 'или нажмите для выбора';
+      hintEl.hidden = false;
+    }
+    dropzone?.setAttribute('aria-label', 'Зона загрузки файла');
+  };
+
+  const applyFile = (file) => {
+    if (!file) return;
+
+    if (file.size > maxBytes) {
+      window.UI?.toast('Файл больше 50 МБ', 'warning');
+      clearFile();
+      return;
+    }
+
+    dropzone?.classList.add('document-upload-card__dropzone--has-file');
+    if (titleEl) titleEl.textContent = file.name;
+    if (hintEl) hintEl.hidden = true;
+    dropzone?.setAttribute('aria-label', `Выбран файл: ${file.name}`);
+  };
+
+  const readFileFromInput = () => {
     const file = fileInput?.files?.[0];
+    if (file) applyFile(file);
+    else clearFile();
+  };
+
+  pickBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    openPicker();
+  });
+
+  dropzone?.addEventListener('click', () => openPicker());
+
+  dropzone?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openPicker();
+    }
+  });
+
+  fileInput?.addEventListener('change', readFileFromInput);
+
+  dropzone?.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropzone.classList.add('document-upload-card__dropzone--dragover');
+  });
+
+  dropzone?.addEventListener('dragleave', () => {
+    dropzone.classList.remove('document-upload-card__dropzone--dragover');
+  });
+
+  dropzone?.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.classList.remove('document-upload-card__dropzone--dragover');
+    const file = e.dataTransfer?.files?.[0];
+    if (!file || !fileInput) return;
+
+    const dt = new DataTransfer();
+    dt.items.add(file);
+    fileInput.files = dt.files;
+    applyFile(file);
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const file = fileInput?.files?.[0];
+    if (!file) {
+      window.UI?.toast('Выберите файл для загрузки', 'warning');
+      return;
+    }
+
+    const categoryTab = getActiveTabId('doc-upload-category');
+    const ownerTab = getActiveTabId('doc-upload-owner');
+    const category = CATEGORY_BY_TAB[categoryTab] || 'tests';
+    const patientName = OWNER_BY_TAB[ownerTab]?.() || resolveFamilyPatientName('mine');
+
+    if (submitBtn) submitBtn.disabled = true;
+
     try {
-      await uploadDocument(file || { name: 'stub.pdf' });
+      await uploadDocument(file, { category, owner: ownerTab, patientName });
       window.UI?.toast('Документ успешно загружен', 'success');
       navigate('#/patient/documents');
     } catch (err) {
-      window.UI?.toast(err.message, 'error');
+      window.UI?.toast(err.message || 'Не удалось загрузить файл', 'error');
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
     }
-  };
-
-  form?.addEventListener('submit', handler);
+  });
 }
 
 function syncAppointmentDatetime(form) {

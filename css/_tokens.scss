@@ -65,9 +65,6 @@
   --focus-ring: 0 0 0 #{rem(2)} var(--color-white), 0 0 0 #{rem(4)} var(--color-focus-ring);
 }
 
-.sidebar__link:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-}
 
 .sidebar__link:focus-visible,
 .btn:focus-visible,
@@ -75,28 +72,4 @@
 .view-toggle__btn:focus-visible {
   box-shadow: var(--focus-ring);
   outline: none;
-}
-
-.layout__burger {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  width: rem(40);
-  height: rem(40);
-  border-radius: var(--radius-md);
-  color: var(--color-text);
-}
-
-.layout__burger:hover {
-  background: var(--color-hover-overlay);
-}
-
-.layout__burger:focus-visible {
-  box-shadow: var(--focus-ring);
-}
-
-@media (max-width: 1024px) {
-  :root {
-    --sidebar-width: var(--sidebar-width-tablet);
-  }
 }

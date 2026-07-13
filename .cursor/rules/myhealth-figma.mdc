@@ -1,0 +1,34 @@
+---
+description: Работа с макетом Figma Dev Mode для MyHealth
+alwaysApply: true
+---
+
+# Figma — источник истины
+
+## Обязательно
+- **Dev Mode**: размеры, отступы, цвета, шрифты, CSS, ассеты — из Figma
+- **Не верстать по скриншотам**; не вставлять растровые скриншоты вместо UI
+- Иконки/логотипы: SVG в `images/`
+
+## Страницы файла Figma
+| Страница | Назначение |
+|----------|------------|
+| ИА \| User Flow | Карта переходов; маршруты при отсутствии прототипных связей |
+| Design System \| UI Kit | Финальные экраны, Button/Container, состояния |
+| Макеты | Wireframe адаптива Desktop/Tablet/Mobile |
+| Прототип | Проверка связей |
+
+## Соответствие в коде
+- Компоненты → `css/_ui-kit.scss`, `css/uikit/_buttons.scss`
+- Витрина (не для pages/) → `buttons.html`, `ui-kit.html`, `css/uikit/_showcase.scss`
+- Адаптив wireframe → `css/_responsive.scss`, `docs/FIGMA-REFERENCE.md`
+
+## Копирование из UI Kit
+Копировать **только innerHTML** из `[data-uikit-copy]` в `pages/`.
+**Не переносить**: `.component-state`, `.component-set`, `data-state-toggle`, `btn--demo`, `btn--md`, `btn--auto`.
+
+## Состояния из макета
+Пусто, заполнено, ошибка, loading, hover, focus, active, disabled, success, 404.
+
+## Перед сдачей
+Пройти User Flow, UI Kit, Макеты, Прототип. Непокрытые фреймы — в отчёте.

@@ -1,0 +1,33 @@
+---
+description: HTML, SPA, JS-интерактивность и моки MyHealth
+alwaysApply: true
+---
+
+# HTML и JavaScript
+
+## Контракт с JS (критично)
+При правке HTML **не удалять/не переименовывать** без обновления JS:
+- `id`, `data-action`, `data-nav`, `data-tabs`
+- `data-modal-open`, `data-modal-close`
+- `data-password-toggle`, `data-role-toggle`, `data-view-toggle`
+- `.is-active`, `.is-loading`, `.is-hidden`, `.sidebar__link--active`
+
+## Интерактивность (без перезагрузки)
+Роль Пациент/Врач, показать пароль, плитка/список документов, табы, family pills, legal-модалки (overlay + Escape), active sidebar, logout `data-action="logout"`. Обновлять `aria-*` и `hidden`.
+
+## Роутинг
+- Hash: `#/patient/...`, `#/doctor/...` — карта в `js/routes.js`, `README.md`
+- После правок `pages/` или `partials/`: `npm run build:templates`
+- Не смешивать `pages/home.html`, `../images/` с SPA без согласования
+
+## Моки
+`js/mock/data.js` + `js/api.js`. Статические числа в HTML могут перезаписываться JS (stat-card на home).
+
+## Ресурсы — без 404
+- Логотип: `images/logo.png`
+- Иконки документов: `images/icon-*.svg`
+- Не оставлять битые `<img>`, `<use href="icons.svg#...">` без файла
+
+## Partials
+`partials/sidebar-patient.html`, `partials/sidebar-doctor.html`.
+Ссылки: класс `sidebar__link`. Logout: `sidebar__logout` + `sidebar__link`.

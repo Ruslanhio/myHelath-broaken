@@ -1,50 +1,13 @@
-// Адаптив по wireframe «Макеты ключевого экрана»
-// Desktop: sidebar 19.9375rem | Tablet ≤1024: 18rem | Mobile ≤767: drawer + бургер (Figma 19:488)
+
 
 @media (max-width: 1024px) {
-  .sidebar {
-    padding: 1.25rem 0.875rem;
-
-    > .logo.logo--card {
-      max-width: rem(237);
-      padding: 0.75rem 0.75rem 0.875rem;
-    }
-
-    &__subtitle {
-      font-size: 0.9375rem;
-      line-height: 1.35;
-      margin-bottom: 0.25rem;
-    }
-
-    &__group {
-      margin-bottom: 1.75rem;
-    }
-
-    &__group-label {
-      font-size: 0.6875rem;
-      padding: 0 0.5rem;
-      margin-bottom: 0.75rem;
-    }
-
-    &__link {
-      font-size: 1rem;
-      gap: 0.875rem;
-      padding: 0.625rem 0.75rem 0.625rem 1rem;
-
-      svg {
-        width: 1.25rem;
-        height: 1.25rem;
-      }
-    }
-
-    &__logout .sidebar__link {
-      font-size: 1rem;
-    }
+  .header {
+    padding-block: $header-padding-y;
+    padding-inline: 0;
   }
 
-  .header,
-  .app-header {
-    padding: $header-padding-y 1.5rem;
+  .header .container {
+    padding-inline: 1.25rem;
   }
 
   .layout__content,
@@ -94,7 +57,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 48rem) {
   .layout__main,
   .app__main {
     margin-left: 0;
@@ -106,8 +69,8 @@
     flex-shrink: 0;
   }
 
-  .header {
-    gap: 0.75rem;
+  .header .container {
+    gap: 2.875rem;
   }
 
   .sidebar {
@@ -126,10 +89,15 @@
     padding: 1rem 0.75rem;
   }
 
-  .header,
-  .app-header {
-    padding: 0 0.75rem;
+  .header {
+    padding-block: 0;
+    padding-inline: 0;
     min-height: 2.875rem;
+  }
+
+  .header .container {
+    min-height: 2.875rem;
+    padding-inline: 0.75rem;
   }
 
   .header__title {
@@ -189,7 +157,7 @@
     gap: 0.75rem;
   }
 
-  .family-count {
+  .summary-stat--family {
     max-width: none;
   }
 
@@ -239,6 +207,7 @@
   .tabs--settings,
   .tabs--profile,
   .tabs--access-doctor,
+  .doctor-access-card__tabs,
   .settings-layout .card > .tabs {
     flex-direction: column;
 
@@ -339,28 +308,26 @@
     }
   }
 
-  .appointment-step--success {
-    padding: 1.75rem 1rem 1.5rem;
+  .appointment-success-card {
+    padding: rem(40) rem(20);
   }
 
   .appointment-success__illustration {
-    width: 6rem;
-    height: 6rem;
-    margin-bottom: 1rem;
+    width: min(rem(249), 60vw);
+    margin-bottom: rem(48);
   }
 
   .appointment-success__title {
-    font-size: $font-size-lg;
+    margin-bottom: rem(20);
+    font-size: rem(24);
   }
 
   .appointment-success__text {
-    margin-bottom: 1rem;
-    font-size: $font-size-sm;
+    font-size: $font-size-base;
   }
 
-  .appointment-success__card {
-    margin-bottom: 1rem;
-    padding: 0.875rem 1rem;
+  .appointment-new-layout {
+    gap: rem(16);
   }
 
   .dashboard__stats .appointments-stat {
@@ -427,6 +394,12 @@
   }
 }
 
+@media (max-width: 30rem) {
+  .sidebar {
+    width: var(--sidebar-width-mobile);
+  }
+}
+
 @media (max-width: 1400px) {
   .dashboard__stats,
   .stats-grid {
@@ -481,10 +454,15 @@
     padding: 0.75rem 0.5rem 1rem;
   }
 
-  .header,
-  .app-header {
-    padding: 0 0.5rem;
+  .header {
+    padding-block: 0;
+    padding-inline: 0;
     min-height: 2.625rem;
+  }
+
+  .header .container {
+    min-height: 2.625rem;
+    padding-inline: 0.5rem;
   }
 
   .header__title {
@@ -517,7 +495,7 @@
 
   .dashboard__stats,
   .stats-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: none;
     gap: 0.5rem;
     margin-bottom: 1rem;
   }
@@ -532,7 +510,7 @@
 
   .stat-card__value {
     font-size: $font-size-lg;
-    line-height: 1.1;
+    line-height: 60%;
   }
 
   .stat-card__label {
@@ -594,7 +572,8 @@
     padding: 1rem 0.75rem;
   }
 
-  .tabs--access-doctor {
+  .tabs--access-doctor,
+  .doctor-access-card__tabs {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
     gap: 0.5rem;

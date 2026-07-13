@@ -1,0 +1,179 @@
+/* ── Document upload (patient) — Figma 137:4781 ── */
+
+.document-upload-page {
+  display: grid;
+  grid-template-columns: minmax(0, rem(736));
+  justify-content: center;
+  width: 100%;
+}
+
+.document-upload__back {
+  display: inline-flex;
+  justify-self: start;
+  align-items: center;
+  gap: rem(8);
+  margin-bottom: rem(16);
+  padding: 0;
+  line-height: 131%;
+  font-size: 1rem;
+  font-weight: $font-weight-medium;
+  color: #424242;
+  text-decoration: none;
+
+  .icon {
+    width: rem(20);
+    height: rem(20);
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.document-upload-card {
+  width: 100%;
+  max-width: rem(736);
+  margin-inline: auto;
+
+  .card__body {
+    border-top: none;
+    padding: rem(24) rem(25) rem(25);
+    gap: rem(20);
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    gap: rem(4);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: rem(18);
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-normal;
+    color: $color-text;
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: $font-size-13;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-normal;
+    color: $color-text-muted;
+  }
+
+  &__dropzone.card__dropzone {
+    width: 100%;
+    max-width: none;
+    min-height: rem(272);
+    margin-inline: 0;
+    border: rem(2) dashed $color-primary-dark;
+    border-radius: $radius-2xl;
+    padding: rem(40) rem(24);
+    text-align: center;
+    background: $color-surface-soft;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: rem(8);
+    cursor: pointer;
+    transition: border-color $transition-fast, background-color $transition-fast;
+
+    svg {
+      flex-shrink: 0;
+      margin-bottom: rem(16);
+    }
+
+    &--dragover {
+      border-color: $color-primary;
+      background: rgba($color-primary-dark, 0.06);
+    }
+
+    &--has-file {
+      border-style: solid;
+      background: $color-white;
+
+      .card__dropzone-title {
+        word-break: break-word;
+      }
+    }
+  }
+
+  &__pick-btn {
+    margin-top: rem(8);
+    padding: rem(8) rem(16);
+    border: rem(1) solid $color-border;
+    border-radius: $radius-md;
+    background: $color-white;
+    font-family: inherit;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    line-height: 114%;
+    color: $color-text;
+    cursor: pointer;
+    transition: background-color $transition-fast, border-color $transition-fast;
+
+    &:hover {
+      border-color: $color-primary-dark;
+      background: $color-white;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    min-height: rem(48);
+    padding: rem(14) rem(24);
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+    line-height: 150%;
+    color: $color-secondary-40;
+  }
+}
+
+.document-upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+
+  &__file {
+    display: none;
+  }
+}
+
+.document-upload-field {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+
+  &__label {
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-normal;
+    color: $color-text;
+  }
+
+  .tabs--family-cards {
+    padding-top: rem(2);
+    padding-left: rem(2);
+  }
+}
+
+.card__dropzone-title {
+  margin: 0;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-15;
+  line-height: $line-height-normal;
+  text-align: center;
+  color: $color-text;
+}
+
+.card__dropzone-hint {
+  margin: 0;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-13;
+  line-height: $line-height-normal;
+  text-align: center;
+  color: $color-text-muted;
+}

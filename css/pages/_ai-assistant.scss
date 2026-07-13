@@ -136,22 +136,24 @@
 .ai-assistant__bubble {
   flex: 1;
   min-width: 0;
-  padding: 0.8125rem 1.0625rem 0.625rem;
+  padding: 0.8125rem 1.0625rem 0.96rem;
   background: $color-white;
+  border-radius: 0 0.5rem 0.5rem 0.5rem;
 }
 
 .ai-assistant__bubble-content {
   display: flex;
   flex-direction: column;
-  gap: 0.125rem;
+  gap: 0.6875rem;
 }
 
 .ai-assistant__bubble-title {
-  margin: 0;
-  font-size: $font-size-base;
-  font-weight: $font-weight-medium;
   line-height: 1.7;
-  color: $color-text;
+  
+span {
+  font-weight: $font-weight-bold;
+}
+
 }
 
 .ai-assistant__bubble-text {

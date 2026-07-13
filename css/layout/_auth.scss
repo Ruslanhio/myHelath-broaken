@@ -1,0 +1,24 @@
+.layout--auth {
+  display: block;
+  background-color: $color-surface;
+}
+
+.layout--legal-modal {
+  background: $color-bg-page;
+  min-height: 100vh;
+}
+
+.layout--auth-modal {
+  background: $gradient-quick-actions;
+  min-height: 100vh;
+}
+
+.layout--auth-page {
+  min-height: 100vh;
+  background: $color-bg-page;
+}
+
+.auth-page {
+  width: 100%;
+  max-width: 30rem;
+}

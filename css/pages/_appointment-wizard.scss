@@ -1,4 +1,19 @@
-/* ── Appointment wizard (node 137:6007) ── */
+
+.appointment-new-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: $content-block-width-narrow;
+  margin: 0 auto;
+  gap: rem(26);
+  padding-top: 5.9675rem;
+}
+
+.appointment-new__back {
+  align-self: flex-start;
+}
+
 .appointment-new-card {
   background: transparent;
   border: none;
@@ -13,6 +28,8 @@
 
 .appointment-new-card__body {
   padding: 0;
+  background-color: $color-white;
+  border-top: none;
 }
 
 .appointment-new__top {
@@ -41,6 +58,8 @@
   border: 0.125rem solid $color-accent-soft;
   border-radius: $radius-md;
   background: $color-white;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .appointment-wizard__panels .appointment-step {
@@ -143,16 +162,17 @@
   margin-top: 1.5rem;
 }
 
-.appointment-success-block {
-  padding: 0 1rem 1rem;
+.appointment-success-page {
+  width: 100%;
+  max-width: rem(695);
+  margin-inline: auto;
 }
 
-.appointment-wizard__panels--success {
-  border-color: $color-accent-soft;
-}
-
-.appointment-step--success {
-  padding: 2.5rem 1.5625rem 2rem;
+.appointment-success-card {
+  width: 100%;
+  background: $color-white;
+  border-radius: $radius-md;
+  padding: rem(60) rem(24);
 }
 
 .appointment-success {
@@ -160,41 +180,34 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 0;
-  max-width: 35rem;
-  margin: 0 auto;
 
   &__illustration {
     display: block;
-    width: 7.5rem;
-    height: 7.5rem;
+    width: rem(249);
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
     object-fit: contain;
-    margin-bottom: 1.5rem;
+    margin-bottom: rem(100);
   }
 
   &__title {
-    margin: 0 0 0.5rem;
-    font-size: $font-size-xl;
-    font-weight: $font-weight-bold;
-    line-height: 1.35;
+    margin: 0 0 rem(35);
+    font-weight: $font-weight-medium;
+    font-size: rem(32);
+    line-height: 0.84;
     color: $color-text;
   }
 
   &__text {
-    margin: 0 0 1.5rem;
-    font-size: $font-size-base;
-    line-height: 1.5;
-  }
-
-  &__card {
+    margin: 0;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-md;
+    line-height: 1.22;
+    text-align: center;
+    color: $color-text-muted;
     width: 100%;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-    text-align: left;
-  }
-
-  .appointment-step__actions {
-    width: 100%;
+    max-width: 25rem;
   }
 }
 
@@ -271,14 +284,17 @@
 
 .appointment-datetime {
   display: grid;
-  grid-template-columns: 21.5rem minmax(0, 27.25rem);
+  grid-template-columns: minmax(0, 21.5rem) minmax(0, 1fr);
   gap: 3.3125rem;
   margin-top: 1.5rem;
   align-items: start;
+  width: 100%;
+  min-width: 0;
 }
 
 .appointment-calendar {
-  width: 21.5rem;
+  width: 100%;
+  max-width: 21.5rem;
   border: 0.0625rem solid $color-primary;
   border-radius: 1.125rem;
   background: $color-white;
@@ -331,7 +347,7 @@
 .appointment-calendar__grid {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 0.75rem 0;
+  gap: 0.75rem;
 }
 
 .appointment-calendar__day {
@@ -385,17 +401,18 @@
   display: flex;
   flex-direction: column;
   gap: 1.125rem;
-  padding-top: 0;
+  min-width: 0;
+  width: 100%;
 }
 
 .appointment-datetime__row {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1.75rem;
 }
 
 .appointment-datetime__label {
-  flex-shrink: 0;
   font-size: $font-size-base;
   font-weight: $font-weight-medium;
   color: $color-text;
@@ -405,7 +422,9 @@
 .appointment-datetime__date {
   display: inline-flex;
   align-items: center;
-  min-width: 12.375rem;
+  flex: 1 1 12.375rem;
+  min-width: 0;
+  max-width: 100%;
   height: 2.0625rem;
   padding: 0 0.75rem;
   border: 0.0625rem solid $color-primary-dark;
@@ -428,21 +447,23 @@
 
 .appointment-time-grid {
   display: grid;
-  grid-template-columns: repeat(4, 6.25rem);
-  gap: 0.75rem 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
+  gap: 0.75rem;
+  width: 100%;
 }
 
 .appointment-time-slot {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 6.25rem;
+  width: 100%;
   height: 2.0625rem;
   padding: 0 0.5rem;
-  border: 0.0625rem solid $color-secondary-01;
+  border: 0.0625rem solid #ededed;
   border-radius: $radius-md;
   background: $color-white;
   font-size: 0.8125rem;
+  line-height: 150%;
   font-weight: $font-weight-medium;
   color: $color-text;
   cursor: pointer;
@@ -458,23 +479,14 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .appointment-datetime {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
   .appointment-calendar {
-    width: 100%;
     max-width: 21.5rem;
-  }
-
-  .appointment-time-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .appointment-time-slot {
-    width: 100%;
   }
 }
 
@@ -487,6 +499,7 @@
 
   .appointment-datetime__date {
     width: 100%;
+    flex-basis: auto;
   }
 
   .appointment-time-grid {

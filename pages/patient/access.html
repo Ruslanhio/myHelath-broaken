@@ -1,21 +1,238 @@
 <script>location.replace('../../index.html#/patient/access');</script>
-<main class="layout__content">
-      <div class="tabs tabs--settings" data-tabs="access">
-        <button type="button" class="tab tab--active" data-tab="active">Активный доступ</button>
-        <button type="button" class="tab" data-tab="incoming">Входящий</button>
-        <button type="button" class="tab" data-tab="expired">Истёкший</button>
+<main class="layout__content layout__content--documents">
+  <div class="toolbar toolbar--access">
+    <div class="summary-stat summary-stat--family">
+      <div class="summary-stat__icon" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M11.6915 1.56647C11.8878 1.47784 12.1127 1.47784 12.3089 1.56647C16.0377 3.25047 17.7116 3.7885 21.8405 4.52913C22.1804 4.59011 22.4348 4.8754 22.4565 5.22012C23.2492 17.7832 13.0538 22.1342 12.2804 22.4457C12.1006 22.5181 11.8998 22.5181 11.72 22.4457C10.9467 22.1342 0.751238 17.7832 1.54389 5.22012C1.56564 4.8754 1.82001 4.59011 2.15999 4.52913C6.28884 3.7885 7.96271 3.25047 11.6915 1.56647ZM3.01236 5.89841C2.65873 16.1309 10.3287 20.1754 12.0002 20.9334C13.6717 20.1754 21.3417 16.1309 20.9881 5.89841C17.2569 5.20575 15.4522 4.61914 12.0002 3.07241C8.54825 4.61914 6.74353 5.20575 3.01236 5.89841Z"
+            fill="#1A9B9A" />
+        </svg>
       </div>
-      <div class="toolbar"><span></span><a href="access-grant.html" class="btn btn--primary btn--md">Дать доступ врачу</a></div>
-      <div class="tab-panel tab-panel--active" data-tab-panel="access" data-panel="active">
-        <div class="doc-list">
-          <article class="doc-list__item doc-list__item--static"><div class="avatar">СН</div><div class="doc-list__body"><p class="doc-list__title">Др. Смирнова Н.В.</p><p class="doc-list__meta text text--muted">Кардиолог · до 15.06.2026</p></div><button type="button" class="btn btn--danger-outline btn--sm">Отозвать</button></article>
-          <article class="doc-list__item doc-list__item--static"><div class="avatar">ПА</div><div class="doc-list__body"><p class="doc-list__title">Др. Петров А.И.</p><p class="doc-list__meta text text--muted">Педиатр · до 01.07.2026</p></div><button type="button" class="btn btn--danger-outline btn--sm">Отозвать</button></article>
+      <div class="summary-stat__info">
+        <p class="summary-stat__number">2</p>
+        <p class="summary-stat__text">активных доступа</p>
+      </div>
+    </div>
+
+    <div class="toolbar-hint">
+      <p class="toolbar-hint__title">Вы контролируете доступ</p>
+      <p class="toolbar-hint__text">Врачи видят только те документы, которые вы им разрешили. Доступ можно отозвать в
+        любой момент.</p>
+    </div>
+
+    <div class="toolbar__actions">
+      <a href="#/patient/access/grant" class="btn btn--primary-pink btn--md btn--auto" data-nav>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M10 3.75C10.3452 3.75 10.625 4.02982 10.625 4.375V15.625C10.625 15.9702 10.3452 16.25 10 16.25C9.65482 16.25 9.375 15.9702 9.375 15.625V4.375C9.375 4.02982 9.65482 3.75 10 3.75Z"
+            fill="white" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M3.75 10C3.75 9.65482 4.02982 9.375 4.375 9.375H15.625C15.9702 9.375 16.25 9.65482 16.25 10C16.25 10.3452 15.9702 10.625 15.625 10.625H4.375C4.02982 10.625 3.75 10.3452 3.75 10Z"
+            fill="white" />
+        </svg>
+        + Дать доступ
+      </a>
+    </div>
+  </div>
+
+  <article class="card access-page-card" data-tab-root>
+    <div class="tabs tabs--documents" data-tabs="access" role="tablist" aria-label="Разделы доступа">
+      <button type="button" class="tab tab--active" data-tab="active" role="tab" aria-selected="true"><span
+          class="tab__label">Активные</span></button>
+      <button type="button" class="tab" data-tab="incoming" role="tab" aria-selected="false"><span
+          class="tab__label">Входящие</span></button>
+      <button type="button" class="tab" data-tab="expired" role="tab" aria-selected="false"><span
+          class="tab__label">Истёкшие</span></button>
+    </div>
+
+    <div class="card__body">
+      <div class="tab-panel tab-panel--active" data-tab-panel="access" data-panel="active" role="tabpanel">
+        <div class="access-list" data-access-list="active">
+          <article class="access-grant-card">
+            <div class="access-grant-card__row">
+              <div class="access-grant-card__lead">
+                <span class="access-grant-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="access-grant-card__identity">
+                <div class="access-grant-card__head">
+                  <h2 class="access-grant-card__doctor">Кардиолог Петров А.И.</h2>
+                  <span class="access-grant-card__status">Активный</span>
+                </div>
+                <p class="access-grant-card__note">Клиника «Мерси»</p>
+                <p class="access-grant-card__view">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.5" aria-hidden="true">
+                    <path d="M12 21s7-4.5 7-10a7 7 0 10-14 0c0 5.5 7 10 7 10z" />
+                    <circle cx="12" cy="11" r="2.5" />
+                  </svg>
+                  Последний просмотр: Сегодня, 10:23
+                </p>
+              </div>
+              </div>
+              <div class="access-grant-card__period">
+                <span class="access-grant-card__label">Доступ:</span>
+                <span class="access-grant-card__date">01.06.2026 - 07.06.2026</span>
+              </div>
+              <div class="access-grant-card__docs">
+                <span class="access-grant-card__label">Используемые документы:</span>
+                <div class="access-grant-card__tags">
+                  <span class="doc-scope-tag">Анализы</span>
+                  <span class="doc-scope-tag">Снимки</span>
+                </div>
+              </div>
+              <span class="person-name">Миша М.</span>
+            </div>
+            <div class="access-grant-card__actions">
+              <button type="button" class="btn btn--primary btn--compact btn--auto">Изменить срок</button>
+              <button type="button" class="btn btn--neutral-outline btn--auto">Отозвать</button>
+            </div>
+          </article>
+
+          <article class="access-grant-card">
+            <div class="access-grant-card__row">
+              <div class="access-grant-card__lead">
+                <span class="access-grant-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="access-grant-card__identity">
+                <div class="access-grant-card__head">
+                  <h2 class="access-grant-card__doctor">Педиатр Смирнова Н.В.</h2>
+                  <span class="access-grant-card__status">Активный</span>
+                </div>
+                <p class="access-grant-card__note">34-я поликлиника</p>
+                <p class="access-grant-card__view">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.5" aria-hidden="true">
+                    <path d="M12 21s7-4.5 7-10a7 7 0 10-14 0c0 5.5 7 10 7 10z" />
+                    <circle cx="12" cy="11" r="2.5" />
+                  </svg>
+                  Последний просмотр: 2 июня 2026, 09:12
+                </p>
+              </div>
+              </div>
+              <div class="access-grant-card__period">
+                <span class="access-grant-card__label">Доступ:</span>
+                <span class="access-grant-card__date">20.05.2026 - 01.07.2026</span>
+              </div>
+              <div class="access-grant-card__docs">
+                <span class="access-grant-card__label">Используемые документы:</span>
+                <div class="access-grant-card__tags">
+                  <span class="doc-scope-tag">Анализы</span>
+                </div>
+              </div>
+              <span class="person-name person-name--accent">Анна М.</span>
+            </div>
+            <div class="access-grant-card__actions">
+              <button type="button" class="btn btn--primary btn--compact btn--auto">Изменить срок</button>
+              <button type="button" class="btn btn--neutral-outline btn--auto">Отозвать</button>
+            </div>
+          </article>
         </div>
       </div>
-      <div class="tab-panel" data-tab-panel="access" data-panel="incoming">
-        <div class="doc-list"><article class="doc-list__item doc-list__item--static"><div class="avatar">КВ</div><div class="doc-list__body"><p class="doc-list__title">Др. Козлов В.П.</p><p class="doc-list__meta text text--muted">Невролог · Запрос от 01.06.2026</p></div><button type="button" class="btn btn--primary btn--sm">Принять</button></article></div>
+
+      <div class="tab-panel" data-tab-panel="access" data-panel="incoming" role="tabpanel" hidden>
+        <div class="access-list" data-access-list="incoming">
+          <article class="access-grant-card access-grant-card--incoming">
+            <div class="access-grant-card__row">
+              <div class="access-grant-card__lead">
+                <span class="access-grant-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="access-grant-card__identity">
+                <div class="access-grant-card__head">
+                  <h2 class="access-grant-card__doctor">Невролог Козлов В.П.</h2>
+                  <span class="access-grant-card__status access-grant-card__status--waiting">Ожидание</span>
+                </div>
+                <p class="access-grant-card__note">Общий анализ крови</p>
+              </div>
+              </div>
+              <div class="access-grant-card__period">
+                <span class="access-grant-card__label">Доступ:</span>
+                <span class="access-grant-card__date">Запрос от 01.06.2026</span>
+              </div>
+              <div class="access-grant-card__docs">
+                <span class="access-grant-card__label">Используемые документы:</span>
+                <div class="access-grant-card__tags">
+                  <span class="doc-scope-tag">Анализы</span>
+                </div>
+              </div>
+              <span class="person-name">Миша М.</span>
+            </div>
+            <div class="access-grant-card__actions">
+              <button type="button" class="btn btn--primary btn--compact btn--auto">Принять</button>
+              <button type="button" class="btn btn--neutral-outline btn--auto">Отклонить</button>
+            </div>
+          </article>
+        </div>
       </div>
-      <div class="tab-panel" data-tab-panel="access" data-panel="expired">
-        <div class="doc-list"><article class="doc-list__item doc-list__item--static"><div class="avatar">ИЕ</div><div class="doc-list__body"><p class="doc-list__title">Др. Иванова Е.С.</p><p class="doc-list__meta text text--muted">Терапевт · Истёк 20.04.2026</p></div><a href="access-grant.html" class="btn btn--outline btn--sm">Запросить снова</a></article></div>
+
+      <div class="tab-panel" data-tab-panel="access" data-panel="expired" role="tabpanel" hidden>
+        <div class="access-list" data-access-list="expired">
+          <article class="access-grant-card">
+            <div class="access-grant-card__row">
+              <div class="access-grant-card__lead">
+                <span class="access-grant-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="access-grant-card__identity">
+                <div class="access-grant-card__head">
+                  <h2 class="access-grant-card__doctor">Терапевт Иванова Е.С.</h2>
+                  <span class="access-grant-card__status access-grant-card__status--expired">Истёк</span>
+                </div>
+                <p class="access-grant-card__note">Документы, записи</p>
+              </div>
+              </div>
+              <div class="access-grant-card__period">
+                <span class="access-grant-card__label">Доступ:</span>
+                <span class="access-grant-card__date">Истёк 20.04.2026</span>
+              </div>
+              <div class="access-grant-card__docs">
+                <span class="access-grant-card__label">Используемые документы:</span>
+                <div class="access-grant-card__tags">
+                  <span class="doc-scope-tag">Анализы</span>
+                  <span class="doc-scope-tag">Снимки</span>
+                </div>
+              </div>
+              <span class="person-name person-name--accent">Анна М.</span>
+            </div>
+            <div class="access-grant-card__actions">
+              <a href="#/patient/access/grant" class="btn btn--primary btn--compact btn--auto" data-nav>Запросить
+                снова</a>
+            </div>
+          </article>
+        </div>
       </div>
-    </main>
+    </div>
+  </article>
+</main>

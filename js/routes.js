@@ -93,7 +93,7 @@ export const routes = [
   // Patient — nested
   {
     pattern: /^\/patient\/documents\/upload\/?$/,
-    title: 'Загрузка документа',
+    title: 'Загрузить документ',
     role: 'patient',
     page: { file: 'pages/patient/document-upload.html' },
   },

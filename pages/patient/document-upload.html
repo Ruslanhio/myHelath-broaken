@@ -1,16 +1,68 @@
 <script>location.replace('../../index.html#/patient/documents/upload');</script>
-<main class="layout__content">
-      <a href="documents.html" class="btn btn--ghost"><svg class="icon" aria-hidden="true"><use href="../../images/icons.svg#icon-arrow-back"/></svg> Назад</a>
-      <article class="card">
-        <header class="card__header"><h2 class="title title--h2">Загрузить документ</h2></header>
-        <div class="card__body">
-          <form class="auth__form" action="documents.html" method="get">
-            <div class="field"><label class="field__label" for="doc-title">Название документа</label><input class="field__input form-input" type="text" id="doc-title" name="title" placeholder="Общий анализ крови"></div>
-            <div class="field"><label class="field__label" for="doc-cat">Категория</label><select class="field__input form-input" id="doc-cat" name="category"><option>Анализы</option><option>Снимки</option><option>Рецепты</option><option>Заключения</option><option>Прививки</option></select></div>
-            <div class="field"><label class="field__label" for="doc-member">Член семьи</label><select class="field__input form-input" id="doc-member" name="member"><option>Анна Морозова</option><option>Иван Морозов</option><option>София Морозова</option><option>Миша Морозов</option></select></div>
-            <div class="card__dropzone"><svg class="icon" aria-hidden="true"><use href="../../images/icons.svg#icon-upload"/></svg><p class="text">Перетащите файл или <span class="link">выберите</span></p><p class="text text--muted">PDF, JPG, PNG до 10 МБ</p></div>
-            <button type="submit" class="btn btn--primary">Загрузить документ</button>
-          </form>
+<main class="layout__content layout__content--documents document-upload-page">
+  <a href="documents.html" class="btn btn--ghost document-upload__back">
+    <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+    Назад к документам
+  </a>
+
+  <article class="card document-upload-card">
+    <div class="card__body document-upload-card__body">
+      <form class="document-upload-form" data-scenario="document-upload" novalidate>
+        <input type="file" id="document-file" class="document-upload-form__file" hidden
+          accept=".pdf,.jpg,.jpeg,.png,.dicom,image/*,application/pdf">
+
+        <header class="document-upload-card__intro">
+          <h2 class="document-upload-card__title">Загрузите файл</h2>
+          <p class="document-upload-card__subtitle">PDF, JPG, PNG, DICOM — до 50 МБ</p>
+        </header>
+
+        <div class="document-upload-card__dropzone card__dropzone" data-upload-dropzone role="button" tabindex="0"
+          aria-label="Зона загрузки файла">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M14.875 22.75C14.1788 22.75 13.5111 23.0266 13.0188 23.5188C12.5266 24.0111 12.25 24.6788 12.25 25.375V46.375C12.25 47.0712 12.5266 47.7389 13.0188 48.2312C13.5111 48.7234 14.1788 49 14.875 49H41.125C41.8212 49 42.4889 48.7234 42.9812 48.2312C43.4734 47.7389 43.75 47.0712 43.75 46.375V25.375C43.75 24.6788 43.4734 24.0111 42.9812 23.5188C42.4889 23.0266 41.8212 22.75 41.125 22.75H36.75C35.7835 22.75 35 21.9665 35 21C35 20.0335 35.7835 19.25 36.75 19.25H41.125C42.7494 19.25 44.3074 19.8953 45.456 21.044C46.6047 22.1926 47.25 23.7505 47.25 25.375V46.375C47.25 47.9995 46.6047 49.5574 45.456 50.706C44.3074 51.8547 42.7494 52.5 41.125 52.5H14.875C13.2505 52.5 11.6926 51.8547 10.544 50.706C9.39531 49.5574 8.75 47.9995 8.75 46.375V25.375C8.75 23.7505 9.39531 22.1926 10.544 21.044C11.6926 19.8953 13.2505 19.25 14.875 19.25H19.25C20.2165 19.25 21 20.0335 21 21C21 21.9665 20.2165 22.75 19.25 22.75H14.875Z"
+              fill="#156B6A" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M26.7626 4.01256C27.446 3.32915 28.554 3.32915 29.2374 4.01256L37.9874 12.7626C38.6709 13.446 38.6709 14.554 37.9874 15.2374C37.304 15.9209 36.196 15.9209 35.5126 15.2374L28 7.72487L20.4874 15.2374C19.804 15.9209 18.696 15.9209 18.0126 15.2374C17.3291 14.554 17.3291 13.446 18.0126 12.7626L26.7626 4.01256Z"
+              fill="#156B6A" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M28 3.5C28.9665 3.5 29.75 4.2835 29.75 5.25V35.1094C29.75 36.0759 28.9665 36.8594 28 36.8594C27.0335 36.8594 26.25 36.0759 26.25 35.1094V5.25C26.25 4.2835 27.0335 3.5 28 3.5Z"
+              fill="#156B6A" />
+          </svg>
+          <p class="card__dropzone-title">Перетащите файл</p>
+          <p class="card__dropzone-hint">или нажмите для выбора</p>
+          <button type="button" class="document-upload-card__pick-btn">Выбрать файл</button>
         </div>
-      </article>
-    </main>
+
+        <div class="document-upload-field">
+          <span class="document-upload-field__label" id="doc-category-label">Категория</span>
+          <div class="tabs tabs--family-cards tabs--family-cards--fluid" data-tabs="doc-upload-category" role="group"
+            aria-labelledby="doc-category-label">
+            <button type="button" class="tab tab--active" data-tab="analyses">Анализы</button>
+            <button type="button" class="tab" data-tab="images">Снимки</button>
+            <button type="button" class="tab" data-tab="prescriptions">Рецепты</button>
+            <button type="button" class="tab" data-tab="reports">Заключения</button>
+            <button type="button" class="tab" data-tab="vaccines">Прививки</button>
+          </div>
+        </div>
+
+        <div class="document-upload-field">
+          <span class="document-upload-field__label" id="doc-owner-label">Чей это документ?</span>
+          <div class="tabs tabs--family-cards tabs--family-cards--fluid" data-tabs="doc-upload-owner" role="group"
+            aria-labelledby="doc-owner-label">
+            <button type="button" class="tab tab--active" data-tab="anna">Анна</button>
+            <button type="button" class="tab" data-tab="ivan">Иван</button>
+            <button type="button" class="tab" data-tab="sofia">София</button>
+            <button type="button" class="tab" data-tab="misha">Миша</button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--primary-pink document-upload-card__submit">Загрузить документ</button>
+      </form>
+    </div>
+  </article>
+</main>

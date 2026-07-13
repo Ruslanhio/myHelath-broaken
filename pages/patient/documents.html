@@ -1,5 +1,5 @@
 <script>location.replace('../../index.html#/patient/documents');</script>
-<main class="layout__content">
+<main class="layout__content layout__content--documents">
         <div class="documents-header">
           <div class="documents-header__family">
             <span class="documents-header__label">Карта:</span>
@@ -11,7 +11,7 @@
               <a href="family.html" class="tabs--family-cards__add">+ Добавить</a>
             </div>
           </div>
-          <a href="document-upload.html" class="btn btn--primary-pink btn--md btn--auto btn--action">
+          <a href="document-upload.html" class="btn btn--primary-pink btn--action">
             <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -60,7 +60,7 @@
           </div>
         </div>
 
-        <article class="card documents-card">
+        <article class="documents-card" data-tab-root>
           <div class="tabs tabs--documents" data-tabs="doc-categories">
             <button type="button" class="tab tab--active" data-tab="all"><span class="tab__label">Все</span></button>
             <button type="button" class="tab" data-tab="tests"><span class="tab__label">Анализы</span></button>
@@ -72,7 +72,7 @@
           <div class="card__body">
             <div data-view-target="documents" data-view-mode="grid">
               <div class="doc-grid">
-                <a href="document-view.html" class="doc-card">
+                <a href="document-view.html" class="doc-card" data-doc-category="tests">
                   <div class="doc-card__head">
                     <span class="doc-card__icon"><img src="../../images/icon-blood.svg" alt="" width="24"
                         height="24"></span>
@@ -82,21 +82,32 @@
                     <p class="doc-card__title">Общий анализ крови</p>
                     <p class="doc-card__meta">Хеликс | 8 апреля 2026</p>
                   </div>
-                  <p class="doc-card__footer">Терапевт Смирнова Н.В., 9 апреля 2026, 13:54</p>
+                  <p class="doc-card__footer">
+                    <svg class="doc-card__footer-icon" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                      xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M0.508796 5.58224C2.0338 3.39626 4.01112 2.25 5.99205 2.25C8.31856 2.25 10.3227 3.76565 11.505 5.59181L11.5056 5.59267C11.5838 5.71425 11.6254 5.85577 11.6254 6.00035C11.6254 6.14467 11.584 6.28594 11.506 6.40736C10.3247 8.25705 8.33353 9.75 5.99205 9.75C3.62565 9.75 1.6729 8.26015 0.494446 6.41586C0.414371 6.29152 0.37284 6.14627 0.375087 5.99838C0.377339 5.85012 0.423488 5.70586 0.507701 5.58382L0.508796 5.58224ZM1.125 6.00978L1.12604 6.0114C2.21451 7.71522 3.95907 9 5.99205 9C8.00226 9 9.78444 7.70976 10.8742 6.00325L10.8749 6.00213C10.8753 6.0016 10.8754 6.00098 10.8754 6.00035C10.8754 6.00009 10.8754 5.99982 10.8753 5.99957C10.8753 5.99925 10.8751 5.99894 10.875 5.99865C9.78105 4.30957 7.9843 3 5.99205 3C4.31997 3 2.55012 3.96778 1.125 6.00978Z"
+                        fill="currentColor" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M6 4.5C5.17157 4.5 4.5 5.17157 4.5 6C4.5 6.82843 5.17157 7.5 6 7.5C6.82843 7.5 7.5 6.82843 7.5 6C7.5 5.17157 6.82843 4.5 6 4.5ZM3.75 6C3.75 4.75736 4.75736 3.75 6 3.75C7.24264 3.75 8.25 4.75736 8.25 6C8.25 7.24264 7.24264 8.25 6 8.25C4.75736 8.25 3.75 7.24264 3.75 6Z"
+                        fill="currentColor" />
+                    </svg>
+                    Врач: Терапевт Смирнова Н.В., 9 апреля 2026, 13:54
+                  </p>
                 </a>
-                <a href="document-view.html" class="doc-card">
+                <a href="document-view.html" class="doc-card" data-doc-category="prescriptions">
                   <div class="doc-card__head">
                     <span class="doc-card__icon"><img src="../../images/icon-prescription.svg" alt="" width="24"
                         height="24"></span>
                     <span class="status-badge status-badge--danger">Истекает</span>
                   </div>
                   <div class="doc-card__body">
-                    <p class="doc-card__title">Рецепт — Азитромицин</p>
+                    <p class="doc-card__title">Рецепт - Азитромицин</p>
                     <p class="doc-card__meta">ЛОДЭ | 23 марта 2026</p>
                   </div>
-                  <p class="doc-card__footer">Терапевт Петрова Н.Н.</p>
+                  <p class="doc-card__footer">Врач: Терапевт Петрова Н.Н.</p>
                 </a>
-                <a href="document-view.html" class="doc-card">
+                <a href="document-view.html" class="doc-card" data-doc-category="reports">
                   <div class="doc-card__head">
                     <span class="doc-card__icon"><img src="../../images/icon-doctor.svg" alt="" width="24"
                         height="24"></span>
@@ -106,9 +117,9 @@
                     <p class="doc-card__title">Заключение кардиолога</p>
                     <p class="doc-card__meta">34-я поликлиника | 22 марта 2026</p>
                   </div>
-                  <p class="doc-card__footer">Кардиолог Иванов И.И.</p>
+                  <p class="doc-card__footer">Врач: Кардиолог Иванов И.И.</p>
                 </a>
-                <a href="document-view.html" class="doc-card">
+                <a href="document-view.html" class="doc-card" data-doc-category="scans">
                   <div class="doc-card__head">
                     <span class="doc-card__icon"><img src="../../images/icon-xray.svg" alt="" width="24"
                         height="24"></span>
@@ -119,16 +130,16 @@
                     <p class="doc-card__meta">ЛОДЭ | 3 марта 2026</p>
                   </div>
                   <p class="doc-card__footer doc-card__footer--alert">
-                    <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    <svg class="doc-card__footer-icon" width="11" height="11" viewBox="0 0 11 11" fill="none"
                       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="currentColor"
-                        stroke-width="1.5" />
-                      <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5.09576 0.0332366C5.19389 -0.0110789 5.30633 -0.0110789 5.40446 0.0332366C7.26886 0.875234 8.1058 1.14425 10.1702 1.51456C10.3402 1.54506 10.4674 1.6877 10.4783 1.86006C10.8746 8.14162 5.77689 10.3171 5.3902 10.4729C5.30031 10.509 5.19991 10.509 5.11002 10.4729C4.72333 10.3171 -0.374381 8.14162 0.0219474 1.86006C0.0328222 1.6877 0.160005 1.54506 0.329993 1.51456C2.39442 1.14425 3.23136 0.875234 5.09576 0.0332366ZM0.756182 2.1992C0.579363 7.31545 4.41437 9.33771 5.25011 9.71672C6.08585 9.33771 9.92086 7.31545 9.74404 2.1992C7.87845 1.85287 6.97609 1.55957 5.25011 0.786203C3.52412 1.55957 2.62176 1.85287 0.756182 2.1992Z"
+                        fill="currentColor" />
                     </svg>
                     Предоставьте доступ врачу
                   </p>
                 </a>
-                <a href="document-view.html" class="doc-card">
+                <a href="document-view.html" class="doc-card" data-doc-category="scans">
                   <div class="doc-card__head">
                     <span class="doc-card__icon"><img src="../../images/icon-xray.svg" alt="" width="24"
                         height="24"></span>
@@ -138,21 +149,20 @@
                     <p class="doc-card__title">УЗИ брюшной полости</p>
                     <p class="doc-card__meta">34-я поликлиника | 2 марта 2026</p>
                   </div>
-                  <p class="doc-card__footer">Терапевт Смирнова Н.В., 2 марта 2026, 16:52</p>
+                  <p class="doc-card__footer">
+                    <svg class="doc-card__footer-icon" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                      xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M0.508796 5.58224C2.0338 3.39626 4.01112 2.25 5.99205 2.25C8.31856 2.25 10.3227 3.76565 11.505 5.59181L11.5056 5.59267C11.5838 5.71425 11.6254 5.85577 11.6254 6.00035C11.6254 6.14467 11.584 6.28594 11.506 6.40736C10.3247 8.25705 8.33353 9.75 5.99205 9.75C3.62565 9.75 1.6729 8.26015 0.494446 6.41586C0.414371 6.29152 0.37284 6.14627 0.375087 5.99838C0.377339 5.85012 0.423488 5.70586 0.507701 5.58382L0.508796 5.58224ZM1.125 6.00978L1.12604 6.0114C2.21451 7.71522 3.95907 9 5.99205 9C8.00226 9 9.78444 7.70976 10.8742 6.00325L10.8749 6.00213C10.8753 6.0016 10.8754 6.00098 10.8754 6.00035C10.8754 6.00009 10.8754 5.99982 10.8753 5.99957C10.8753 5.99925 10.8751 5.99894 10.875 5.99865C9.78105 4.30957 7.9843 3 5.99205 3C4.31997 3 2.55012 3.96778 1.125 6.00978Z"
+                        fill="currentColor" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M6 4.5C5.17157 4.5 4.5 5.17157 4.5 6C4.5 6.82843 5.17157 7.5 6 7.5C6.82843 7.5 7.5 6.82843 7.5 6C7.5 5.17157 6.82843 4.5 6 4.5ZM3.75 6C3.75 4.75736 4.75736 3.75 6 3.75C7.24264 3.75 8.25 4.75736 8.25 6C8.25 7.24264 7.24264 8.25 6 8.25C4.75736 8.25 3.75 7.24264 3.75 6Z"
+                        fill="currentColor" />
+                    </svg>
+                    Врач: Терапевт Смирнова Н.В., 2 марта 2026, 16:52
+                  </p>
                 </a>
-                <a href="document-view.html" class="doc-card">
-                  <div class="doc-card__head">
-                    <span class="doc-card__icon"><img src="../../images/icon-blood.svg" alt="" width="24"
-                        height="24"></span>
-                    <span class="status-badge status-badge--success">Норма</span>
-                  </div>
-                  <div class="doc-card__body">
-                    <p class="doc-card__title">Общий анализ мочи</p>
-                    <p class="doc-card__meta">Хеликс | 1 марта 2026</p>
-                  </div>
-                  <p class="doc-card__footer">Терапевт Смирнова Н.В., 2 марта 2026, 09:54</p>
-                </a>
-                <a href="document-view.html" class="doc-card">
+                <a href="document-view.html" class="doc-card" data-doc-category="vaccines">
                   <div class="doc-card__head">
                     <span class="doc-card__icon"><img src="../../images/icon-vaccine.svg" alt="" width="24"
                         height="24"></span>
@@ -162,20 +172,21 @@
                     <p class="doc-card__title">Прививка от гриппа «Гриппол Плюс»</p>
                     <p class="doc-card__meta">34-я поликлиника | 12 февраля 2026</p>
                   </div>
-                  <p class="doc-card__footer">Терапевт Петрова Н.Н.</p>
+                  <p class="doc-card__footer">Врач: Терапевт Петрова Н.Н.</p>
                 </a>
               </div>
             </div>
 
             <div data-view-target="documents" data-view-mode="list" hidden>
               <div class="doc-list">
-                <a href="document-view.html" class="doc-list__item">
+                <a href="document-view.html" class="doc-list__item" data-doc-category="tests">
                   <span class="doc-list__icon"><img src="../../images/icon-blood.svg" alt="" width="24" height="24"></span>
                   <span class="doc-list__body">
                     <span class="doc-list__title">Общий анализ крови</span>
                     <span class="doc-list__meta">Анализы | Хеликс | 8 апреля 2026</span>
                   </span>
                   <span class="doc-list__badge doc-list__badge--accent">Анна М.</span>
+                  <span class="list-item__tag">Готово</span>
                   <span class="doc-list__arrow">
                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"
                       aria-hidden="true">
@@ -185,14 +196,15 @@
                     </svg>
                   </span>
                 </a>
-                <a href="document-view.html" class="doc-list__item">
+                <a href="document-view.html" class="doc-list__item" data-doc-category="prescriptions">
                   <span class="doc-list__icon"><img src="../../images/icon-prescription.svg" alt="" width="24"
                       height="24"></span>
                   <span class="doc-list__body">
-                    <span class="doc-list__title">Рецепт — Азитромицин</span>
+                    <span class="doc-list__title">Рецепт - Азитромицин</span>
                     <span class="doc-list__meta">Рецепты | ЛОДЭ | 23 марта 2026</span>
                   </span>
                   <span class="doc-list__badge doc-list__badge--accent">Анна М.</span>
+                  <span class="list-item__tag list-item__tag--danger">Срочно</span>
                   <span class="doc-list__arrow">
                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"
                       aria-hidden="true">
@@ -202,7 +214,7 @@
                     </svg>
                   </span>
                 </a>
-                <a href="document-view.html" class="doc-list__item">
+                <a href="document-view.html" class="doc-list__item" data-doc-category="reports">
                   <span class="doc-list__icon"><img src="../../images/icon-doctor.svg" alt="" width="24"
                       height="24"></span>
                   <span class="doc-list__body">
@@ -210,6 +222,7 @@
                     <span class="doc-list__meta">Заключения | 34-я поликлиника | 22 марта 2026</span>
                   </span>
                   <span class="doc-list__badge doc-list__badge--accent">Анна М.</span>
+                  <span class="list-item__tag list-item__tag--info">Новое</span>
                   <span class="doc-list__arrow">
                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"
                       aria-hidden="true">
@@ -219,13 +232,14 @@
                     </svg>
                   </span>
                 </a>
-                <a href="document-view.html" class="doc-list__item">
+                <a href="document-view.html" class="doc-list__item" data-doc-category="scans">
                   <span class="doc-list__icon"><img src="../../images/icon-xray.svg" alt="" width="24" height="24"></span>
                   <span class="doc-list__body">
                     <span class="doc-list__title">Флюорография</span>
                     <span class="doc-list__meta">Снимки | ЛОДЭ | 3 марта 2026</span>
                   </span>
                   <span class="doc-list__badge doc-list__badge--accent">Анна М.</span>
+                  <span class="list-item__tag list-item__tag--warning">На проверке</span>
                   <span class="doc-list__arrow">
                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"
                       aria-hidden="true">
@@ -235,13 +249,14 @@
                     </svg>
                   </span>
                 </a>
-                <a href="document-view.html" class="doc-list__item">
+                <a href="document-view.html" class="doc-list__item" data-doc-category="scans">
                   <span class="doc-list__icon"><img src="../../images/icon-xray.svg" alt="" width="24" height="24"></span>
                   <span class="doc-list__body">
                     <span class="doc-list__title">УЗИ брюшной полости</span>
                     <span class="doc-list__meta">Снимки | 34-я поликлиника | 2 марта 2026</span>
                   </span>
                   <span class="doc-list__badge doc-list__badge--accent">Анна М.</span>
+                  <span class="list-item__tag">Готово</span>
                   <span class="doc-list__arrow">
                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"
                       aria-hidden="true">
@@ -251,23 +266,7 @@
                     </svg>
                   </span>
                 </a>
-                <a href="document-view.html" class="doc-list__item">
-                  <span class="doc-list__icon"><img src="../../images/icon-blood.svg" alt="" width="24" height="24"></span>
-                  <span class="doc-list__body">
-                    <span class="doc-list__title">Общий анализ мочи</span>
-                    <span class="doc-list__meta">Анализы | Хеликс | 1 марта 2026</span>
-                  </span>
-                  <span class="doc-list__badge doc-list__badge--accent">Анна М.</span>
-                  <span class="doc-list__arrow">
-                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true">
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M0.292893 0.292893C-0.0976315 0.683417 -0.0976315 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976315 12.6834 -0.0976315 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7.70711 7.70711C8.09763 7.31658 8.09763 6.68342 7.70711 6.29289L1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893Z"
-                        fill="#156B6A" />
-                    </svg>
-                  </span>
-                </a>
-                <a href="document-view.html" class="doc-list__item">
+                <a href="document-view.html" class="doc-list__item" data-doc-category="vaccines">
                   <span class="doc-list__icon"><img src="../../images/icon-vaccine.svg" alt="" width="24"
                       height="24"></span>
                   <span class="doc-list__body">
@@ -275,6 +274,7 @@
                     <span class="doc-list__meta">Прививки | 34-я поликлиника | 12 февраля 2026</span>
                   </span>
                   <span class="doc-list__badge doc-list__badge--accent">Анна М.</span>
+                  <span class="list-item__tag">Готово</span>
                   <span class="doc-list__arrow">
                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"
                       aria-hidden="true">

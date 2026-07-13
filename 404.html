@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,33 @@
   <link rel="stylesheet" href="css/core.css">
   <link rel="stylesheet" href="css/auth.css">
 </head>
+
 <body class="layout layout--auth">
-<div class="auth">
-  <div class="auth__form-area">
-    <section class="auth__error">
-      <p class="auth__error-code" aria-hidden="true">404</p>
-      <h1 class="title title--h1">Страница не найдена</h1>
-      <p class="text text--muted">Запрашиваемая страница не существует или была перемещена.</p>
-      <a href="index.html#/login" class="btn btn--primary">На главную</a>
-    </section>
+  <div class="auth">
+    <div class="auth__form-area">
+      <div class="auth__error">
+        <svg width="148" height="148" viewBox="0 0 148 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M13.875 74C13.875 40.8051 40.8051 13.875 74 13.875C107.195 13.875 134.125 40.8051 134.125 74C134.125 107.195 107.195 134.125 74 134.125C40.8051 134.125 13.875 107.195 13.875 74ZM74 23.125C45.9137 23.125 23.125 45.9137 23.125 74C23.125 102.086 45.9137 124.875 74 124.875C102.086 124.875 124.875 102.086 124.875 74C124.875 45.9137 102.086 23.125 74 23.125Z"
+            fill="#156B6A" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M67.9397 40.2773C67.729 36.682 70.8939 34.1094 74 34.1094C77.1061 34.1094 80.271 36.682 80.0603 40.2773L78.5473 80.8296C78.5289 82.0013 78.0519 83.1212 77.2158 83.9512C76.3629 84.7978 75.2062 85.2734 74 85.2734C72.7938 85.2734 71.6371 84.7978 70.7842 83.9512C69.9481 83.1212 69.4711 82.0013 69.4527 80.8296L67.9397 40.2773ZM74.0595 40.1732C74.0595 40.1732 74.0592 40.1729 74.0587 40.1723C74.0592 40.1729 74.0595 40.1732 74.0595 40.1732ZM73.9405 40.1732C73.9405 40.1732 73.9408 40.1729 73.9413 40.1723C73.9408 40.1729 73.9405 40.1732 73.9405 40.1732Z"
+            fill="#156B6A" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M68.2188 100.305C68.2188 96.9521 70.8718 94.2344 74.1445 94.2344C77.4172 94.2344 80.0703 96.9521 80.0703 100.305C80.0703 103.657 77.4172 106.375 74.1445 106.375C70.8718 106.375 68.2188 103.657 68.2188 100.305Z"
+            fill="#156B6A" />
+        </svg>
+        <div class="auth__error-content">
+          <h1 class="auth__error-title">Страница не найдена</h1>
+          <p class="auth__error-text">Возможно страница устарела и была удалена. Попробуйте начать с главной страницы
+          </p>
+          <a href="index.html#/login" class="btn btn--primary">Вернуться на главную</a>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<script src="js/ui.js"></script>
-<script src="js/main.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>

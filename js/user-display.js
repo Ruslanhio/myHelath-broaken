@@ -63,15 +63,6 @@ export function patchUserFields(root = document) {
     }
   });
 
-  root.querySelectorAll('.header__user-name').forEach((el) => {
-    el.textContent = user.shortName || '';
-  });
-  root.querySelectorAll('.header__user-role').forEach((el) => {
-    el.textContent = getUserHeaderRole(user);
-  });
-  root.querySelectorAll('.header .avatar').forEach((el) => {
-    el.textContent = user.initials || '';
-  });
   root.querySelectorAll('.greeting__title:not([data-user])').forEach((el) => {
     el.textContent = getUserGreeting(user);
   });

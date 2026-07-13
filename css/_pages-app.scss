@@ -1,13 +1,16 @@
-// Page-specific BEM blocks (дашборд SPA, без auth/legal)
-@import "pages/shell";
+
 @import "pages/dashboard";
 @import "pages/documents";
+@import "pages/document-view";
+@import "pages/document-upload";
 @import "pages/appointments";
 @import "pages/settings";
 @import "pages/family";
+@import "pages/access";
 @import "pages/help";
 @import "pages/notifications";
 @import "pages/ai-assistant";
 @import "pages/misc";
 @import "pages/doctor";
 @import "pages/appointment-wizard";
+@import "pages/profile";

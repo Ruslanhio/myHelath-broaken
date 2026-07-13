@@ -1,27 +1,122 @@
 <script>location.replace('../../index.html#/patient/documents/doc-1');</script>
-<main class="layout__content">
-      <a href="documents.html" class="btn btn--ghost"><svg class="icon" aria-hidden="true"><use href="../../images/icons.svg#icon-arrow-back"/></svg> Назад к документам</a>
-      <article class="card">
-        <header class="card__header"><h2 class="title title--h2">Общий анализ крови</h2><p class="text text--muted">Анализы · Инвитро · 05.05.2026 · Анна М.</p></header>
-        <div class="card__body">
-          <figure class="card__preview"><img src="../../images/icon-blood.svg" alt="" width="64" height="64"><figcaption class="text text--muted">Предпросмотр документа</figcaption><p class="text text--muted">PDF · 245 КБ</p></figure>
-          <div class="card__actions">
-            <button type="button" class="btn btn--primary btn--md">Скачать</button>
-            <button type="button" class="btn btn--outline btn--md" data-modal-open="modal-history">История просмотров</button>
-            <a href="access-grant.html" class="btn btn--outline btn--md">Поделиться с врачом</a>
-          </div>
+<main class="layout__content layout__content--doc-view">
+  <article class="doc-view" data-doc-view>
+    <header class="doc-view__hero">
+      <div class="doc-view__hero-main">
+        <a href="#/patient/documents" class="doc-view__back btn btn--ghost btn--sm btn--auto" data-nav>
+          <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          Назад
+        </a>
+        <div class="doc-view__hero-icon">
+          <img src="images/icon-blood.svg" alt="" width="32" height="32" data-doc-icon>
         </div>
-      </article>
-  <div class="modal-overlay" id="modal-history" aria-hidden="true" role="dialog" aria-labelledby="modal-history-title">
-    <div class="modal">
-      <div class="modal__header">
-        <h2 class="modal__title title title--h3" id="modal-history-title">История просмотров документов</h2>
-        <button type="button" class="modal__close" data-modal-close aria-label="Закрыть"><svg class="icon" aria-hidden="true"><use href="../../images/icons.svg#icon-close"/></svg></button>
+        <div class="doc-view__hero-body">
+          <div class="doc-view__tags">
+            <span class="doc-view__tag" data-doc-category>Анализы</span>
+            <span class="doc-view__tag doc-view__tag--status" data-doc-status>Норма</span>
+          </div>
+          <h1 class="doc-view__title" data-doc-title>Общий анализ крови</h1>
+          <p class="doc-view__meta" data-doc-meta>Хеликс | 8 апреля 2026</p>
+        </div>
       </div>
-      <div class="modal__body">
-        <div class="settings__session"><div class="settings__session-info"><p class="settings__session-name">Вы</p><p class="settings__session-date text text--muted">05.05.2026, 14:30</p></div></div>
-        <div class="settings__session"><div class="settings__session-info"><p class="settings__session-name">Др. Смирнова Н.В.</p><p class="settings__session-date text text--muted">04.05.2026, 11:15</p></div></div>
+      <div class="doc-view__hero-aside">
+        <a href="#/patient/access" class="doc-view__access-btn btn btn--outline btn--md btn--auto" data-nav>
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path
+              d="M9 15.75C9 15.75 14.25 12.75 14.25 9.375C14.25 7.51104 12.864 6.125 11 6.125C9.13604 6.125 7.75 7.51104 7.75 9.375C7.75 12.75 9 15.75 9 15.75Z"
+              stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M9 10.125C9.62132 10.125 10.125 9.62132 10.125 9C10.125 8.37868 9.62132 7.875 9 7.875C8.37868 7.875 7.875 8.37868 7.875 9C7.875 9.62132 8.37868 10.125 9 10.125Z"
+              stroke="currentColor" stroke-width="1.25" />
+          </svg>
+          Доступ
+        </a>
+        <p class="doc-view__access-note" data-doc-access-note>Последний доступ: Терапевт Смирнова Н.В. | 9 апреля 2026,
+          13:54</p>
+      </div>
+    </header>
+
+    <div class="doc-view__workspace">
+      <div class="doc-view__grid">
+        <div class="doc-view__main">
+          <section class="doc-view__pdf" aria-labelledby="doc-pdf-title">
+            <div class="doc-view__pdf-icon" aria-hidden="true">
+              <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M21 7C21 6.0335 21.7835 5.25 22.75 5.25H30.051C31.443 5.25021 32.7778 5.80315 33.7621 6.78727L33.7623 6.78741L49.2127 22.2379C50.1968 23.2222 50.7498 24.5571 50.75 25.949V47.25C50.75 49.1065 50.0125 50.887 48.6997 52.1997C47.387 53.5125 45.6065 54.25 43.75 54.25H21C19.1435 54.25 17.363 53.5125 16.0503 52.1997C14.7375 50.887 14 49.1065 14 47.25V33.25C14 32.2835 14.7835 31.5 15.75 31.5C16.7165 31.5 17.5 32.2835 17.5 33.25V47.25C17.5 48.1783 17.8687 49.0685 18.5251 49.7249C19.1815 50.3812 20.0717 50.75 21 50.75H43.75C44.6783 50.75 45.5685 50.3812 46.2249 49.7249C46.8812 49.0685 47.25 48.1783 47.25 47.25V25.9495C47.25 25.9494 47.25 25.9493 47.25 25.9492C47.2499 25.4854 47.0656 25.0406 46.7377 24.7126C46.7377 24.7125 46.7376 24.7125 46.7376 24.7125L31.2875 9.26242C30.9595 8.93445 30.5147 8.75014 30.0508 8.75C30.0507 8.75 30.0506 8.75 30.0505 8.75H22.75C21.7835 8.75 21 7.9665 21 7Z" fill="currentColor" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M31.5 6.125C32.4665 6.125 33.25 6.9085 33.25 7.875V21C33.25 21.4641 33.4344 21.9092 33.7626 22.2374C34.0908 22.5656 34.5359 22.75 35 22.75H48.125C49.0915 22.75 49.875 23.5335 49.875 24.5C49.875 25.4665 49.0915 26.25 48.125 26.25H35C33.6076 26.25 32.2723 25.6969 31.2877 24.7123C30.3031 23.7277 29.75 22.3924 29.75 21V7.875C29.75 6.9085 30.5335 6.125 31.5 6.125Z" fill="currentColor" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.957 6.39531C14.3753 7.12871 14 8.24682 14 9.625V25.375C14 25.6872 14.1133 25.8803 14.2548 26.0104C14.418 26.1605 14.6493 26.25 14.875 26.25H14.8865L14.8981 26.2502C15.0104 26.2516 15.1218 26.2306 15.2259 26.1883C15.3299 26.146 15.4245 26.0833 15.5039 26.0039C15.5833 25.9245 15.646 25.8299 15.6883 25.7259C15.7306 25.6218 15.7516 25.5104 15.7502 25.3981L15.75 25.3865V8.75C15.75 7.7835 16.5335 7 17.5 7C18.4665 7 19.25 7.7835 19.25 8.75V25.365C19.2559 25.9402 19.1473 26.5109 18.9306 27.0439C18.7123 27.581 18.3887 28.0688 17.9787 28.4787C17.5688 28.8887 17.081 29.2123 16.5439 29.4306C16.0105 29.6475 15.4392 29.7561 14.8634 29.75C12.7292 29.7441 10.5 28.1017 10.5 25.375V9.625C10.5 7.6574 11.0309 5.71301 12.2148 4.22036C13.4352 2.6816 15.2562 1.75 17.5 1.75C19.7284 1.75 21.5497 2.65263 22.7771 4.17671C23.9684 5.65604 24.5 7.58915 24.5 9.55719V24.733C24.5 30.1963 20.8678 35 14.875 35C8.88233 35 5.25 30.1976 5.25 24.733V15.75C5.25 14.7835 6.0335 14 7 14C7.9665 14 8.75 14.7835 8.75 15.75V24.733C8.75 28.6768 11.2033 31.5 14.875 31.5C18.5466 31.5 21 28.6759 21 24.733V9.55719C21 8.18053 20.6254 7.08506 20.0511 6.37196C19.5129 5.70362 18.7092 5.25 17.5 5.25C16.3061 5.25 15.5021 5.70801 14.957 6.39531Z" fill="currentColor" />
+              </svg>
+            </div>
+            <h2 class="doc-view__pdf-title" id="doc-pdf-title">Предпросмотр PDF</h2>
+            <p class="doc-view__pdf-meta" data-doc-pdf-meta>Общий анализ крови.pdf | 1.2 МБ</p>
+            <button type="button" class="btn btn--outline btn--md btn--auto">Открыть в полном размере</button>
+          </section>
+
+          <section class="doc-view__indicators" aria-labelledby="doc-indicators-title">
+            <h2 class="doc-view__indicators-title" id="doc-indicators-title">Показатели:</h2>
+            <ul class="doc-view__indicator-list" data-doc-indicators></ul>
+          </section>
+        </div>
+
+        <aside class="doc-view__aside">
+          <section class="doc-view__panel doc-view__panel--ai" aria-labelledby="doc-ai-title">
+            <div class="doc-view__panel-header">
+              <span class="doc-view__panel-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 3l1.2 3.6L17 8l-3.6 1.2L12 13l-1.2-3.8L7 8l3.8-1.4L12 3z" />
+                  <path d="M5 14l.8 2.4L8 17l-2.4.8L5 20l-.8-2.2L2 17l2.2-.6L5 14z" />
+                  <path d="M19 14l.8 2.4L22 17l-2.4.8L19 20l-.8-2.2L16 17l2.2-.6L19 14z" />
+                </svg>
+              </span>
+              <h2 class="doc-view__panel-title" id="doc-ai-title">ИИ-помощник</h2>
+            </div>
+            <div class="doc-view__ai-card">
+              <h3 class="doc-view__ai-card-title">ИИ-объяснение результата</h3>
+              <p class="doc-view__ai-card-text" data-doc-ai-summary>Показатели общего анализа крови в пределах
+                референсных значений.</p>
+              <button type="button" class="doc-view__ai-expand" data-doc-ai-expand>Развернуть текст 
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.25 10.5L8.75 7L5.25 3.5" stroke="#1A9B9A" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="doc-view__ai-warning" role="note">
+              <svg class="doc-view__ai-warning-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                aria-hidden="true">
+                <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1" />
+                <path d="M8 7.2V10.8M8 5.6V5.7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+              </svg>
+              <span>ИИ предоставляет информацию в образовательных целях и не является медицинской консультацией.</span>
+            </div>
+            <a href="#/patient/ai-assistant" class="doc-view__ai-action btn btn--primary btn--md btn--full"
+              data-nav>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                aria-hidden="true">
+                <path d="M12 3l1.2 3.6L17 8l-3.6 1.2L12 13l-1.2-3.8L7 8l3.8-1.4L12 3z" />
+              </svg>
+              Подготовиться к визиту врача с этим документом
+            </a>
+          </section>
+
+          <section class="doc-view__panel doc-view__panel--viewers" aria-labelledby="doc-viewers-title">
+            <h2 class="doc-view__panel-title" id="doc-viewers-title">Кто видел этот документ</h2>
+            <ul class="doc-view__viewer-list" data-doc-viewers></ul>
+            <p class="doc-view__privacy">
+              <svg class="doc-view__privacy-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"
+                aria-hidden="true">
+                <path
+                  d="M3.5 6.125V4.375C3.5 2.71815 4.84315 1.375 6.5 1.375C8.15685 1.375 9.5 2.71815 9.5 4.375V6.125"
+                  stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+                <rect x="2.625" y="6.125" width="8.75" height="6.5" rx="1" stroke="currentColor" stroke-width="1" />
+              </svg>
+              <span>Вы полностью контролируете доступ к своим документам. Все просмотры фиксируются.</span>
+            </p>
+          </section>
+        </aside>
       </div>
     </div>
-  </div>
-    </main>
+  </article>
+</main>

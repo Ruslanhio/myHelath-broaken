@@ -1,13 +1,15 @@
 <script>location.replace('../../index.html#/patient/appointments/new');</script>
-<main class="layout__content">
-  <a href="appointments.html" class="btn btn--ghost appointment-new__back">
-    <svg class="icon" aria-hidden="true">
-      <use href="../../images/icons.svg#icon-arrow-back" />
-    </svg>
-    Назад к записям
-  </a>
+<main class="layout__content layout__content--narrow">
+  <div class="appointment-new-layout">
+    <a href="#/patient/appointments" class="btn btn--ghost appointment-new__back" data-nav>
+      <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      Назад к записям
+    </a>
 
-  <article class="card appointment-new-card">
+    <article class="card appointment-new-card" data-appointment-wizard-shell>
     <header class="card__header appointment-new-card__header">
       <h1 class="title title--h1">Запись на приём</h1>
     </header>
@@ -175,18 +177,17 @@
               <div class="appointment-datetime">
                 <div class="appointment-calendar" data-appointment-calendar aria-label="Календарь">
                   <div class="appointment-calendar__header">
-                    <button type="button" class="btn btn--ghost btn--icon appointment-calendar__nav"
+                    <button type="button"
                       data-appointment-calendar-prev aria-label="Предыдущий месяц">
-                      <svg class="icon appointment-calendar__nav-icon appointment-calendar__nav-icon--prev"
-                        aria-hidden="true">
-                        <use href="../../images/icons.svg#icon-chevron-right" />
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 6.70508C14.8132 6.51783 14.5595 6.4126 14.295 6.4126C14.0305 6.4126 13.7769 6.51783 13.59 6.70508L9.00002 11.2951C8.61002 11.6851 8.61002 12.3151 9.00002 12.7051L13.59 17.2951C13.98 17.6851 14.61 17.6851 15 17.2951C15.39 16.9051 15.39 16.2751 15 15.8851L11.12 11.9951L15 8.11508C15.38 7.72508 15.38 7.08508 15 6.70508Z" fill="#15200E" />
                       </svg>
                     </button>
                     <p class="appointment-calendar__title" data-appointment-calendar-title>Июнь 2026</p>
-                    <button type="button" class="btn btn--ghost btn--icon appointment-calendar__nav"
+                    <button type="button"
                       data-appointment-calendar-next aria-label="Следующий месяц">
-                      <svg class="icon" aria-hidden="true">
-                        <use href="../../images/icons.svg#icon-chevron-right" />
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.00002 6.71051C8.61002 7.10051 8.61002 7.73051 9.00002 8.12051L12.88 12.0005L9.00002 15.8805C8.61002 16.2705 8.61002 16.9005 9.00002 17.2905C9.39002 17.6805 10.02 17.6805 10.41 17.2905L15 12.7005C15.39 12.3105 15.39 11.6805 15 11.2905L10.41 6.70051C10.03 6.32051 9.39002 6.32051 9.00002 6.71051Z" fill="#15200E" />
                       </svg>
                     </button>
                   </div>
@@ -258,33 +259,6 @@
         </div>
       </div>
 
-      <div class="appointment-success-block" data-appointment-success hidden>
-        <div class="appointment-wizard__panels appointment-wizard__panels--success">
-          <section class="appointment-step appointment-step--success">
-            <div class="appointment-success">
-              <img class="appointment-success__illustration" src="../../images/recording.png" alt="" width="120"
-                height="120" aria-hidden="true">
-              <h3 class="appointment-success__title">Запись успешно создана!</h3>
-              <p class="appointment-success__text text text--muted">Мы отправили подтверждение на email</p>
-
-              <div class="appointment-confirm-card appointment-success__card" data-appointment-success-card>
-                <span class="appointment-confirm-card__doctor" data-success-doctor>—</span>
-                <div class="appointment-confirm-card__meta">
-                  <span class="appointment-confirm-card__clinic" data-success-clinic>—</span>
-                  <span class="appointment-confirm-card__datetime" data-success-datetime>—</span>
-                </div>
-                <span class="appointment-confirm-card__patient visit-card__patient visit-card__patient--accent"
-                  data-success-patient>—</span>
-              </div>
-
-              <div class="appointment-step__actions appointment-step__actions--center">
-                <a href="#/patient/appointments" class="btn btn--primary" data-nav>К списку записей</a>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-
       <form id="appointment-form" action="appointments.html" method="get">
         <div class="appointment-new__hidden-fields visually-hidden">
           <div class="field">
@@ -335,4 +309,16 @@
       </form>
     </div>
   </article>
+
+    <div class="appointment-success-page" data-appointment-success hidden>
+      <article class="appointment-success-card">
+        <div class="appointment-success">
+          <img class="appointment-success__illustration" src="../../images/recording.png" alt="" width="249"
+            height="249" aria-hidden="true">
+          <h2 class="appointment-success__title">Запись создана!</h2>
+          <p class="appointment-success__text">Детали записи успешно сохранены. Их вы можете увидеть в разделе записи</p>
+        </div>
+      </article>
+    </div>
+  </div>
 </main>

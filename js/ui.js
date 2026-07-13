@@ -10,6 +10,7 @@ const UI = {
     this.initTabs();
     this.initModals();
     this.initPasswordToggle();
+    this.initDocCategoryFilter();
     this.initRoleToggle();
     this.initSegmented();
     this.initLanguageList();
@@ -145,17 +146,32 @@ const UI = {
   },
 
   setPasswordToggleIcon(btn, isVisible) {
-    const icon = btn.querySelector('use');
-    if (icon) {
-      const sprite = icon.getAttribute('href') || icon.getAttribute('xlink:href') || '';
-      const base = sprite.replace(/#.*$/, '');
-      icon.setAttribute('href', `${base}#${isVisible ? 'icon-eye' : 'icon-eye-off'}`);
-      return;
-    }
-
     btn.setAttribute('aria-label', isVisible ? 'Скрыть пароль' : 'Показать пароль');
     btn.classList.toggle('form-input-wrap__toggle--visible', isVisible);
     btn.innerHTML = isVisible ? PASSWORD_EYE_ON_SVG : PASSWORD_EYE_OFF_SVG;
+  },
+
+  filterDocCategory(root, category) {
+    root.querySelectorAll('[data-doc-category]').forEach((el) => {
+      const match = category === 'all' || el.dataset.docCategory === category;
+      el.hidden = !match;
+    });
+  },
+
+  initDocCategoryFilter() {
+    document.querySelectorAll('[data-tabs="doc-categories"]:not([data-doc-categories-init])').forEach((tabsContainer) => {
+      tabsContainer.setAttribute('data-doc-categories-init', '');
+      const root = tabsContainer.closest('.documents-card') || document;
+
+      const apply = (category) => this.filterDocCategory(root, category);
+
+      tabsContainer.addEventListener('tabchange', (e) => {
+        apply(e.detail.tabId);
+      });
+
+      const activeTab = tabsContainer.querySelector('.tab--active')?.getAttribute('data-tab') || 'all';
+      apply(activeTab);
+    });
   },
 
   initPasswordToggle() {

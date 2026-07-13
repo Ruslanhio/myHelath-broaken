@@ -1,0 +1,44 @@
+---
+description: Контекст проекта MyHealth.by — SPA-кабинет на HTML/SCSS/JS
+alwaysApply: true
+---
+
+# MyHealth.by — контекст
+
+## Роль
+Senior Frontend Developer. Медицинский кабинет (пациент + врач) на HTML/CSS/JS без фреймворков и без обязательного backend.
+
+## Фаза работы
+**Исправлять ошибки вёрстки**, не расширять функциональность: битые ресурсы, пути, шрифты, JS, расхождения с Figma, horizontal scroll, недоведённые состояния.
+
+## Архитектура SPA
+- Вход: `index.html` → hash-роутер `js/router.js` + `js/routes.js`
+- Shell: sidebar (`partials/`) + topbar; контент в `#page-content`
+- Страницы: `pages/patient/`, `pages/doctor/`, `auth/`
+- Сборка шаблонов: `npm run build:templates` → `js/generated/templates.js`
+- Runtime-fetch HTML **не используется**
+- Данные: `js/mock/data.js`, `js/api.js`
+- «Семья» в UI = «Склад» в ТЗ: `#/patient/family`
+
+## Приоритеты
+| P | Блок |
+|---|------|
+| P0 | Ресурсы, пути, шрифты, JS (404, битые img/font) |
+| P1 | Auth, документы, семья |
+| P2 | Legal-модалки, адаптив, UI-kit |
+
+## Область проверки (минимум)
+`index.html`, auth-экраны, `pages/patient/documents.html`, `pages/patient/family.html`, `privacy.html`, `terms.html`, все пункты sidebar.
+
+## Сборка
+```bash
+npm run build:templates   # после правок pages/ или partials/
+npm run build:css         # после правок SCSS
+```
+Открывать через локальный HTTP-сервер (`index.html#/login`), не `file://`.
+
+## CSS из превью браузера
+Правки из DevTools / встроенного браузера — **только в SCSS** (классы в `_ui-kit.scss`, `layout/`, `pages/`), не inline `style="..."`. После SCSS — `npm run build:css`. Свойство должно применяться ко **всем** элементам с классом, а не к одному узлу.
+
+## Язык
+Отвечать пользователю на русском.

@@ -30,10 +30,6 @@ function fillAppointmentConfirm(wrapper, draft) {
   set('[data-confirm-clinic]', formatConfirmClinic(draft.clinic));
   set('[data-confirm-datetime]', formatConfirmDateTime(draft.date, draft.time));
   set('[data-confirm-patient]', formatPatientShort(draft.patient));
-  set('[data-success-doctor]', draft.doctor);
-  set('[data-success-clinic]', formatConfirmClinic(draft.clinic));
-  set('[data-success-datetime]', formatConfirmDateTime(draft.date, draft.time));
-  set('[data-success-patient]', formatPatientShort(draft.patient));
 
   const reasonInput = wrapper.querySelector('[data-appointment-reason]');
   if (reasonInput && draft.reason != null) reasonInput.value = draft.reason;
@@ -125,21 +121,19 @@ export function applyDatetimeSelection(wrapper, date, time) {
 }
 
 export function applyAppointmentStep(wrapper, step) {
+  const wizardShell = wrapper.querySelector('[data-appointment-wizard-shell]');
   const wizard = wrapper.querySelector('[data-appointment-wizard]');
   const successBlock = wrapper.querySelector('[data-appointment-success]');
   const familyTop = wrapper.querySelector('.appointment-new__top');
-  if (!wizard) return;
+  if (!wizard && !wizardShell) return;
 
   if (step === 'success') {
-    wizard.hidden = true;
-    if (familyTop) familyTop.hidden = true;
+    if (wizardShell) wizardShell.hidden = true;
     if (successBlock) successBlock.hidden = false;
-    fillAppointmentConfirm(wrapper, State.appointmentDraft || {});
     return;
   }
 
-  wizard.hidden = false;
-  if (familyTop) familyTop.hidden = false;
+  if (wizardShell) wizardShell.hidden = false;
   if (successBlock) successBlock.hidden = true;
 
   const tabId = STEP_TO_TAB[step] || 'facility';

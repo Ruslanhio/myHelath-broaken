@@ -1,0 +1,14 @@
+/* ── Page-specific content area (padding / max-width) ── */
+
+.layout__content--home {
+  padding: rem(43) rem(46) rem(48) rem(48);
+}
+
+.layout__content--documents {
+  padding: rem(45) rem(54) rem(39);
+}
+
+.layout__content--narrow {
+  width: 100%;
+  max-width: $content-width-narrow;
+}

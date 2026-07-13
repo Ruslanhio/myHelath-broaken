@@ -1,0 +1,455 @@
+/* ============================================================
+   UI Kit showcase — только ui-kit.html и buttons.html
+   Не используйте на страницах приложения (pages/):
+   .uikit-page, .buttons-board, .component-set, .component-state,
+   .uikit-demo*, .btn--demo, [data-uikit-copy] — обёртки витрины.
+   Копируйте innerHTML из [data-uikit-copy] → pages/...
+   Стили компонентов: css/_ui-kit.scss, css/uikit/_buttons.scss
+   ============================================================ */
+.uikit-page {
+  padding: 3rem;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.uikit-section {
+  margin-bottom: 4rem;
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.125rem solid $color-surface;
+  }
+
+  &__desc {
+    color: $color-text-muted;
+    margin-bottom: 2rem;
+  }
+}
+
+.uikit-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.uikit-colors {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8.75rem, 1fr));
+  gap: 1rem;
+}
+
+.uikit-page__header {
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.uikit-page__logo {
+  height: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.uikit-page__hint {
+  max-width: 42rem;
+  margin-top: 0.5rem;
+  font-size: $font-size-sm;
+  line-height: 1.5;
+}
+
+.uikit-page [data-uikit-copy] {
+  position: relative;
+}
+
+
+
+.uikit-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &--gap-lg {
+    gap: 1.25rem;
+  }
+
+  &--gap-sm {
+    gap: 0.75rem;
+  }
+}
+
+.uikit-demo {
+  max-width: 25rem;
+
+  &--sm {
+    max-width: 22.4375rem;
+  }
+
+  &--md {
+    max-width: 31.25rem;
+  }
+
+  &--lg {
+    max-width: 43.75rem;
+  }
+
+  &--role {
+    max-width: 24rem;
+  }
+
+  &--segmented {
+    max-width: 33.75rem;
+  }
+}
+
+.uikit-tabs {
+  margin-bottom: 1rem;
+}
+
+.uikit-tabs-settings {
+  margin-top: 2rem;
+}
+
+.uikit-sidebar-demo {
+  background: $gradient-sidebar;
+  padding: 1.5rem;
+  border-radius: $radius-2xl;
+  max-width: 19.1875rem;
+
+  .btn {
+    width: 100%;
+  }
+}
+
+.uikit-color {
+  border-radius: $radius-md;
+  overflow: hidden;
+  border: 0.0625rem solid $color-surface;
+
+  &__swatch {
+    height: 5rem;
+
+    &--primary {
+      background: $color-primary;
+    }
+
+    &--primary-dark {
+      background: $color-primary-dark;
+    }
+
+    &--text {
+      background: $color-text;
+    }
+
+    &--text-muted {
+      background: $color-text-muted;
+    }
+
+    &--surface {
+      background: $color-surface;
+    }
+
+    &--accent {
+      background: $color-accent;
+    }
+
+    &--surface-soft {
+      background: $color-surface-soft;
+    }
+
+    &--neutral-11 {
+      background: $color-neutral-11;
+    }
+  }
+
+  &__label {
+    padding: 0.5rem 0.75rem;
+    font-size: $font-size-sm;
+    background: $color-white;
+  }
+
+  &__hex {
+    padding: 0 0.75rem 0.5rem;
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+}
+
+/* --- Buttons board (Figma component sets) --- */
+.buttons-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.component-set {
+  border: 0.0625rem dashed $color-component-set-border;
+  border-radius: $radius-md;
+  padding: 1.25rem;
+  background: $color-white;
+  min-width: 0;
+
+  &--wide {
+    grid-column: span 2;
+  }
+
+  &--sidebar {
+    background: $gradient-sidebar;
+    border-color: rgba($color-component-set-border, 0.65);
+
+    .component-set__name {
+      color: rgba(255, 255, 255, 0.92);
+    }
+  }
+
+  &--gradient {
+    background: $gradient-quick-actions;
+    border-color: rgba($color-component-set-border, 0.65);
+  }
+
+  &__name {
+    display: block;
+    margin: -0.5rem 0 1rem;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    letter-spacing: 0.02em;
+    color: $color-component-set-border;
+  }
+
+  &__demo-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: -0.25rem 0 1rem;
+  }
+
+  &__demo-control {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
+    padding: 0.375rem 0.75rem;
+    border: 0.0625rem solid $color-secondary-01;
+    border-radius: $radius-md;
+    background: $color-neutral-10;
+    color: $color-secondary-40;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    transition:
+      background-color $transition-fast,
+      color $transition-fast,
+      border-color $transition-fast;
+  }
+
+  &__demo-control:hover {
+    background: $color-secondary-10;
+  }
+
+  &__demo-control.is-active {
+    background: $color-primary-01;
+    border-color: $color-primary-01;
+    color: $color-neutral-10;
+  }
+
+  &__states {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.component-state {
+ 
+
+  &__slot {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .list-item,
+  .visit-card {
+    width: 100%;
+  }
+
+  .nav-item,
+  .sidebar__link {
+    width: 100%;
+    max-width: 17.6875rem;
+  }
+
+  .buttons-board__sidebar-nav {
+    width: 100%;
+    max-width: 17.6875rem;
+  }
+
+  .link-upload,
+  .quick-actions__btn {
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .form-input-wrap,
+  .form-input {
+    width: 100%;
+    max-width: $btn-auth-width;
+  }
+
+  .question-item {
+    width: 100%;
+    max-width: 59.125rem;
+  }
+
+  .btn--outline,
+  .btn--success,
+  .btn--danger-soft,
+  .btn--not-active,
+  .btn--action,
+  .tab-chip,
+  .role-pill {
+    width: 100%;
+  }
+
+  .role-toggle {
+    width: 100%;
+  }
+
+  .tabs {
+    width: 100%;
+  }
+
+  .tab {
+    flex: 0 0 $tab-width;
+    width: $tab-width;
+  }
+}
+
+.component-set--wide .component-state__slot {
+  width: 100%;
+  max-width: $list-item-kit-width;
+}
+
+.component-set:not(.component-set--wide) .component-state__slot--visit {
+  display: flex;
+  width: 100%;
+  max-width: $visit-card-kit-width;
+}
+
+.visit-card:hover,
+.visit-card--hover,
+.visit-card--click,
+.visit-card.is-active {
+  background: #dff0f0;
+}
+
+.visit-card--disabled,
+.visit-card[aria-disabled="true"],
+.visit-card.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .component-set--wide {
+    grid-column: span 1;
+  }
+}
+
+.uikit-button-states {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 26.25rem;
+}
+
+.uikit-button-state {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &__label {
+    flex-shrink: 0;
+    width: 5.5rem;
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+  }
+
+  .btn,
+  .quick-actions__btn {
+    flex: 1;
+  }
+}
+
+.uikit-button-state__hover.btn--primary {
+  background-color: $color-primary-dark;
+}
+
+.uikit-button-state__hover.btn--outline {
+  background-color: $color-surface-soft;
+}
+
+.uikit-button-state__hover.btn--action {
+  background-color: $color-surface;
+}
+
+.uikit-button-state__active.btn--primary {
+  background-color: $color-primary-dark;
+}
+
+.uikit-button-state__active.btn--outline {
+  background-color: $color-surface-soft;
+  border-color: $color-primary-dark;
+  color: $color-primary-dark;
+}
+
+/* Ширина кнопок на витрине (auth-форма) — не для pages/ */
+.btn--demo {
+  width: $btn-auth-width;
+  max-width: 100%;
+}
+
+.component-state .btn--primary.btn--demo {
+  width: $btn-auth-width;
+}
+
+.component-state .btn--success,
+.component-state .btn--danger-soft,
+.component-state .btn--not-active,
+.component-state .btn--error {
+  width: 100%;
+}
+
+.component-state .btn--primary-pink:not(.btn--action) {
+  width: 100%;
+}
+
+.uikit-demo--buttons {
+  max-width: 24rem;
+}
+
+.uikit-demo--quick-actions {
+  max-width: none;
+  padding: 0;
+  background: none;
+}
+
+.uikit-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .uikit-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}

@@ -30,7 +30,7 @@
   </div>
 
   <article class="card doctor-access-card-wrap" data-tab-root>
-    <div class="tabs tabs--access-doctor" data-tabs="doctor-access" role="tablist" aria-label="Разделы доступа">
+    <div class="tabs doctor-access-card__tabs" data-tabs="doctor-access" role="tablist" aria-label="Разделы доступа">
       <button type="button" class="tab tab--active" data-tab="active" role="tab" aria-selected="true">Активные</button>
       <button type="button" class="tab" data-tab="incoming" role="tab" aria-selected="false">Входящие</button>
       <button type="button" class="tab" data-tab="outgoing" role="tab" aria-selected="false">Исходящие</button>
@@ -41,64 +41,78 @@
       <div class="tab-panel tab-panel--active" data-tab-panel="doctor-access" data-panel="active" role="tabpanel">
         <div class="doctor-access-list" data-doctor-access-list="active">
           <article class="doctor-access-row" data-search="Петров А.И. Биохимический анализ крови">
-            <span class="doctor-access-row__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </span>
-            <div class="doctor-access-row__main">
-              <div class="doctor-access-row__head">
-                <span class="doctor-access-row__name">Петров А.И.</span>
-                <span class="doctor-access-row__tag doctor-access-row__tag--direction">Входящий</span>
+            <div class="doctor-access-row__row">
+              <div class="doctor-access-row__lead">
+                <span class="doctor-access-row__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="doctor-access-row__identity">
+                <div class="doctor-access-row__head">
+                  <span class="doctor-access-row__name">Петров А.И.</span>
+                  <span class="doctor-access-row__tag doctor-access-row__tag--direction">Входящий</span>
+                </div>
+                <p class="doctor-access-row__desc">Биохимический анализ крови</p>
               </div>
-              <p class="doctor-access-row__desc">Биохимический анализ крови</p>
-              <p class="doctor-access-row__dates">01.06.2026 - 07.06.2026</p>
-            </div>
-            <div class="doctor-access-row__docs">
-              <span class="doctor-access-row__docs-label">Используемые документы:</span>
-              <div class="doctor-access-row__tags">
-                <span class="doctor-access-row__tag doctor-access-row__tag--doc">Анализы</span>
               </div>
-            </div>
-            <div class="doctor-access-row__aside">
+              <div class="doctor-access-row__period">
+                <span class="doctor-access-row__period-label">Доступ:</span>
+                <span class="doctor-access-row__period-date">01.06.2026 - 07.06.2026</span>
+              </div>
+              <div class="doctor-access-row__docs">
+                <span class="doctor-access-row__docs-label">Используемые документы:</span>
+                <div class="doctor-access-row__tags">
+                  <span class="doctor-access-row__tag doctor-access-row__tag--doc">Анализы</span>
+                </div>
+              </div>
               <span class="doctor-access-row__days doctor-access-row__days--warning">ещё 3 дня</span>
+            </div>
+            <div class="doctor-access-row__actions-row">
               <button type="button" class="btn btn--outline btn--sm btn--auto">Просмотр</button>
             </div>
           </article>
 
           <article class="doctor-access-row" data-search="Зуева Г.Т. Общий анализ крови МРТ">
-            <span class="doctor-access-row__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </span>
-            <div class="doctor-access-row__main">
-              <div class="doctor-access-row__head">
-                <span class="doctor-access-row__name">Зуева Г.Т.</span>
-                <span class="doctor-access-row__tag doctor-access-row__tag--direction">Исходящий</span>
+            <div class="doctor-access-row__row">
+              <div class="doctor-access-row__lead">
+                <span class="doctor-access-row__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="doctor-access-row__identity">
+                <div class="doctor-access-row__head">
+                  <span class="doctor-access-row__name">Зуева Г.Т.</span>
+                  <span class="doctor-access-row__tag doctor-access-row__tag--direction">Исходящий</span>
+                </div>
+                <p class="doctor-access-row__desc">Общий анализ крови | МРТ</p>
               </div>
-              <p class="doctor-access-row__desc">Общий анализ крови | МРТ</p>
-              <p class="doctor-access-row__dates">04.06.2026 - 11.06.2026</p>
-            </div>
-            <div class="doctor-access-row__docs">
-              <span class="doctor-access-row__docs-label">Используемые документы:</span>
-              <div class="doctor-access-row__tags">
-                <span class="doctor-access-row__tag doctor-access-row__tag--doc">Анализы</span>
-                <span class="doctor-access-row__tag doctor-access-row__tag--doc">Снимки</span>
               </div>
-            </div>
-            <div class="doctor-access-row__aside">
+              <div class="doctor-access-row__period">
+                <span class="doctor-access-row__period-label">Доступ:</span>
+                <span class="doctor-access-row__period-date">04.06.2026 - 11.06.2026</span>
+              </div>
+              <div class="doctor-access-row__docs">
+                <span class="doctor-access-row__docs-label">Используемые документы:</span>
+                <div class="doctor-access-row__tags">
+                  <span class="doctor-access-row__tag doctor-access-row__tag--doc">Анализы</span>
+                  <span class="doctor-access-row__tag doctor-access-row__tag--doc">Снимки</span>
+                </div>
+              </div>
               <span class="doctor-access-row__days doctor-access-row__days--ok">ещё 7 дней</span>
+            </div>
+            <div class="doctor-access-row__actions-row">
               <button type="button" class="btn btn--outline btn--sm btn--auto">Просмотр</button>
             </div>
           </article>
@@ -108,31 +122,38 @@
       <div class="tab-panel" data-tab-panel="doctor-access" data-panel="incoming" role="tabpanel" hidden>
         <div class="doctor-access-list" data-doctor-access-list="incoming">
           <article class="doctor-access-row doctor-access-row--incoming" data-search="Иванов В.Г. Биохимический анализ крови">
-            <span class="doctor-access-row__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </span>
-            <div class="doctor-access-row__main">
-              <div class="doctor-access-row__head">
-                <span class="doctor-access-row__name">Иванов В.Г.</span>
-                <span class="doctor-access-row__tag doctor-access-row__tag--waiting">Ожидание</span>
+            <div class="doctor-access-row__row">
+              <div class="doctor-access-row__lead">
+                <span class="doctor-access-row__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="doctor-access-row__identity">
+                <div class="doctor-access-row__head">
+                  <span class="doctor-access-row__name">Иванов В.Г.</span>
+                  <span class="doctor-access-row__tag doctor-access-row__tag--waiting">Ожидание</span>
+                </div>
+                <p class="doctor-access-row__desc">Биохимический анализ крови</p>
               </div>
-              <p class="doctor-access-row__desc">Биохимический анализ крови</p>
-              <p class="doctor-access-row__dates">04.06.2026 - 18.06.2026</p>
-            </div>
-            <div class="doctor-access-row__docs">
-              <span class="doctor-access-row__docs-label">Используемые документы:</span>
-              <div class="doctor-access-row__tags">
-                <span class="doctor-access-row__tag doctor-access-row__tag--doc">Анализы</span>
+              </div>
+              <div class="doctor-access-row__period">
+                <span class="doctor-access-row__period-label">Доступ:</span>
+                <span class="doctor-access-row__period-date">04.06.2026 - 18.06.2026</span>
+              </div>
+              <div class="doctor-access-row__docs">
+                <span class="doctor-access-row__docs-label">Используемые документы:</span>
+                <div class="doctor-access-row__tags">
+                  <span class="doctor-access-row__tag doctor-access-row__tag--doc">Анализы</span>
+                </div>
               </div>
             </div>
-            <div class="doctor-access-row__aside">
+            <div class="doctor-access-row__actions-row">
               <div class="doctor-access-row__actions">
                 <button type="button" class="btn btn--primary btn--sm btn--auto" data-action="doctor-access-accept">Принять</button>
                 <button type="button" class="btn btn--outline btn--sm btn--auto" data-action="doctor-access-decline">Отклонить</button>
@@ -141,32 +162,39 @@
           </article>
 
           <article class="doctor-access-row doctor-access-row--incoming" data-search="Жуков Г.Т. Общий анализ крови МРТ">
-            <span class="doctor-access-row__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </span>
-            <div class="doctor-access-row__main">
-              <div class="doctor-access-row__head">
-                <span class="doctor-access-row__name">Жуков Г.Т.</span>
-                <span class="doctor-access-row__tag doctor-access-row__tag--waiting">Ожидание</span>
+            <div class="doctor-access-row__row">
+              <div class="doctor-access-row__lead">
+                <span class="doctor-access-row__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="doctor-access-row__identity">
+                <div class="doctor-access-row__head">
+                  <span class="doctor-access-row__name">Жуков Г.Т.</span>
+                  <span class="doctor-access-row__tag doctor-access-row__tag--waiting">Ожидание</span>
+                </div>
+                <p class="doctor-access-row__desc">Общий анализ крови | МРТ</p>
               </div>
-              <p class="doctor-access-row__desc">Общий анализ крови | МРТ</p>
-              <p class="doctor-access-row__dates">04.06.2026 - 11.06.2026</p>
-            </div>
-            <div class="doctor-access-row__docs">
-              <span class="doctor-access-row__docs-label">Используемые документы:</span>
-              <div class="doctor-access-row__tags">
-                <span class="doctor-access-row__tag doctor-access-row__tag--doc">Анализы</span>
-                <span class="doctor-access-row__tag doctor-access-row__tag--doc">Снимки</span>
+              </div>
+              <div class="doctor-access-row__period">
+                <span class="doctor-access-row__period-label">Доступ:</span>
+                <span class="doctor-access-row__period-date">04.06.2026 - 11.06.2026</span>
+              </div>
+              <div class="doctor-access-row__docs">
+                <span class="doctor-access-row__docs-label">Используемые документы:</span>
+                <div class="doctor-access-row__tags">
+                  <span class="doctor-access-row__tag doctor-access-row__tag--doc">Анализы</span>
+                  <span class="doctor-access-row__tag doctor-access-row__tag--doc">Снимки</span>
+                </div>
               </div>
             </div>
-            <div class="doctor-access-row__aside">
+            <div class="doctor-access-row__actions-row">
               <div class="doctor-access-row__actions">
                 <button type="button" class="btn btn--primary btn--sm btn--auto" data-action="doctor-access-accept">Принять</button>
                 <button type="button" class="btn btn--outline btn--sm btn--auto" data-action="doctor-access-decline">Отклонить</button>
@@ -175,31 +203,38 @@
           </article>
 
           <article class="doctor-access-row doctor-access-row--incoming" data-search="Демин В.В. МРТ">
-            <span class="doctor-access-row__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </span>
-            <div class="doctor-access-row__main">
-              <div class="doctor-access-row__head">
-                <span class="doctor-access-row__name">Демин В.В.</span>
-                <span class="doctor-access-row__tag doctor-access-row__tag--waiting">Ожидание</span>
+            <div class="doctor-access-row__row">
+              <div class="doctor-access-row__lead">
+                <span class="doctor-access-row__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="doctor-access-row__identity">
+                <div class="doctor-access-row__head">
+                  <span class="doctor-access-row__name">Демин В.В.</span>
+                  <span class="doctor-access-row__tag doctor-access-row__tag--waiting">Ожидание</span>
+                </div>
+                <p class="doctor-access-row__desc">МРТ</p>
               </div>
-              <p class="doctor-access-row__desc">МРТ</p>
-              <p class="doctor-access-row__dates">04.06.2026 - 11.06.2026</p>
-            </div>
-            <div class="doctor-access-row__docs">
-              <span class="doctor-access-row__docs-label">Используемые документы:</span>
-              <div class="doctor-access-row__tags">
-                <span class="doctor-access-row__tag doctor-access-row__tag--doc">Снимки</span>
+              </div>
+              <div class="doctor-access-row__period">
+                <span class="doctor-access-row__period-label">Доступ:</span>
+                <span class="doctor-access-row__period-date">04.06.2026 - 11.06.2026</span>
+              </div>
+              <div class="doctor-access-row__docs">
+                <span class="doctor-access-row__docs-label">Используемые документы:</span>
+                <div class="doctor-access-row__tags">
+                  <span class="doctor-access-row__tag doctor-access-row__tag--doc">Снимки</span>
+                </div>
               </div>
             </div>
-            <div class="doctor-access-row__aside">
+            <div class="doctor-access-row__actions-row">
               <div class="doctor-access-row__actions">
                 <button type="button" class="btn btn--primary btn--sm btn--auto" data-action="doctor-access-accept">Принять</button>
                 <button type="button" class="btn btn--outline btn--sm btn--auto" data-action="doctor-access-decline">Отклонить</button>
@@ -212,31 +247,38 @@
       <div class="tab-panel" data-tab-panel="doctor-access" data-panel="outgoing" role="tabpanel" hidden>
         <div class="doctor-access-list" data-doctor-access-list="outgoing">
           <article class="doctor-access-row" data-search="Иванов В.Г. Биохимический анализ крови">
-            <span class="doctor-access-row__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </span>
-            <div class="doctor-access-row__main">
-              <div class="doctor-access-row__head">
-                <span class="doctor-access-row__name">Иванов В.Г.</span>
-                <span class="doctor-access-row__tag doctor-access-row__tag--review">На рассмотрении</span>
+            <div class="doctor-access-row__row">
+              <div class="doctor-access-row__lead">
+                <span class="doctor-access-row__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="doctor-access-row__identity">
+                <div class="doctor-access-row__head">
+                  <span class="doctor-access-row__name">Иванов В.Г.</span>
+                  <span class="doctor-access-row__tag doctor-access-row__tag--review">На рассмотрении</span>
+                </div>
+                <p class="doctor-access-row__desc">Биохимический анализ крови</p>
               </div>
-              <p class="doctor-access-row__desc">Биохимический анализ крови</p>
-              <p class="doctor-access-row__dates">04.06.2026 - 18.06.2026</p>
-            </div>
-            <div class="doctor-access-row__docs">
-              <span class="doctor-access-row__docs-label">Используемые документы:</span>
-              <div class="doctor-access-row__tags">
-                <span class="doctor-access-row__tag doctor-access-row__tag--doc">Анализы</span>
+              </div>
+              <div class="doctor-access-row__period">
+                <span class="doctor-access-row__period-label">Доступ:</span>
+                <span class="doctor-access-row__period-date">04.06.2026 - 18.06.2026</span>
+              </div>
+              <div class="doctor-access-row__docs">
+                <span class="doctor-access-row__docs-label">Используемые документы:</span>
+                <div class="doctor-access-row__tags">
+                  <span class="doctor-access-row__tag doctor-access-row__tag--doc">Анализы</span>
+                </div>
               </div>
             </div>
-            <div class="doctor-access-row__aside">
+            <div class="doctor-access-row__actions-row">
               <button type="button" class="btn btn--outline btn--sm btn--auto">Просмотр</button>
             </div>
           </article>
@@ -246,63 +288,77 @@
       <div class="tab-panel" data-tab-panel="doctor-access" data-panel="expired" role="tabpanel" hidden>
         <div class="doctor-access-list" data-doctor-access-list="expired">
           <article class="doctor-access-row doctor-access-row--expired" data-search="Иванов В.Г. Биохимический анализ крови">
-            <span class="doctor-access-row__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </span>
-            <div class="doctor-access-row__main">
-              <div class="doctor-access-row__head">
-                <span class="doctor-access-row__name">Иванов В.Г.</span>
-                <span class="doctor-access-row__tag doctor-access-row__tag--expired">Истёкший</span>
-                <span class="doctor-access-row__tag doctor-access-row__tag--direction">Исходящий</span>
+            <div class="doctor-access-row__row">
+              <div class="doctor-access-row__lead">
+                <span class="doctor-access-row__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="doctor-access-row__identity">
+                <div class="doctor-access-row__head">
+                  <span class="doctor-access-row__name">Иванов В.Г.</span>
+                  <span class="doctor-access-row__tag doctor-access-row__tag--expired">Истёкший</span>
+                  <span class="doctor-access-row__tag doctor-access-row__tag--direction">Исходящий</span>
+                </div>
+                <p class="doctor-access-row__desc">Биохимический анализ крови</p>
               </div>
-              <p class="doctor-access-row__desc">Биохимический анализ крови</p>
-              <p class="doctor-access-row__dates">04.05.2026 - 18.05.2026</p>
-            </div>
-            <div class="doctor-access-row__docs">
-              <span class="doctor-access-row__docs-label">Используемые документы:</span>
-              <div class="doctor-access-row__tags">
-                <span class="doctor-access-row__tag doctor-access-row__tag--doc doctor-access-row__tag--doc-muted">Анализы</span>
+              </div>
+              <div class="doctor-access-row__period">
+                <span class="doctor-access-row__period-label">Доступ:</span>
+                <span class="doctor-access-row__period-date">04.05.2026 - 18.05.2026</span>
+              </div>
+              <div class="doctor-access-row__docs">
+                <span class="doctor-access-row__docs-label">Используемые документы:</span>
+                <div class="doctor-access-row__tags">
+                  <span class="doctor-access-row__tag doctor-access-row__tag--doc doctor-access-row__tag--doc-muted">Анализы</span>
+                </div>
               </div>
             </div>
-            <div class="doctor-access-row__aside">
+            <div class="doctor-access-row__actions-row">
               <button type="button" class="btn btn--outline btn--sm btn--auto">Просмотр</button>
             </div>
           </article>
 
           <article class="doctor-access-row doctor-access-row--expired" data-search="Гришко В.Г. МРТ">
-            <span class="doctor-access-row__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </span>
-            <div class="doctor-access-row__main">
-              <div class="doctor-access-row__head">
-                <span class="doctor-access-row__name">Гришко В.Г.</span>
-                <span class="doctor-access-row__tag doctor-access-row__tag--expired">Истёкший</span>
-                <span class="doctor-access-row__tag doctor-access-row__tag--direction">Исходящий</span>
+            <div class="doctor-access-row__row">
+              <div class="doctor-access-row__lead">
+                <span class="doctor-access-row__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="doctor-access-row__identity">
+                <div class="doctor-access-row__head">
+                  <span class="doctor-access-row__name">Гришко В.Г.</span>
+                  <span class="doctor-access-row__tag doctor-access-row__tag--expired">Истёкший</span>
+                  <span class="doctor-access-row__tag doctor-access-row__tag--direction">Исходящий</span>
+                </div>
+                <p class="doctor-access-row__desc">МРТ</p>
               </div>
-              <p class="doctor-access-row__desc">МРТ</p>
-              <p class="doctor-access-row__dates">04.05.2026 - 18.05.2026</p>
-            </div>
-            <div class="doctor-access-row__docs">
-              <span class="doctor-access-row__docs-label">Используемые документы:</span>
-              <div class="doctor-access-row__tags">
-                <span class="doctor-access-row__tag doctor-access-row__tag--doc doctor-access-row__tag--doc-muted">Снимки</span>
+              </div>
+              <div class="doctor-access-row__period">
+                <span class="doctor-access-row__period-label">Доступ:</span>
+                <span class="doctor-access-row__period-date">04.05.2026 - 18.05.2026</span>
+              </div>
+              <div class="doctor-access-row__docs">
+                <span class="doctor-access-row__docs-label">Используемые документы:</span>
+                <div class="doctor-access-row__tags">
+                  <span class="doctor-access-row__tag doctor-access-row__tag--doc doctor-access-row__tag--doc-muted">Снимки</span>
+                </div>
               </div>
             </div>
-            <div class="doctor-access-row__aside">
+            <div class="doctor-access-row__actions-row">
               <button type="button" class="btn btn--outline btn--sm btn--auto">Просмотр</button>
             </div>
           </article>
