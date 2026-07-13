@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor (локальное; .vscode/settings.json — в репозитории по желанию команды)
+.idea/
+*.swp
+*~
+
+# Sass cache
+.sass-cache/
+
+# Cursor — локальное состояние; rules коммитим
+.cursor/rules/
+
+
+# Случайные артефакты в корне
+/npm

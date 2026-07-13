@@ -76,16 +76,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 6.4375rem;
   height: 1.875rem;
-  padding: 0 1.25rem;
+  padding: rem(7) rem(26);
   border: 0.0625rem solid $color-border;
   border-radius: $radius-md;
   background: $color-white;
   color: $color-text;
   font-size: $font-size-sm;
   font-weight: $font-weight-medium;
-  line-height: 1;
+  line-height: 133%;
   cursor: pointer;
   transition: background-color $transition-fast, border-color $transition-fast;
 
@@ -102,7 +101,7 @@
 .ai-assistant__body {
   flex: 1;
   min-height: 0;
-  padding: 1rem 1rem 0;
+  padding-top: 1rem;
   background: #f8f8f8;
   overflow: hidden;
 }
@@ -215,7 +214,7 @@ span {
   font-family: inherit;
   font-size: 0.8125rem;
   line-height: 1.45;
-  color: $color-text;
+  color: $color-secondary-50;
 
   &::placeholder {
     color: $color-text-muted;
@@ -252,6 +251,7 @@ span {
   font-size: 0.625rem;
   line-height: 1.5;
   color: $color-text-muted;
+  text-align: center;
 }
 
 .ai-assistant__messages .chat__message {

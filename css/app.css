@@ -163,12 +163,7 @@
   color: #15200e;
 }
 .tabs--family-cards .tab {
-  flex: 0 0 8.5625rem;
-  width: 8.5625rem;
-  min-width: 0;
-  max-width: none;
-  height: 2.75rem;
-  padding: 0 0.75rem;
+  width: 100%;
   border-radius: 0.375rem;
   border-bottom: none;
   background: transparent;
@@ -224,12 +219,11 @@
 .tabs--family-cards--fluid {
   display: flex;
   width: 100%;
+  height: auto;
 }
 .tabs--family-cards--fluid .tab {
-  flex: 1 1 0;
-  width: auto;
-  min-width: 0;
-  max-width: none;
+  width: 100%;
+  padding: 0.5625rem 0 0.5rem;
 }
 
 .documents-toolbar {
@@ -313,6 +307,11 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem 2.625rem;
+}
+
+.doc-card[hidden],
+.doc-list__item[hidden] {
+  display: none !important;
 }
 
 .doc-card {
@@ -490,6 +489,7 @@ body:has(.layout__content--doc-view) {
 .doc-view__back {
   flex-shrink: 0;
   margin-top: 0.25rem;
+  padding: 0;
   color: rgba(255, 255, 255, 0.92);
 }
 .doc-view__back:hover {
@@ -559,13 +559,7 @@ body:has(.layout__content--doc-view) {
   text-align: right;
 }
 .doc-view__access-btn {
-  background: #ffffff;
-  border-color: transparent;
-  color: #156b6a;
-  gap: 0.5rem;
-}
-.doc-view__access-btn:hover:not(:disabled) {
-  background: #e9f5f5;
+  line-height: 114%;
 }
 .doc-view__access-note {
   margin: 0;
@@ -579,6 +573,18 @@ body:has(.layout__content--doc-view) {
   overflow-y: auto;
   background: #fafbfc;
   border-radius: 1rem 1rem 0 0;
+  padding: 2rem;
+}
+.doc-view__toolbar {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 93.5625rem;
+  margin: 0 auto 1rem;
+}
+.doc-view__toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
 }
 .doc-view__grid {
   display: grid;
@@ -880,31 +886,10 @@ body:has(.layout__content--doc-view) {
 }
 /* ── Document upload (patient) — Figma 137:4781 ── */
 .document-upload-page {
-  display: grid;
-  grid-template-columns: minmax(0, 46rem);
-  justify-content: center;
-  width: 100%;
-}
-
-.document-upload__back {
-  display: inline-flex;
-  justify-self: start;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  padding: 0;
-  line-height: 131%;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #424242;
-  text-decoration: none;
-}
-.document-upload__back .icon {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-.document-upload__back:hover {
-  color: #1a9b9a;
+  width: 100%;
 }
 
 .document-upload-card {
@@ -1017,9 +1002,13 @@ body:has(.layout__content--doc-view) {
   line-height: 150%;
   color: #15200e;
 }
+.document-upload-field .tabs {
+  padding: 0.125rem;
+}
 .document-upload-field .tabs--family-cards {
-  padding-top: 0.125rem;
-  padding-left: 0.125rem;
+  width: 100%;
+  height: auto;
+  padding: 0.125rem;
 }
 
 .card__dropzone-title {
@@ -1220,6 +1209,29 @@ body:has(.layout__content--doc-view) {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+}
+.appointment-item__actions .btn--primary {
+  width: auto;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 133%;
+  text-align: center;
+  color: #ffffff;
+}
+.appointment-item__actions .btn--action {
+  width: auto;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 133%;
+  text-align: center;
+  background-color: #ffffff;
+  border: 0.0625rem solid #d5d5d5;
+  color: #15200e;
+}
+.appointment-item__actions .appointment-item__btn--repeat {
+  color: #156b6a;
 }
 
 .status-badge--upcoming {
@@ -2207,16 +2219,15 @@ button.settings__row--nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 6.4375rem;
   height: 1.875rem;
-  padding: 0 1.25rem;
+  padding: 0.4375rem 1.625rem;
   border: 0.0625rem solid #d5d5d5;
   border-radius: 0.5rem;
   background: #ffffff;
   color: #15200e;
   font-size: 0.75rem;
   font-weight: 500;
-  line-height: 1;
+  line-height: 133%;
   cursor: pointer;
   transition: background-color 150ms ease, border-color 150ms ease;
 }
@@ -2232,7 +2243,7 @@ button.settings__row--nav {
 .ai-assistant__body {
   flex: 1;
   min-height: 0;
-  padding: 1rem 1rem 0;
+  padding-top: 1rem;
   background: #f8f8f8;
   overflow: hidden;
 }
@@ -2342,7 +2353,7 @@ button.settings__row--nav {
   font-family: inherit;
   font-size: 0.8125rem;
   line-height: 1.45;
-  color: #15200e;
+  color: #767676;
 }
 .ai-assistant__input::placeholder {
   color: #767676;
@@ -2376,6 +2387,7 @@ button.settings__row--nav {
   font-size: 0.625rem;
   line-height: 1.5;
   color: #767676;
+  text-align: center;
 }
 
 .ai-assistant__messages .chat__message {
@@ -3285,6 +3297,14 @@ button.settings__row--nav {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.appointment-step__search .documents-search__input {
+  font-size: 0.875rem;
+  color: #15200e;
+}
+.appointment-step__search .documents-search__input::placeholder {
+  font-size: 0.875rem;
+  color: #767676;
+}
 
 .appointment-facility-grid {
   display: grid;
@@ -3301,8 +3321,9 @@ button.settings__row--nav {
   background: #ffffff;
   border: 0.0625rem solid #d5d5d5;
   border-radius: 0.625rem;
-  font-size: 1rem;
+  font-size: 0.8125rem;
   font-weight: 500;
+  line-height: 150%;
   color: #15200e;
   cursor: pointer;
   text-align: center;
@@ -4501,7 +4522,7 @@ button.settings__row--nav {
   .settings__row--toggle .settings__label {
     font-size: 0.75rem;
   }
-  .settings-layout .btn--sm {
+  .settings-layout .settings__session .btn {
     font-size: 0.75rem;
     padding: 0.25rem 0.625rem;
   }

@@ -214,6 +214,16 @@
 .appointment-step__search {
   margin-top: 1rem;
   margin-bottom: 1rem;
+
+  .documents-search__input {
+    font-size: $font-size-base;
+    color: $color-text;
+
+    &::placeholder {
+      font-size: $font-size-base;
+      color: $color-text-muted;
+    }
+  }
 }
 
 .appointment-facility-grid {
@@ -231,8 +241,9 @@
   background: $color-white;
   border: 0.0625rem solid $color-secondary-01;
   border-radius: $radius-lg;
-  font-size: $font-size-md;
+  font-size: $font-size-13;
   font-weight: $font-weight-medium;
+  line-height: $line-height-normal;
   color: $color-text;
   cursor: pointer;
   text-align: center;

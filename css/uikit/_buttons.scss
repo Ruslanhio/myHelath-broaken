@@ -49,8 +49,7 @@
 }
 
 .btn--primary.btn--md,
-.btn--primary.btn--sm,
-.btn--primary.btn--auto {
+.btn--primary.btn--compact {
   width: auto;
 }
 
@@ -146,12 +145,6 @@
   color: $color-primary-02;
 }
 
-.btn--sm {
-  padding: 0.25rem $space-md;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-medium;
-}
-
 .btn--md {
   padding: 0.4375rem $space-xl;
   font-size: $font-size-sm;
@@ -160,10 +153,6 @@
 
 .btn--primary.btn--md {
   color: $color-neutral-10;
-}
-
-.btn--auto {
-  width: auto;
 }
 
 .btn--full {
@@ -360,6 +349,29 @@
     &:hover:not(:disabled) {
       background-color: #f99;
     }
+  }
+}
+
+.btn--share {
+  line-height: 114%;
+}
+
+.btn--download {
+  padding: 0.9375rem 1.75rem;
+  background-color: $color-primary;
+  border: 0.0625rem solid transparent;
+  color: $color-white;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  line-height: 114%;
+  width: auto;
+
+  &:hover:not(:disabled) {
+    background-color: $color-primary-dark;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $color-primary-dark;
   }
 }
 

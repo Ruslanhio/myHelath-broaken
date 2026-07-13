@@ -98,7 +98,7 @@
           <div class="tab-panel" data-tab-panel="appointment-wizard" data-panel="specialty" hidden>
             <section class="appointment-step appointment-step--specialty">
               <h3 class="title title--h3">Выберите специализацию</h3>
-              <p class="text text--muted">Подберите специалиста для вашего случая</p>
+              <p class="text text--muted">Или введите название врача / симптом</p>
 
               <div class="appointment-step__search">
                 <div class="documents-search">
@@ -111,7 +111,7 @@
                         stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
-                  <input class="documents-search__input" type="search" placeholder="Терапевт, кардиолог..."
+                  <input class="documents-search__input" type="search" placeholder="Кардиолог, боль в спине, давление..."
                     aria-label="Поиск специализации">
                 </div>
               </div>
@@ -122,12 +122,21 @@
                 <button type="button" class="appointment-facility-chip"
                   data-appointment-specialty="Кардиолог">Кардиолог</button>
                 <button type="button" class="appointment-facility-chip"
-                  data-appointment-specialty="Педиатр">Педиатр</button>
-                <button type="button" class="appointment-facility-chip"
                   data-appointment-specialty="Невролог">Невролог</button>
-                <button type="button" class="appointment-facility-chip" data-appointment-specialty="ЛОР">ЛОР</button>
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-specialty="Дерматолог">Дерматолог</button>
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-specialty="Эндокринолог">Эндокринолог</button>
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-specialty="Гинеколог">Гинеколог</button>
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-specialty="Ортопед">Ортопед</button>
                 <button type="button" class="appointment-facility-chip"
                   data-appointment-specialty="Офтальмолог">Офтальмолог</button>
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-specialty="Педиатр">Педиатр</button>
+                <button type="button" class="appointment-facility-chip"
+                  data-appointment-specialty="Хирург">Хирург</button>
               </div>
             </section>
           </div>
@@ -135,7 +144,7 @@
           <div class="tab-panel" data-tab-panel="appointment-wizard" data-panel="doctor" hidden>
             <section class="appointment-step appointment-step--doctor">
               <h3 class="title title--h3">Выберите врача</h3>
-              <p class="text text--muted">Список доступных специалистов</p>
+              <p class="text text--muted">Или введите фамилию врача</p>
 
               <div class="appointment-step__search">
                 <div class="documents-search">
@@ -148,20 +157,20 @@
                         stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
-                  <input class="documents-search__input" type="search" placeholder="Фамилия врача..."
+                  <input class="documents-search__input" type="search" placeholder="Шевчук, Смирнова..."
                     aria-label="Поиск врача">
                 </div>
               </div>
 
               <div class="appointment-facility-grid appointment-facility-grid--doctor" role="list">
                 <button type="button" class="appointment-facility-chip"
-                  data-appointment-doctor="Кардиолог Смирнова Н.В.">Кардиолог Смирнова Н.В.</button>
+                  data-appointment-doctor="Шевчук Н.П.">Шевчук Н.П.</button>
                 <button type="button" class="appointment-facility-chip"
-                  data-appointment-doctor="Педиатр Петров А.И.">Педиатр Петров А.И.</button>
+                  data-appointment-doctor="Смирнова Е.П.">Смирнова Е.П.</button>
                 <button type="button" class="appointment-facility-chip"
-                  data-appointment-doctor="Терапевт Иванов И.Н.">Терапевт Иванов И.Н.</button>
+                  data-appointment-doctor="Кравченко А.А.">Кравченко А.А.</button>
                 <button type="button" class="appointment-facility-chip"
-                  data-appointment-doctor="Невролог Козлова Е.А.">Невролог Козлова Е.А.</button>
+                  data-appointment-doctor="Иванов И.Н.">Иванов И.Н.</button>
               </div>
             </section>
           </div>
@@ -278,19 +287,23 @@
             <select class="field__input form-input" id="spec" name="spec">
               <option>Терапевт</option>
               <option>Кардиолог</option>
-              <option>Педиатр</option>
               <option>Невролог</option>
-              <option>ЛОР</option>
+              <option>Дерматолог</option>
+              <option>Эндокринолог</option>
+              <option>Гинеколог</option>
+              <option>Ортопед</option>
               <option>Офтальмолог</option>
+              <option>Педиатр</option>
+              <option>Хирург</option>
             </select>
           </div>
           <div class="field">
             <label class="field__label" for="doctor">Врач</label>
             <select class="field__input form-input" id="doctor" name="doctor">
-              <option>Кардиолог Смирнова Н.В.</option>
-              <option>Педиатр Петров А.И.</option>
-              <option>Терапевт Иванов И.Н.</option>
-              <option>Невролог Козлова Е.А.</option>
+              <option>Шевчук Н.П.</option>
+              <option>Смирнова Е.П.</option>
+              <option>Кравченко А.А.</option>
+              <option>Иванов И.Н.</option>
             </select>
           </div>
           <div class="field">

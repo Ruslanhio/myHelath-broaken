@@ -148,7 +148,7 @@ html {
 
 body {
   min-height: 100%;
-  font-size: var(--font-size-base);
+  font-size: $font-size-base;
   line-height: $line-height-normal;
   -webkit-font-smoothing: antialiased;
 }
@@ -159,26 +159,25 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: var(--font-size-lg);
   line-height: $line-height-tight;
 }
 
 h1 {
-  font-size: var(--font-size-xl);
+  font-size: $font-size-xl;
 }
 
 h2 {
-  font-size: var(--font-size-lg);
+  font-size: $font-size-lg;
 }
 
 h3 {
-  font-size: var(--font-size-md);
+  font-size: $font-size-md;
 }
 
 h4,
 h5,
 h6 {
-  font-size: var(--font-size-base);
+  font-size: $font-size-base;
 }
 
 img,

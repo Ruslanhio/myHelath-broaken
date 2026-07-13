@@ -46,6 +46,10 @@ const UI = {
       panel.toggleAttribute('hidden', !isActive);
     });
 
+    if (groupId === 'doc-categories') {
+      this.syncDocCategoryFilter(tabsContainer);
+    }
+
     if (!silent) {
       tabsContainer.dispatchEvent(
         new CustomEvent('tabchange', { detail: { groupId, tabId }, bubbles: true })
@@ -70,7 +74,10 @@ const UI = {
           }
 
           const targetId = tab.getAttribute('data-tab');
-          if (targetId) this.activateTab(groupId, targetId);
+          if (targetId) {
+            const scopeRoot = container.closest('#page-content') || document;
+            this.activateTab(groupId, targetId, { root: scopeRoot });
+          }
         });
       });
     });
@@ -153,24 +160,26 @@ const UI = {
 
   filterDocCategory(root, category) {
     root.querySelectorAll('[data-doc-category]').forEach((el) => {
-      const match = category === 'all' || el.dataset.docCategory === category;
-      el.hidden = !match;
+      const docCategory = el.getAttribute('data-doc-category');
+      const match = category === 'all' || docCategory === category;
+      el.toggleAttribute('hidden', !match);
     });
+  },
+
+  syncDocCategoryFilter(tabsContainer) {
+    const root =
+      tabsContainer.closest('.documents-card') ||
+      tabsContainer.closest('[data-tab-root]') ||
+      tabsContainer.parentElement ||
+      document;
+    const activeTab = tabsContainer.querySelector('.tab--active')?.getAttribute('data-tab') || 'all';
+    this.filterDocCategory(root, activeTab);
   },
 
   initDocCategoryFilter() {
     document.querySelectorAll('[data-tabs="doc-categories"]:not([data-doc-categories-init])').forEach((tabsContainer) => {
       tabsContainer.setAttribute('data-doc-categories-init', '');
-      const root = tabsContainer.closest('.documents-card') || document;
-
-      const apply = (category) => this.filterDocCategory(root, category);
-
-      tabsContainer.addEventListener('tabchange', (e) => {
-        apply(e.detail.tabId);
-      });
-
-      const activeTab = tabsContainer.querySelector('.tab--active')?.getAttribute('data-tab') || 'all';
-      apply(activeTab);
+      this.syncDocCategoryFilter(tabsContainer);
     });
   },
 

@@ -238,7 +238,7 @@ html {
 
 body {
   min-height: 100%;
-  font-size: var(--font-size-base);
+  font-size: 0.875rem;
   line-height: 150%;
   -webkit-font-smoothing: antialiased;
 }
@@ -249,26 +249,25 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: var(--font-size-lg);
   line-height: 125%;
 }
 
 h1 {
-  font-size: var(--font-size-xl);
+  font-size: 1.5rem;
 }
 
 h2 {
-  font-size: var(--font-size-lg);
+  font-size: 1.25rem;
 }
 
 h3 {
-  font-size: var(--font-size-md);
+  font-size: 1rem;
 }
 
 h4,
 h5,
 h6 {
-  font-size: var(--font-size-base);
+  font-size: 0.875rem;
 }
 
 img,
@@ -347,8 +346,7 @@ h6 {
 }
 
 .btn--primary.btn--md,
-.btn--primary.btn--sm,
-.btn--primary.btn--auto {
+.btn--primary.btn--compact {
   width: auto;
 }
 
@@ -444,12 +442,6 @@ h6 {
   color: #156b6a;
 }
 
-.btn--sm {
-  padding: 0.25rem 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
 .btn--md {
   padding: 0.4375rem 1.5rem;
   font-size: 0.75rem;
@@ -458,10 +450,6 @@ h6 {
 
 .btn--primary.btn--md {
   color: #ffffff;
-}
-
-.btn--auto {
-  width: auto;
 }
 
 .btn--full {
@@ -654,6 +642,27 @@ h6 {
 }
 .btn--primary-pink.btn--action:hover:not(:disabled) {
   background-color: #f99;
+}
+
+.btn--share {
+  line-height: 114%;
+}
+
+.btn--download {
+  padding: 0.9375rem 1.75rem;
+  background-color: #1a9b9a;
+  border: 0.0625rem solid transparent;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 114%;
+  width: auto;
+}
+.btn--download:hover:not(:disabled) {
+  background-color: #156b6a;
+}
+.btn--download:active:not(:disabled) {
+  background-color: #156b6a;
 }
 
 .btn--not-active,
@@ -1004,13 +1013,9 @@ h6 {
   padding-left: 0.875rem;
 }
 .tabs--appointment-wizard .tab {
-  flex: 0 1 auto;
-  width: auto;
-  min-width: 11.4375rem;
-  max-width: none;
-  height: 2.375rem;
-  padding: 0 1.75rem;
-  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 11.375rem;
+  border-radius: 0.75rem 0.75rem 0 0;
   border-bottom: none;
   background: #fff8f8;
   color: #15200e;
@@ -1340,14 +1345,12 @@ h6 {
 .tabs {
   display: inline-flex;
   gap: 0.5rem;
-  max-width: 100%;
+  width: 100%;
   padding-top: 0.5625rem;
   padding-left: 2rem;
 }
 
 .tab {
-  flex: 0 0 14.25rem;
-  width: 14.25rem;
   padding: 0.75rem 0;
   border-radius: 0.75rem 0.75rem 0 0;
   font-size: 0.875rem;
@@ -2732,9 +2735,8 @@ body {
 }
 
 .icon {
-  width: 1.25rem;
-  height: 1.25rem;
   flex-shrink: 0;
+  display: block;
 }
 
 .quick-actions__btn {

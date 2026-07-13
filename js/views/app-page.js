@@ -92,6 +92,11 @@ async function injectDocumentsList(wrapper, pathname) {
     list.innerHTML = docs.map(renderDocumentListItem).join('');
   }
 
+  const categoryTabs = wrapper.querySelector('[data-tabs="doc-categories"]');
+  if (categoryTabs && window.UI?.syncDocCategoryFilter) {
+    window.UI.syncDocCategoryFilter(categoryTabs);
+  }
+
   const statValue = wrapper.querySelector('.stat-card__value');
   if (statValue && pathname === '/patient/home') {
     statValue.textContent = String(docs.length);
@@ -181,16 +186,16 @@ function renderAccessCard(item) {
     : item.accessUntil;
   const actions = item.status === 'incoming'
     ? `<div class="access-grant-card__actions">
-        <button type="button" class="btn btn--primary btn--compact btn--auto">Принять</button>
-        <button type="button" class="btn btn--neutral-outline btn--auto">Отклонить</button>
+        <button type="button" class="btn btn--primary btn--compact">Принять</button>
+        <button type="button" class="btn btn--neutral-outline">Отклонить</button>
       </div>`
     : item.status === 'expired'
       ? `<div class="access-grant-card__actions">
-          <a href="#/patient/access/grant" class="btn btn--primary btn--compact btn--auto" data-nav>Запросить снова</a>
+          <a href="#/patient/access/grant" class="btn btn--primary btn--compact" data-nav>Запросить снова</a>
         </div>`
       : `<div class="access-grant-card__actions">
-          <button type="button" class="btn btn--primary btn--compact btn--auto">Изменить срок</button>
-          <button type="button" class="btn btn--neutral-outline btn--auto">Отозвать</button>
+          <button type="button" class="btn btn--primary btn--compact">Изменить срок</button>
+          <button type="button" class="btn btn--neutral-outline">Отозвать</button>
         </div>`;
 
   return `
@@ -415,12 +420,12 @@ function renderAppointmentItem(a) {
   const reason = a.reason ? `Причина: ${escapeHtml(a.reason)}` : '';
   const actions = isPast
     ? `<div class="appointment-item__actions">
-        <button type="button" class="btn btn--action btn--sm btn--auto">Повторить запись</button>
-        <button type="button" class="btn btn--action btn--sm btn--auto">Заключение врача</button>
+        <button type="button" class="btn btn--action">Повторить запись</button>
+        <button type="button" class="btn btn--action">Заключение врача</button>
       </div>`
     : `<div class="appointment-item__actions">
-        <button type="button" class="btn btn--primary btn--sm btn--auto">Перенести запись</button>
-        <button type="button" class="btn btn--action btn--sm btn--auto">Отменить</button>
+        <button type="button" class="btn btn--primary">Перенести запись</button>
+        <button type="button" class="btn btn--action">Отменить</button>
       </div>`;
 
   return `

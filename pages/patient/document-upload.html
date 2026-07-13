@@ -1,6 +1,7 @@
 <script>location.replace('../../index.html#/patient/documents/upload');</script>
-<main class="layout__content layout__content--documents document-upload-page">
-  <a href="documents.html" class="btn btn--ghost document-upload__back">
+<main class="layout__content layout__content--documents">
+  <div class="document-upload-page">
+  <a href="documents.html" class="btn btn--ghost appointment-new__back">
     <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
       <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
         stroke-linejoin="round" />
@@ -55,9 +56,9 @@
           <div class="tabs tabs--family-cards tabs--family-cards--fluid" data-tabs="doc-upload-owner" role="group"
             aria-labelledby="doc-owner-label">
             <button type="button" class="tab tab--active" data-tab="anna">Анна</button>
-            <button type="button" class="tab" data-tab="ivan">Иван</button>
-            <button type="button" class="tab" data-tab="sofia">София</button>
-            <button type="button" class="tab" data-tab="misha">Миша</button>
+            <button type="button" class="tab" data-tab="ivan">Иван<span>(муж)</span></button>
+            <button type="button" class="tab" data-tab="sofia">София<span>(жена)</span></button>
+            <button type="button" class="tab" data-tab="misha">Миша<span>(сын)</span></button>
           </div>
         </div>
 
@@ -65,4 +66,5 @@
       </form>
     </div>
   </article>
+  </div>
 </main>

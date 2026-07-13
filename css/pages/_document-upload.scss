@@ -1,34 +1,13 @@
 /* ── Document upload (patient) — Figma 137:4781 ── */
 
 .document-upload-page {
-  display: grid;
-  grid-template-columns: minmax(0, rem(736));
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 }
 
-.document-upload__back {
-  display: inline-flex;
-  justify-self: start;
-  align-items: center;
-  gap: rem(8);
-  margin-bottom: rem(16);
-  padding: 0;
-  line-height: 131%;
-  font-size: 1rem;
-  font-weight: $font-weight-medium;
-  color: #424242;
-  text-decoration: none;
 
-  .icon {
-    width: rem(20);
-    height: rem(20);
-  }
-
-  &:hover {
-    color: $color-primary;
-  }
-}
 
 .document-upload-card {
   width: 100%;
@@ -154,9 +133,14 @@
     color: $color-text;
   }
 
+  .tabs {
+    padding: rem(2);
+  }
+
   .tabs--family-cards {
-    padding-top: rem(2);
-    padding-left: rem(2);
+    width: 100%;
+    height: auto;
+    padding: rem(2);
   }
 }
 
